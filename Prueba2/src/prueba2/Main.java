@@ -10,6 +10,9 @@ public class Main {
         //tercera Prueba
         //Yohan canson...
         String developerMember = "Acactown";
+        
+        String Diana;
+               
         double tati;
         developerMember = "que paso Yohan";
 
