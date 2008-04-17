@@ -76,10 +76,8 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="SOPAS">
-                <Property name="tabTitle" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <PlainString value="SOPAS"/>
-                </Property>
+              <JTabbedPaneConstraints tabName="&lt;html&gt;&#xa;&#x9;&lt;body&gt;&#xa;&#x9;S&lt;br&gt;O&lt;br&gt;P&lt;br&gt;A&lt;br&gt;S&#xa;&#x9;&#xa;&#x9;&lt;/body&gt;&#xa;&lt;/html&gt;">
+                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt;&#xa;&#x9;&lt;body&gt;&#xa;&#x9;S&lt;br&gt;O&lt;br&gt;P&lt;br&gt;A&lt;br&gt;S&#xa;&#x9;&#xa;&#x9;&lt;/body&gt;&#xa;&lt;/html&gt;"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>

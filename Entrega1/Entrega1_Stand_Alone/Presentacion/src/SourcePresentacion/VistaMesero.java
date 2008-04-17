@@ -62,7 +62,7 @@ public class VistaMesero extends javax.swing.JFrame {
             .addGap(0, 525, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("SOPAS", jPanel1);
+        jTabbedPane1.addTab("<html>\n\t<body>\n\tS<br>O<br>P<br>A<br>S\n\t\n\t</body>\n</html>", jPanel1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
