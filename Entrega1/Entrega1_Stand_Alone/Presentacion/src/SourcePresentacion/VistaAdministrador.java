@@ -1,6 +1,7 @@
 
 package SourcePresentacion;
 
+import java.awt.*;
 import sources.Empleado;
 
 /**
@@ -8,10 +9,28 @@ import sources.Empleado;
  * @author  Familia
  */
 public class VistaAdministrador extends javax.swing.JFrame {
+    private GraphicsDevice monitor;
+    
     private Empleado empleado;
     /** Creates new form VistaAdministrador */
     public VistaAdministrador(Empleado empleado) {
         initComponents();
+        GraphicsEnvironment entornoGrafico = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        monitor = entornoGrafico.getDefaultScreenDevice();
+        if(!monitor.isFullScreenSupported())
+            System.out.println("WARNING: No hay soporte.\n");
+        else
+            System.out.println("INFO: Detectado soporte\n");
+        try{
+            // Activamos el modo a pantalla completa
+            monitor.setFullScreenWindow(this);
+            // Inicializamos toda la interfaz gráfica
+        }
+        catch(Throwable e) {
+            e.printStackTrace();
+            System.out.println("ERROR CRITICO: "+e.getMessage());
+        }
+        
         this.empleado=empleado;
         n.setText(empleado.getNombre());
         c.setText(empleado.getCargo());
