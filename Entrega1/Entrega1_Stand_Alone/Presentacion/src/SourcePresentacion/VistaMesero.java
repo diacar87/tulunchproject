@@ -153,7 +153,7 @@ public class VistaMesero extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Mis documentos\\NetBeansProjects\\Entrega1\\Entrega1_Stand_Alone\\Imágenes\\ajiaco.JPG")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SourcePresentacion/ajiaco.JPG"))); // NOI18N
         jButton1.setText("jButton1");
 
         jButton2.setText("jButton2");
@@ -173,7 +173,7 @@ public class VistaMesero extends javax.swing.JFrame {
 
         jButton5.setText("jButton5");
 
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Mis documentos\\NetBeansProjects\\Entrega1\\Entrega1_Stand_Alone\\Imágenes\\cazuela.JPG")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SourcePresentacion/cazuela.JPG"))); // NOI18N
         jButton6.setText("jButton6");
 
         jButton7.setLabel("jButton7");
@@ -184,15 +184,17 @@ public class VistaMesero extends javax.swing.JFrame {
 
         jButton10.setText("jButton10");
 
-        jButton11.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Mis documentos\\NetBeansProjects\\Entrega1\\Entrega1_Stand_Alone\\Imágenes\\crem_cebolla.JPG")); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SourcePresentacion/crem_cebolla.JPG"))); // NOI18N
         jButton11.setText("jButton11");
 
         jButton12.setText("jButton12");
 
         jButton13.setText("jButton13");
 
+        jButton14.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Mis documentos\\NetBeansProjects\\Entrega1\\Entrega1_Stand_Alone\\Presentacion\\src\\SourcePresentacion\\crem_tom.JPG")); // NOI18N
         jButton14.setText("jButton14");
 
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SourcePresentacion/crem_maz.JPG"))); // NOI18N
         jButton16.setText("jButton16");
 
         jButton17.setText("jButton17");
@@ -308,19 +310,19 @@ public class VistaMesero extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 100, Short.MAX_VALUE)
                                     .addComponent(jButton18, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                     .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))))
+                                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, Short.MAX_VALUE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

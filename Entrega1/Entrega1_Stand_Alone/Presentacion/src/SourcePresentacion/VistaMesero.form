@@ -293,17 +293,17 @@
                                           <Component id="jLabel14" alignment="0" max="32767" attributes="1"/>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jButton14" pref="100" max="32767" attributes="1"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel11" alignment="0" pref="100" max="32767" attributes="0"/>
                                                   <Component id="jButton3" alignment="0" pref="100" max="32767" attributes="1"/>
                                                   <Component id="jLabel15" alignment="0" pref="100" max="32767" attributes="0"/>
                                               </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jButton14" pref="100" max="32767" attributes="1"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -415,7 +415,7 @@
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Documents and Settings\Windows xp\Mis documentos\NetBeansProjects\Entrega1\Entrega1_Stand_Alone\Im&#xe1;genes\ajiaco.JPG"/>
+                  <Image iconType="3" name="/SourcePresentacion/ajiaco.JPG"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jButton1"/>
               </Properties>
@@ -461,7 +461,7 @@
             <Component class="javax.swing.JButton" name="jButton6">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Documents and Settings\Windows xp\Mis documentos\NetBeansProjects\Entrega1\Entrega1_Stand_Alone\Im&#xe1;genes\cazuela.JPG"/>
+                  <Image iconType="3" name="/SourcePresentacion/cazuela.JPG"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jButton6"/>
               </Properties>
@@ -489,7 +489,7 @@
             <Component class="javax.swing.JButton" name="jButton11">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Documents and Settings\Windows xp\Mis documentos\NetBeansProjects\Entrega1\Entrega1_Stand_Alone\Im&#xe1;genes\crem_cebolla.JPG"/>
+                  <Image iconType="3" name="/SourcePresentacion/crem_cebolla.JPG"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jButton11"/>
               </Properties>
@@ -506,11 +506,17 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton14">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Documents and Settings\Windows xp\Mis documentos\NetBeansProjects\Entrega1\Entrega1_Stand_Alone\Presentacion\src\SourcePresentacion\crem_tom.JPG"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="jButton14"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton16">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/SourcePresentacion/crem_maz.JPG"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="jButton16"/>
               </Properties>
             </Component>
