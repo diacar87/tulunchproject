@@ -153,7 +153,7 @@ public class VistaMesero extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Escritorio\\Imágenes\\ajiaco.JPG")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Mis documentos\\NetBeansProjects\\Entrega1\\Entrega1_Stand_Alone\\Imágenes\\ajiaco.JPG")); // NOI18N
         jButton1.setText("jButton1");
 
         jButton2.setText("jButton2");
@@ -173,7 +173,7 @@ public class VistaMesero extends javax.swing.JFrame {
 
         jButton5.setText("jButton5");
 
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Escritorio\\Imágenes\\cazuela.JPG")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Mis documentos\\NetBeansProjects\\Entrega1\\Entrega1_Stand_Alone\\Imágenes\\cazuela.JPG")); // NOI18N
         jButton6.setText("jButton6");
 
         jButton7.setLabel("jButton7");
@@ -184,7 +184,7 @@ public class VistaMesero extends javax.swing.JFrame {
 
         jButton10.setText("jButton10");
 
-        jButton11.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Escritorio\\Imágenes\\crem_cebolla.JPG")); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Mis documentos\\NetBeansProjects\\Entrega1\\Entrega1_Stand_Alone\\Imágenes\\crem_cebolla.JPG")); // NOI18N
         jButton11.setText("jButton11");
 
         jButton12.setText("jButton12");
@@ -206,7 +206,7 @@ public class VistaMesero extends javax.swing.JFrame {
         jLabel5.setText("Crema de cebolla");
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Crema de Mazora");
+        jLabel6.setText("Crema de Mazorca");
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Cuchuco de Trigo");
