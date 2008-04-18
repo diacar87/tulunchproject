@@ -1,7 +1,7 @@
 CREATE TABLE pedido_producto (Pedido_id INTEGER NOT NULL, productos_id INTEGER NOT NULL, PRIMARY KEY (Pedido_id, productos_id))
 CREATE TABLE empleado (id INTEGER NOT NULL, cargo VARCHAR(255) NOT NULL, telefono VARCHAR(255), nombre VARCHAR(255) NOT NULL, clave VARCHAR(255) NOT NULL, PRIMARY KEY (id))
-CREATE TABLE producto (id INTEGER NOT NULL, precio DOUBLE NOT NULL, tipo VARCHAR(255) NOT NULL, nombre VARCHAR(255) NOT NULL, estaEnMenu TINYINT(1) default 0 NOT NULL, PRIMARY KEY (id))
 CREATE TABLE pedido (id INTEGER NOT NULL, mesa INTEGER NOT NULL, fecha VARCHAR(255) NOT NULL, EMPLEADO_id INTEGER, PRIMARY KEY (id))
+CREATE TABLE producto (id INTEGER NOT NULL, precio DOUBLE NOT NULL, tipo VARCHAR(255) NOT NULL, nombre VARCHAR(255) NOT NULL, estaEnMenu TINYINT(1) default 0 NOT NULL, PRIMARY KEY (id))
 ALTER TABLE pedido_producto ADD CONSTRAINT FK_pedido_producto_productos_id FOREIGN KEY (productos_id) REFERENCES producto (id)
 ALTER TABLE pedido_producto ADD CONSTRAINT FK_pedido_producto_Pedido_id FOREIGN KEY (Pedido_id) REFERENCES pedido (id)
 ALTER TABLE pedido ADD CONSTRAINT FK_pedido_EMPLEADO_id FOREIGN KEY (EMPLEADO_id) REFERENCES empleado (id)

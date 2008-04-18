@@ -3,5 +3,5 @@ ALTER TABLE pedido_producto DROP FOREIGN KEY FK_pedido_producto_Pedido_id
 ALTER TABLE pedido DROP FOREIGN KEY FK_pedido_EMPLEADO_id
 DROP TABLE pedido_producto
 DROP TABLE empleado
-DROP TABLE producto
 DROP TABLE pedido
+DROP TABLE producto
