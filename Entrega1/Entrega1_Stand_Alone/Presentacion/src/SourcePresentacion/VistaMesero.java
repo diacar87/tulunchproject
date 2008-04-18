@@ -156,6 +156,7 @@ public class VistaMesero extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SourcePresentacion/ajiaco.JPG"))); // NOI18N
         jButton1.setText("jButton1");
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SourcePresentacion/crem_cham.JPG"))); // NOI18N
         jButton2.setText("jButton2");
 
         jButton4.setText("jButton4");
@@ -191,7 +192,7 @@ public class VistaMesero extends javax.swing.JFrame {
 
         jButton13.setText("jButton13");
 
-        jButton14.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Windows xp\\Mis documentos\\NetBeansProjects\\Entrega1\\Entrega1_Stand_Alone\\Presentacion\\src\\SourcePresentacion\\crem_tom.JPG")); // NOI18N
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SourcePresentacion/crem_tom.JPG"))); // NOI18N
         jButton14.setText("jButton14");
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SourcePresentacion/crem_maz.JPG"))); // NOI18N
@@ -263,7 +264,7 @@ public class VistaMesero extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, Short.MAX_VALUE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
