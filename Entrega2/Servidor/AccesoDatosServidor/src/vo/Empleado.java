@@ -43,7 +43,7 @@ public class Empleado implements Serializable {
     public Empleado() {
     }
 
-    public Empleado(String nombre, String password, String cargo) throws NoSuchAlgorithmException, UnsupportedEncodingException{
+    public Empleado(String nombre, String password, String cargo){
         this.nombre = nombre;
         this.password = encriptacion.md5(password);
         this.cargo = cargo;
