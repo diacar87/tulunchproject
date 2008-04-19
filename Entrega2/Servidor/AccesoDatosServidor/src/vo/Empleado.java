@@ -1,6 +1,8 @@
 package vo;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import seguridad.encriptacion;
 
 @Entity
 @Table(name = "empleado")
@@ -40,9 +43,9 @@ public class Empleado implements Serializable {
     public Empleado() {
     }
 
-    public Empleado(String nombre, String password, String cargo) {
+    public Empleado(String nombre, String password, String cargo) throws NoSuchAlgorithmException, UnsupportedEncodingException{
         this.nombre = nombre;
-        this.password = password;
+        this.password = encriptacion.md5(password);
         this.cargo = cargo;
     }
 
