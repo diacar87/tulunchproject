@@ -37,6 +37,118 @@ public class VistaAdministrador extends javax.swing.JFrame {
         i.setText( String.valueOf( empleado.getId() ) );
     }
     
+    private void busqueda()
+    {
+        /*try{
+            String entrada=BuscarTextField.getText(); 
+            
+            if(ProductoRadio.isSelected())
+            {
+                if(entrada.isEmpty()){
+                    categorias = logicaNegocioJDBC.leerCategoria("*", "1 = 1");
+                }
+                else{
+                    String condicion = "`"+ campoSeleccionado +"` = '"+ entrada +"'";
+                    categorias = logicaNegocioJDBC.leerCategoria("*", condicion);
+                }          
+               
+            
+            }
+            if(MeseroRadio.isSelected())
+            {
+            
+            }
+            if(VentaRadio.isSelected())
+            {
+            
+            }
+            String entrada = entradaBusqueda.getText();
+            entidadSeleccionada = String.valueOf( comboBoxEntidades.getSelectedItem() );
+            String campoSeleccionado = String.valueOf( comboBoxCampos.getSelectedItem() );
+            javax.swing.table.DefaultTableModel modeloTabla = new javax.swing.table.DefaultTableModel();
+            categorias.clear();
+            proveedores.clear();
+            productos.clear();
+            
+            if(entidadSeleccionada.equals("Categoria")) {
+                if(entrada.isEmpty()){
+                    categorias = logicaNegocioJDBC.leerCategoria("*", "1 = 1");
+                }
+                else{
+                    String condicion = "`"+ campoSeleccionado +"` = '"+ entrada +"'";
+                    categorias = logicaNegocioJDBC.leerCategoria("*", condicion);
+                }
+                modeloTabla = generarTabla();
+                modeloTabla.setRowCount(categorias.size());
+                for(int fila = 0 ; fila < categorias.size() ; fila++){
+                    modeloTabla.setValueAt(categorias.get(fila).getIdCategoria(), fila ,0);
+                    modeloTabla.setValueAt(categorias.get(fila).getDescripcion(), fila ,1);
+                    modeloTabla.setValueAt(categorias.get(fila).getNombre(), fila ,2);
+                }
+            }
+            if(entidadSeleccionada.equals("Proveedor")) {
+                if(entrada.isEmpty()){
+                    proveedores = logicaNegocioJDBC.leerProveedor("*", "1 = 1");
+                }
+                else{
+                    if (campoSeleccionado.equals("Nombre Empresa")) campoSeleccionado = "nombreEmpresa";
+                    if (campoSeleccionado.equals("persona contacto")) campoSeleccionado = "personaContacto";
+                    if (campoSeleccionado.equals("registro mercantil")) campoSeleccionado = "registroMercantil";
+                    String condicion = "`"+ campoSeleccionado +"` = ";
+                    if ( campoSeleccionado.equals("descripcion") || campoSeleccionado.equals("direccion") || campoSeleccionado.equals("nombreEmpresa") || campoSeleccionado.equals("personaContacto") || campoSeleccionado.equals("registroMercantil") || campoSeleccionado.equals("telefono")) {
+                        condicion = condicion +"'"+ entrada +"'";
+                    }
+                    else {
+                        condicion = condicion + entrada;
+                    }
+                    proveedores = logicaNegocioJDBC.leerProveedor("*", condicion);
+                }
+                modeloTabla = generarTabla();
+                modeloTabla.setRowCount(proveedores.size());
+                for(int fila = 0 ; fila < proveedores.size() ; fila++){
+                    modeloTabla.setValueAt(proveedores.get(fila).getIdProveedor(), fila ,0);
+                    modeloTabla.setValueAt(proveedores.get(fila).getDescripcion(), fila ,1);
+                    modeloTabla.setValueAt(proveedores.get(fila).getDireccion(), fila ,2);
+                    modeloTabla.setValueAt(proveedores.get(fila).getNombreEmpresa(), fila ,3);
+                    modeloTabla.setValueAt(proveedores.get(fila).getPersonaContacto(), fila ,4);
+                    modeloTabla.setValueAt(proveedores.get(fila).getRegistroMercantil(), fila ,5);
+                    modeloTabla.setValueAt(proveedores.get(fila).getTelefono(), fila ,6);
+                }      
+            }
+            if(entidadSeleccionada.equals("Producto")) {
+                if(entrada.isEmpty()){
+                    productos = logicaNegocioJDBC.leerProducto("*", "1 = 1");
+                }
+                else{
+                    String condicion = "`"+ campoSeleccionado +"` = ";
+                    if ( campoSeleccionado.equals("nombre") || campoSeleccionado.equals("presentacion") ) {
+                        condicion = condicion +"'"+ entrada +"'";
+                    }
+                    else {
+                        condicion = condicion + entrada;
+                    }
+                    productos = logicaNegocioJDBC.leerProducto("*", condicion);
+                }
+                modeloTabla = generarTabla();
+                modeloTabla.setRowCount(productos.size());
+                for(int fila = 0 ; fila < productos.size() ; fila++){
+                    modeloTabla.setValueAt(productos.get(fila).getIdProducto(), fila ,0);
+                    modeloTabla.setValueAt(productos.get(fila).getNombre(), fila ,1);
+                    modeloTabla.setValueAt(productos.get(fila).getPeso(), fila ,2);
+                    modeloTabla.setValueAt(productos.get(fila).getPrecio(), fila ,3);
+                    modeloTabla.setValueAt(productos.get(fila).getPresentacion(), fila ,4);
+                    modeloTabla.setValueAt(productos.get(fila).getIdCategoria(), fila ,5);
+                    modeloTabla.setValueAt(productos.get(fila).getIdProveedor(), fila ,6);
+                }      
+            }
+
+            tablaBuscar.setModel( modeloTabla );
+        }
+        catch(SQLException excep){
+                mensajeLogicaNegocio.setText("* No fue posible Realizar la Busqueda.");
+        }*/
+       
+    }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -60,12 +172,13 @@ public class VistaAdministrador extends javax.swing.JFrame {
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jTextField4 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        tablaBuscar = new javax.swing.JTable();
+        campoBuscar = new javax.swing.JTextField();
+        botonBuscar = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        radioMesero = new javax.swing.JRadioButton();
+        radioProducto = new javax.swing.JRadioButton();
+        radioVenta = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -77,7 +190,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        botonModificar = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
@@ -89,10 +202,11 @@ public class VistaAdministrador extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
+        botonCrear = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        radioMeseroCrear = new javax.swing.JRadioButton();
+        radioVentaCrear = new javax.swing.JRadioButton();
+        radioProductoCrear = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
@@ -168,7 +282,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
         jTabbedPane5.setTabPlacement(javax.swing.JTabbedPane.RIGHT);
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tablaBuscar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -179,15 +293,61 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(jTable4);
+        jScrollPane5.setViewportView(tablaBuscar);
 
-        jRadioButton7.setText("Ventas");
+        botonBuscar.setText("Buscar");
+        botonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscarActionPerformed(evt);
+            }
+        });
 
-        jRadioButton8.setText("Meseros");
+        radioMesero.setText("Mesero");
+        radioMesero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioMeseroActionPerformed(evt);
+            }
+        });
 
-        jRadioButton9.setText("Productos");
+        radioProducto.setText("Producto");
+        radioProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioProductoActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Buscar");
+        radioVenta.setText("Venta");
+        radioVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioVentaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(radioVenta)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(radioMesero)
+                        .addGap(8, 8, 8))
+                    .addComponent(radioProducto))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(radioProducto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radioMesero)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radioVenta)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -196,30 +356,29 @@ public class VistaAdministrador extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
-                    .addComponent(jRadioButton7, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jRadioButton8)
-                        .addGap(60, 60, 60)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jRadioButton9, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(52, 52, 52)
+                        .addComponent(campoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jRadioButton9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap(46, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonBuscar))
+                        .addGap(44, 44, 44)))
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -236,7 +395,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
         jLabel11.setText("jLabel7");
 
-        jButton2.setText("Aceptar");
+        botonModificar.setText("Modificar");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -268,7 +427,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addContainerGap(155, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(397, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
         );
         jPanel4Layout.setVerticalGroup(
@@ -295,7 +454,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98))
         );
 
@@ -311,13 +470,52 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
         jLabel16.setText("jLabel7");
 
-        jButton3.setText("Crear");
+        botonCrear.setText("Crear");
 
-        jRadioButton10.setText("Producto");
+        radioMeseroCrear.setText("Mesero");
+        radioMeseroCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioMeseroCrearActionPerformed(evt);
+            }
+        });
 
-        jRadioButton11.setText("Mesero");
+        radioVentaCrear.setText("Venta");
+        radioVentaCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioVentaCrearActionPerformed(evt);
+            }
+        });
 
-        jRadioButton12.setText("Venta");
+        radioProductoCrear.setText("Producto");
+        radioProductoCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioProductoCrearActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(radioVentaCrear, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(radioMeseroCrear, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(radioProductoCrear, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(radioProductoCrear)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radioMeseroCrear)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(radioVentaCrear)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -325,17 +523,8 @@ public class VistaAdministrador extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(396, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jRadioButton12, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jRadioButton11)
-                        .addGap(8, 8, 8))
-                    .addComponent(jRadioButton10, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(428, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(84, 84, 84)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,16 +549,16 @@ public class VistaAdministrador extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(153, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(416, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(jRadioButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton12)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(44, 44, 44)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -390,8 +579,8 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
         );
 
@@ -443,7 +632,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap(358, Short.MAX_VALUE)
+                .addContainerGap(125, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel14Layout.setVerticalGroup(
@@ -550,7 +739,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
                             .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -654,6 +843,50 @@ public class VistaAdministrador extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void radioProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioProductoActionPerformed
+        // TODO add your handling code here:
+        radioMesero.setSelected(false);
+        radioVenta.setSelected(false);
+        
+        
+}//GEN-LAST:event_radioProductoActionPerformed
+
+    private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+        // TODO add your handling code here:
+        busqueda();     
+        
+}//GEN-LAST:event_botonBuscarActionPerformed
+
+    private void radioMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMeseroActionPerformed
+        // TODO add your handling code here:
+        radioProducto.setSelected(false);
+        radioVenta.setSelected(false);
+}//GEN-LAST:event_radioMeseroActionPerformed
+
+    private void radioVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioVentaActionPerformed
+        // TODO add your handling code here:
+        radioMesero.setSelected(false);
+        radioProducto.setSelected(false);
+}//GEN-LAST:event_radioVentaActionPerformed
+
+    private void radioProductoCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioProductoCrearActionPerformed
+        // TODO add your handling code here:
+        radioMeseroCrear.setSelected(false);
+        radioVentaCrear.setSelected(false);
+}//GEN-LAST:event_radioProductoCrearActionPerformed
+
+    private void radioMeseroCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMeseroCrearActionPerformed
+        // TODO add your handling code here:
+        radioProductoCrear.setSelected(false);
+        radioVentaCrear.setSelected(false);
+    }//GEN-LAST:event_radioMeseroCrearActionPerformed
+
+    private void radioVentaCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioVentaCrearActionPerformed
+        // TODO add your handling code here:
+        radioMeseroCrear.setSelected(false);
+        radioProductoCrear.setSelected(false);
+    }//GEN-LAST:event_radioVentaCrearActionPerformed
     
     /**
      * @param args the command line arguments
@@ -664,12 +897,13 @@ public class VistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JToggleButton Mesa2;
     private javax.swing.JToggleButton Mesa3;
     private javax.swing.JToggleButton Mesa4;
+    private javax.swing.JButton botonBuscar;
+    private javax.swing.JButton botonCrear;
+    private javax.swing.JButton botonModificar;
     private javax.swing.JTextField c;
+    private javax.swing.JTextField campoBuscar;
     private javax.swing.JTextField i;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
@@ -696,12 +930,8 @@ public class VistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane5;
@@ -709,20 +939,25 @@ public class VistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField n;
+    private javax.swing.JRadioButton radioMesero;
+    private javax.swing.JRadioButton radioMeseroCrear;
+    private javax.swing.JRadioButton radioProducto;
+    private javax.swing.JRadioButton radioProductoCrear;
+    private javax.swing.JRadioButton radioVenta;
+    private javax.swing.JRadioButton radioVentaCrear;
+    private javax.swing.JTable tablaBuscar;
     // End of variables declaration//GEN-END:variables
     
 }
