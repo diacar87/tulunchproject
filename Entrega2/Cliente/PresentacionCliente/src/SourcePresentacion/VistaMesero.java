@@ -1031,7 +1031,7 @@ public class VistaMesero extends javax.swing.JFrame {
         jLabel80.setText("Brevas con arquipe");
         jLabel80.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jButton78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/aleche.png"))); // NOI18N
+        jButton78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/arrozconleche0qx.jpg"))); // NOI18N
         jButton78.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jButton89.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/manjar.png"))); // NOI18N
