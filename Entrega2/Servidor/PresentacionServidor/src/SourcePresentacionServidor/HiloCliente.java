@@ -16,11 +16,11 @@ import dao.*;
  */
 public class HiloCliente implements Runnable{
 
-    Socket skClienteComunicacion=null;
-    Socket skClienteMensajes=null;
-    ObjectInputStream entradaComunicacion=null;
-    ObjectOutputStream salidaComunicacion=null;
-    ObjectOutputStream salidaMensajes=null;
+    Socket skClienteComunicacion = null;
+    Socket skClienteMensajes = null;
+    ObjectInputStream entradaComunicacion = null;
+    ObjectOutputStream salidaComunicacion = null;
+    ObjectOutputStream salidaMensajes = null;
     public static Vector<HiloCliente> clientesActivos = new Vector();	
     String nameUser;
      
