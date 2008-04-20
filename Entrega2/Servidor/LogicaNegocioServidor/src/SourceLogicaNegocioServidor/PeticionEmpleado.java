@@ -7,7 +7,8 @@ package SourceLogicaNegocioServidor;
  */
 public class PeticionEmpleado extends PeticionCliente{
 
-    public PeticionEmpleado() {
+    public PeticionEmpleado(String password) {
+        tipoPeticion = new PedirEmpleadoXPassword(password);
     }
 
 }

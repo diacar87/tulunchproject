@@ -7,7 +7,7 @@ package SourceLogicaNegocioServidor;
  */
 public class PeticionCliente {
 
-    private ITipoPeticion tipoPeticion;
+    public ITipoPeticion tipoPeticion;
 
     public void setTipoPeticion(ITipoPeticion tipoPeticion) {
         this.tipoPeticion = tipoPeticion;
