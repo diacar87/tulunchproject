@@ -16,15 +16,15 @@ import SourceLogicaNegocioServidor.LogServidor;
 public class HiloCliente implements Runnable{
 
     Socket skClienteComunicacion = null;
-    Socket skClienteMensajes = null;
+    Socket skClientePeticiones = null;
     ObjectInputStream entradaComunicacion = null;
     ObjectOutputStream salidaComunicacion = null;
-    ObjectOutputStream salidaMensajes = null;
+    ObjectOutputStream salidaPeticiones = null;
     public static Vector<HiloCliente> clientesActivos = new Vector();	
      
-     public HiloCliente(Socket skClienteComunicacion,Socket skClienteMensajes){
+     public HiloCliente(Socket skClienteComunicacion,Socket skClientePeticiones){
         this.skClienteComunicacion = skClienteComunicacion;
-        this.skClienteMensajes = skClienteMensajes;
+        this.skClientePeticiones = skClientePeticiones;
         clientesActivos.add(this);
         LogServidor.setEvento("Cliente Agregado: "+ this);			
      }

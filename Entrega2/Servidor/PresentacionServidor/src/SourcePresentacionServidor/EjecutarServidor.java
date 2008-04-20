@@ -10,13 +10,13 @@ import java.net.*;
 
 public class EjecutarServidor{
    
-   Servidor ejecutarServidor;
+   Servidor servidor;
    public EjecutarServidor(){
-        ejecutarServidor = new Servidor();
-        Thread correrServidor = new Thread(ejecutarServidor);
+        servidor = new Servidor();
+        Thread correrServidor = new Thread( servidor);
    }
 
    public static void main(String abc[]) throws IOException {                
-        EjecutarServidor servidor = new EjecutarServidor();
+        EjecutarServidor ejecutarServidor = new EjecutarServidor();
    }  
 }
