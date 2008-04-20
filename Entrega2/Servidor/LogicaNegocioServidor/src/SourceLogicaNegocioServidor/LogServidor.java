@@ -36,26 +36,25 @@ public class LogServidor {
             System.out.println("Error :  al intentar abrir el archivo : "+nombreLog +
                                          "\n no se puede crear el Log del Servidor");
         }finally{
-            escritorArchivo.println("\n------------------------| LOG DE SERVIDOR |-------------------" +
-                             "\n  IP del Servidor : " + ip +
-                             "\n  Nombre del Host : "+ host +
-                             "\n  Fecha y Hora de Inicio : "+ tiempoEvento() +
-                             "\n--------------------------------------------------------------");
-            escritorArchivo.flush();
-            escritorConsola.println("\n------------------------| LOG DE SERVIDOR |-------------------" +
-                             "\n  IP del Servidor : " + ip +
-                             "\n  Nombre del Host : "+ host +
-                             "\n  Fecha y Hora de Inicio : "+ tiempoEvento() +
-                             "\n--------------------------------------------------------------");
-            escritorConsola.flush();
+            String primerLog ="\n------------------------| LOG DE SERVIDOR |-------------------" +
+                              "\n  IP del Servidor : " + ip +
+                              "\n  Nombre del Host : "+ host +
+                              "\n  Fecha y Hora de Inicio : "+ tiempoEvento() +
+                              "\n--------------------------------------------------------------";
+            escribir(escritorArchivo, primerLog);
+            escribir(escritorConsola, primerLog);
+            
         }
     }
     
+    public static void escribir(PrintWriter escritor, String evento){
+        escritor.println(evento);
+        escritor.flush();
+    }
+    
     public static void setEvento(String evento) {
-        escritorArchivo.println("\n"+ tiempoEvento() +" -->"+ evento);
-        escritorArchivo.flush();
-        escritorConsola.println("\n"+ tiempoEvento() +" -->"+ evento);
-        escritorConsola.flush();
+        escribir(escritorArchivo, "\n"+ tiempoEvento() +" -->"+ evento );
+        escribir(escritorConsola, "\n"+ tiempoEvento() +" -->"+ evento );
     }
     
     private static  String tiempoEvento(){   
