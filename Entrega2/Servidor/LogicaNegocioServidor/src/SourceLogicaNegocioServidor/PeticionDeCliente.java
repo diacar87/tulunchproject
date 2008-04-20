@@ -17,9 +17,9 @@ public class PeticionDeCliente {
     }
     
     /**
-     * Esta es la manera como cada cliente  
+     * Esta es la manera como cada cliente ejecuta su peticion.
      */
-    public void enviarPeticion(){
+    public void ejecutarPeticion(){
         tipoPeticion.peticion();
     }
 
