@@ -16,18 +16,18 @@ import SourceLogicaNegocioServidor.Peticion;
 public class HiloCliente implements Runnable{
 
     Socket skClienteComunicacion = null;
-    Socket skClientePeticiones = null;
+    //Socket skClientePeticiones = null;
     ObjectInputStream entradaComunicacion = null;
     ObjectOutputStream salidaComunicacion = null;
-    ObjectOutputStream salidaPeticiones = null;
+    //ObjectOutputStream salidaPeticiones = null;
     public static Vector<HiloCliente> clientesActivos = new Vector();
     Peticion peticion;
     boolean atendiendo;
     
-     
-     public HiloCliente(Socket skClienteComunicacion,Socket skClientePeticiones){
+     //public HiloCliente(Socket skClienteComunicacion,Socket skClientePeticiones){
+     public HiloCliente(Socket skClienteComunicacion){
         this.skClienteComunicacion = skClienteComunicacion;
-        this.skClientePeticiones = skClientePeticiones;
+        //this.skClientePeticiones = skClientePeticiones;
         clientesActivos.add(this);
         peticion = new Peticion(0, "N/A");
         atendiendo = true;
@@ -38,7 +38,7 @@ public class HiloCliente implements Runnable{
         try{
             entradaComunicacion = new ObjectInputStream(skClienteComunicacion.getInputStream());
             salidaComunicacion =new ObjectOutputStream(skClienteComunicacion.getOutputStream());
-            salidaPeticiones = new ObjectOutputStream(skClientePeticiones.getOutputStream());
+            //salidaPeticiones = new ObjectOutputStream(skClientePeticiones.getOutputStream());
             try{
                 peticion = ( Peticion )entradaComunicacion.readObject();
             }catch(ClassNotFoundException ex ) {
@@ -51,19 +51,14 @@ public class HiloCliente implements Runnable{
             LogServidor.setEvento("Error 4: Falla de Comunicacion: " + skClienteComunicacion + 
                       "\n               Causa :" + ex.getMessage());
         }
-        int opcion = 0;              
+                      
     	while( atendiendo ){
-          try{
-             opcion = entradaComunicacion.readInt();
-             switch( opcion ){
+             switch( peticion.getOpcionPeticion() ){
+                 case 1://se envia un Empleado al conocer el password
 
              }
-          }catch (IOException e) {
-              LogServidor.setEvento("El Cliente Termino la Conexion: " + this +
-                       "\n               Empleado : "+ peticion.getNombreEmpleado());
-              break;
-          }
-        }
+        }        
+     
         
     	LogServidor.setEvento("Se Retiro el Cliente: " + this +
                        "\n               Empleado : "+ peticion.getNombreEmpleado());
