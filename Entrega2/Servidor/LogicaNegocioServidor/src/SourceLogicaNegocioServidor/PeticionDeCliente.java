@@ -20,7 +20,7 @@ public class PeticionDeCliente {
      * Esta es la manera como cada cliente ejecuta su peticion.
      */
     public void ejecutarPeticion(){
-        tipoPeticion.peticion();
+        tipoPeticion.ejecutarPeticion();
     }
 
 }
