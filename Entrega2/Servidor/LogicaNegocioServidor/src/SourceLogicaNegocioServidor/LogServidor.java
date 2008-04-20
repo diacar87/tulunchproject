@@ -45,7 +45,7 @@ public class LogServidor {
     
     public static void setEvento(String evento) {
         escritor.println("\n"+ tiempoEvento() +" -->"+ evento);
-        System.out.println(tiempoEvento() + evento);
+        System.out.println("\n"+ tiempoEvento() +" -->"+ evento);
         escritor.flush();
     }
     
