@@ -4,7 +4,9 @@ package SourcePresentacionServidor;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import SourceLogicaNegocioServidor.*;
+import SourceLogicaNegocioServidor.LogServidor;
+
+
 
 /**
  *
@@ -37,8 +39,8 @@ public class EjecutarServidor implements Runnable{
                     LogServidor.setEvento("Error 2: Falla de Comunicacion: " + skServerComunicacion + "\n    Causa :" + e.getMessage());
                     continue;
                 }
-                //HiloCliente user = new threadServidor(skComunicacion,skMensajes,this);            
-                //user.start();
+                HiloCliente cliente = new HiloCliente(skComunicacion,skMensajes,this);            
+                Thread correrCliente = new Thread(cliente);
             }
         }catch(IOException e){
             LogServidor.setEvento("Error 1: Falla de Comunicacion: " + skServerComunicacion + "\n    Causa :" + e.getMessage());

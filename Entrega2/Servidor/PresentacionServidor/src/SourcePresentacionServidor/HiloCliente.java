@@ -31,7 +31,7 @@ public class HiloCliente implements Runnable{
         this.servidor = servidor;
         nameUser="";
         clientesActivos.add(this);
-        LogServidor.setEvento("Cliente Agregado: "+this);			
+        LogServidor.setEvento("Cliente Agregado: "+ this);			
      }
      
      public String getNameUser()
@@ -46,7 +46,7 @@ public class HiloCliente implements Runnable{
      
      public void run()
      {
-    	serv.mostrar(".::Esperando Mensajes :");
+    	LogServidor.setEvento("Esperando Peticiones :");
     	
     	try
     	{
