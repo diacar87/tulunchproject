@@ -19,5 +19,10 @@ public class EjecutarServidor{
 
    public static void main(String abc[]) throws IOException {                
         EjecutarServidor ejecutarServidor = new EjecutarServidor();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new IniciarSesion().setVisible(true);
+            }
+        });
    }  
 }
