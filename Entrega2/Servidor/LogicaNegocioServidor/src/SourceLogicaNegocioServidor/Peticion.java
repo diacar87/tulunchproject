@@ -1,11 +1,13 @@
 
 package SourceLogicaNegocioServidor;
 
+import java.io.Serializable;
+
 /**
  *
  * @author acactown
  */
-public class Peticion {
+public class Peticion implements Serializable {
     
     private int opcionPeticion;
     private String nombreEmpleado;
