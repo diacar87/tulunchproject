@@ -41,6 +41,7 @@ public class Servidor implements Runnable{
                 }
                 HiloCliente cliente = new HiloCliente(skComunicacion, skPeticiones);           
                 Thread correrCliente = new Thread(cliente);
+                correrCliente.start();
             }
         }catch(IOException e){
             LogServidor.setEvento("Error 1: Falla de Comunicacion: " + skServerComunicacion + "\n    Causa :" + e.getMessage());

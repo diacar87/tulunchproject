@@ -53,8 +53,8 @@ public class LogServidor {
     }
     
     public static void setEvento(String evento) {
-        escribir(escritorArchivo, "\n"+ tiempoEvento() +" -->"+ evento );
-        escribir(escritorConsola, "\n"+ tiempoEvento() +" -->"+ evento );
+        escribir(escritorArchivo, tiempoEvento() +" --> "+ evento );
+        escribir(escritorConsola, tiempoEvento() +" --> "+ evento );
     }
     
     private static  String tiempoEvento(){   

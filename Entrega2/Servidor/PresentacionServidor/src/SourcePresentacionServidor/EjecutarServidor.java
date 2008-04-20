@@ -14,6 +14,7 @@ public class EjecutarServidor{
    public EjecutarServidor(){
         servidor = new Servidor();
         Thread correrServidor = new Thread( servidor);
+        correrServidor.start();
    }
 
    public static void main(String abc[]) throws IOException {                
