@@ -15,7 +15,8 @@ import java.util.List;
  */
 public class LogServidor {
     
-    private static PrintWriter escritor = null;
+    private static PrintWriter escritorArchivo = null;
+    private static PrintWriter escritorConsola = null;
     private static Calendar fecha;
     private static List<String> dias = new ArrayList<String>();    
     private static List<String> meses = new ArrayList<String>();
@@ -23,10 +24,11 @@ public class LogServidor {
     public static void setSalida (){
         dias.add("Lunes");dias.add("Martes");dias.add("Miercoles");dias.add("Jueves");dias.add("Viernes");dias.add("Sabado");dias.add("Domingo");        
         meses.add("Enero");meses.add("Febrero");meses.add("Marzo");meses.add("Abril");meses.add("Mayo");meses.add("Junio");meses.add("Julio");meses.add("Agosto");meses.add("Septiembre");meses.add("Octubre");meses.add("Noviembre");meses.add("Diciembre");
-        String nombreLog = "Log.log"; 
+        String nombreLog = "LogServidor.log"; 
         String ip = "N/A",host="N/A";
         try {
-            escritor = new PrintWriter(new FileWriter(nombreLog,true));
+            escritorArchivo = new PrintWriter(new FileWriter(nombreLog,true));
+            escritorConsola = new PrintWriter(System.out);
             InetAddress ipservidor = InetAddress.getLocalHost();
             ip = String.valueOf(ipservidor);
             host = ipservidor.getHostName();
@@ -34,19 +36,26 @@ public class LogServidor {
             System.out.println("Error :  al intentar abrir el archivo : "+nombreLog +
                                          "\n no se puede crear el Log del Servidor");
         }finally{
-            escritor.println("\n------------------------| LOG DE SERVIDOR |-------------------" +
+            escritorArchivo.println("\n------------------------| LOG DE SERVIDOR |-------------------" +
                              "\n  IP del Servidor : " + ip +
                              "\n  Nombre del Host : "+ host +
                              "\n  Fecha y Hora de Inicio : "+ tiempoEvento() +
                              "\n--------------------------------------------------------------");
-            escritor.flush();
+            escritorArchivo.flush();
+            escritorConsola.println("\n------------------------| LOG DE SERVIDOR |-------------------" +
+                             "\n  IP del Servidor : " + ip +
+                             "\n  Nombre del Host : "+ host +
+                             "\n  Fecha y Hora de Inicio : "+ tiempoEvento() +
+                             "\n--------------------------------------------------------------");
+            escritorConsola.flush();
         }
     }
     
     public static void setEvento(String evento) {
-        escritor.println("\n"+ tiempoEvento() +" -->"+ evento);
-        System.out.println("\n"+ tiempoEvento() +" -->"+ evento);
-        escritor.flush();
+        escritorArchivo.println("\n"+ tiempoEvento() +" -->"+ evento);
+        escritorArchivo.flush();
+        escritorConsola.println("\n"+ tiempoEvento() +" -->"+ evento);
+        escritorConsola.flush();
     }
     
     private static  String tiempoEvento(){   
