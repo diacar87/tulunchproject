@@ -39,7 +39,7 @@ public class Servidor implements Runnable{
                     LogServidor.setEvento("Error 2: Falla de Comunicacion: " + skServerComunicacion + "\n    Causa :" + e.getMessage());
                     continue;
                 }
-                HiloCliente cliente = new HiloCliente(skComunicacion, skMensajes, this);           
+                HiloCliente cliente = new HiloCliente(skComunicacion, skMensajes);           
                 Thread correrCliente = new Thread(cliente);
             }
         }catch(IOException e){

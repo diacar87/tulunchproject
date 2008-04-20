@@ -23,12 +23,10 @@ public class HiloCliente implements Runnable{
     ObjectOutputStream salidaMensajes=null;
     public static Vector<HiloCliente> clientesActivos = new Vector();	
     String nameUser;
-    Servidor servidor;
      
-     public HiloCliente(Socket skClienteComunicacion,Socket skClienteMensajes,Servidor servidor){
+     public HiloCliente(Socket skClienteComunicacion,Socket skClienteMensajes){
         this.skClienteComunicacion = skClienteComunicacion;
         this.skClienteMensajes = skClienteMensajes;
-        this.servidor = servidor;
         nameUser="";
         clientesActivos.add(this);
         LogServidor.setEvento("Cliente Agregado: "+ this);			
