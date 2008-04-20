@@ -46,7 +46,9 @@ public class HiloCliente implements Runnable{
                       "\n               Causa :" + ex.getMessage());
             }
             LogServidor.setEvento("Se Agrega Cliente: "+ this +
-                       "\n               Empleado : "+ peticion.getNombreEmpleado());
+                       "\n               Empleado    : "+ peticion.getNombreEmpleado() +
+                       "\n               Desde IP    : " + String.valueOf(skClienteComunicacion.getInetAddress()) +
+                       "\n               Nombre Host : " + skClienteComunicacion.getInetAddress().getHostName());
         }catch(IOException ex) {
             LogServidor.setEvento("Error 4: Falla de Comunicacion: " + skClienteComunicacion + 
                       "\n               Causa :" + ex.getMessage());
@@ -61,11 +63,15 @@ public class HiloCliente implements Runnable{
      
         
     	LogServidor.setEvento("Se Retiro el Cliente: " + this +
-                       "\n               Empleado : "+ peticion.getNombreEmpleado());
+                       "\n               Empleado    : "+ peticion.getNombreEmpleado() +
+                       "\n               Desde IP    : " + String.valueOf(skClienteComunicacion.getInetAddress()) +
+                       "\n               Nombre Host : " + skClienteComunicacion.getInetAddress().getHostName());
     	clientesActivos.removeElement(this);
     	try{
             LogServidor.setEvento("Se Desconecto el Cliente: " + this +
-                       "\n               Empleado : "+ peticion.getNombreEmpleado());
+                       "\n               Empleado    : "+ peticion.getNombreEmpleado() +
+                       "\n               Desde IP    : " + String.valueOf(skClienteComunicacion.getInetAddress()) +
+                       "\n               Nombre Host : " + skClienteComunicacion.getInetAddress().getHostName());
             skClienteComunicacion.close();
         } catch(Exception ex){
             LogServidor.setEvento("Error 5: No se pudo Cerrar la Comunicacion: " + skClienteComunicacion + 
