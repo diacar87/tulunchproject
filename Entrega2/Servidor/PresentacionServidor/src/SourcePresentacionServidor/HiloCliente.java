@@ -3,13 +3,11 @@ package SourcePresentacionServidor;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.IOException;
 import java.net.Socket;
 import java.util.Vector;
 import SourceLogicaNegocioServidor.LogServidor;
 import SourceLogicaNegocioServidor.Peticion;
-import java.io.IOException;
-
-
 
 /**
  *
@@ -31,7 +29,7 @@ public class HiloCliente implements Runnable{
         this.skClienteComunicacion = skClienteComunicacion;
         this.skClientePeticiones = skClientePeticiones;
         clientesActivos.add(this);
-        peticion = new Peticion();
+        peticion = new Peticion(0, "N/A");
         atendiendo = true;
      }
      
@@ -41,11 +39,17 @@ public class HiloCliente implements Runnable{
             entradaComunicacion = new ObjectInputStream(skClienteComunicacion.getInputStream());
             salidaComunicacion =new ObjectOutputStream(skClienteComunicacion.getOutputStream());
             salidaPeticiones = new ObjectOutputStream(skClientePeticiones.getOutputStream());
-            peticion.setNombreEmpleado(entradaComunicacion.readUTF());
+            try{
+                peticion = ( Peticion )entradaComunicacion.readObject();
+            }catch(ClassNotFoundException ex ) {
+                LogServidor.setEvento("Error 3: Falla de Comunicacion de Entrada Desconocida: " + skClienteComunicacion + 
+                      "\n               Causa :" + ex.getMessage());
+            }
             LogServidor.setEvento("Se Agrega Cliente: "+ this +
                        "\n               Empleado : "+ peticion.getNombreEmpleado());
-        }catch(IOException e) {
-            LogServidor.setEvento("Error 3: Falla de Comunicacion: " + skClienteComunicacion + "\n               Causa :" + e.getMessage());
+        }catch(IOException ex) {
+            LogServidor.setEvento("Error 4: Falla de Comunicacion: " + skClienteComunicacion + 
+                      "\n               Causa :" + ex.getMessage());
         }
         int opcion = 0;              
     	while( atendiendo ){
@@ -55,7 +59,7 @@ public class HiloCliente implements Runnable{
 
              }
           }catch (IOException e) {
-              LogServidor.setEvento("Fallo Comunicacion con el Cliente: " + this +
+              LogServidor.setEvento("El Cliente Termino la Conexion: " + this +
                        "\n               Empleado : "+ peticion.getNombreEmpleado());
               break;
           }
@@ -64,15 +68,14 @@ public class HiloCliente implements Runnable{
     	LogServidor.setEvento("Se Retiro el Cliente: " + this +
                        "\n               Empleado : "+ peticion.getNombreEmpleado());
     	clientesActivos.removeElement(this);
-    	try
-    	{
-          serv.mostrar("Se desconecto un usuario");
-          scli.close();
-    	}	
-        catch(Exception et)
-        {serv.mostrar("no se puede cerrar el socket");}  */        
+    	try{
+            LogServidor.setEvento("Se Desconecto el Cliente: " + this +
+                       "\n               Empleado : "+ peticion.getNombreEmpleado());
+            skClienteComunicacion.close();
+        } catch(Exception ex){
+            LogServidor.setEvento("Error 5: No se pudo Cerrar la Comunicacion: " + skClienteComunicacion + 
+                      "\n               Causa :" + ex.getMessage());
+        }         
      }
-     
-
-
+    
 }
