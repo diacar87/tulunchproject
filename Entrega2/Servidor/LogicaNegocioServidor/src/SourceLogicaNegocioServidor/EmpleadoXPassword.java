@@ -9,17 +9,10 @@ import java.util.List;
  *
  * @author acactown
  */
-public class EmpleadoXPassword implements ITipoPeticion{
+public class EmpleadoXPassword{
 
-    String password;
-    private Empleado empleado;
-    
-    public EmpleadoXPassword(String password) {
-        this.password = password;
-    }
-
-    
-    public void ejecutarPeticion() {
+    public static Empleado getEmpleado(String password) {
+        Empleado empleado = new Empleado();
         List<Empleado> empleados = dao.DaoEmpleado.readAll();
         for(int i = 0; i<empleados.size() ; i++ ){
             if(empleados.get(i).getPassword().equals(password)){
@@ -27,9 +20,6 @@ public class EmpleadoXPassword implements ITipoPeticion{
                 break;
             }
         }
-    }
-
-    public Empleado getEmpleado() {
         return empleado;
     }
     
