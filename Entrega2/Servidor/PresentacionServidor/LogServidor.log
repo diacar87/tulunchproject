@@ -1,0 +1,35 @@
+
+------------------------| LOG DE SERVIDOR |-------------------
+  IP del Servidor : acactown-host.acactown-site/127.0.0.2
+  Nombre del Host : acactown-host.acactown-site
+  Fecha y Hora de Inicio : Lunes 20/Marzo/2008  <12:30:55>
+--------------------------------------------------------------
+
+Lunes 20/Marzo/2008  <12:30:55> -->Error 1: Falla de Comunicacion: null
+    Causa :Address already in use
+
+------------------------| LOG DE SERVIDOR |-------------------
+  IP del Servidor : acactown-host.acactown-site/127.0.0.2
+  Nombre del Host : acactown-host.acactown-site
+  Fecha y Hora de Inicio : Lunes 20/Marzo/2008  <12:32:06>
+--------------------------------------------------------------
+
+Lunes 20/Marzo/2008  <12:32:06> -->El Servidor esta Corriendo.
+
+Lunes 20/Marzo/2008  <12:32:06> -->Esperando Cliente.
+
+------------------------| LOG DE SERVIDOR |-------------------
+  IP del Servidor : acactown-host.acactown-site/127.0.0.2
+  Nombre del Host : acactown-host.acactown-site
+  Fecha y Hora de Inicio : Lunes 20/Marzo/2008  <12:36:28>
+--------------------------------------------------------------
+Lunes 20/Marzo/2008  <12:36:28> --> Error 1: Falla de Comunicacion: null
+    Causa :Address already in use
+
+------------------------| LOG DE SERVIDOR |-------------------
+  IP del Servidor : acactown-host.acactown-site/127.0.0.2
+  Nombre del Host : acactown-host.acactown-site
+  Fecha y Hora de Inicio : Lunes 20/Marzo/2008  <12:37:18>
+--------------------------------------------------------------
+Lunes 20/Marzo/2008  <12:37:19> --> El Servidor esta Corriendo.
+Lunes 20/Marzo/2008  <12:37:19> --> Esperando Cliente.

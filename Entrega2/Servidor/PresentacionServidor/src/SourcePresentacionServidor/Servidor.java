@@ -36,7 +36,7 @@ public class Servidor implements Runnable{
                     skComunicacion = skServerComunicacion.accept();
                     skPeticiones = skServerPeticiones.accept();
                 } catch (IOException e){
-                    LogServidor.setEvento("Error 2: Falla de Comunicacion: " + skServerComunicacion + "\n    Causa :" + e.getMessage());
+                    LogServidor.setEvento("Error 2: Falla de Comunicacion: " + skServerComunicacion + "\n               Causa :" + e.getMessage());
                     continue;
                 }
                 HiloCliente cliente = new HiloCliente(skComunicacion, skPeticiones);           
@@ -44,7 +44,7 @@ public class Servidor implements Runnable{
                 correrCliente.start();
             }
         }catch(IOException e){
-            LogServidor.setEvento("Error 1: Falla de Comunicacion: " + skServerComunicacion + "\n    Causa :" + e.getMessage());
+            LogServidor.setEvento("Error 1: Falla de Comunicacion: " + skServerComunicacion + "\n               Causa :" + e.getMessage());
         }
     }
 }
