@@ -2,7 +2,7 @@
 package SourceLogicaNegocioServidor;
 
 /**
- *
+ * 
  * @author acactown
  */
 public interface ITipoPeticion {

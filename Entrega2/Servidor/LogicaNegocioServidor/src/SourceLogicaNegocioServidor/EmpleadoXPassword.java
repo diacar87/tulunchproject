@@ -8,11 +8,11 @@ import dao.DaoEmpleado;
  *
  * @author acactown
  */
-public class PedirEmpleadoXPassword implements ITipoPeticion{
+public class EmpleadoXPassword implements ITipoPeticion{
 
     String password;
     
-    public PedirEmpleadoXPassword(String password) {
+    public EmpleadoXPassword(String password) {
         this.password = password;
     }
 
