@@ -2,6 +2,7 @@
 package SourcePresentacionServidor;
 
 import SourceLogicaNegocioServidor.PantallaCompleta;
+import SourceLogicaNegocioServidor.LogServidor;
 
 /**
  *
@@ -13,6 +14,8 @@ public class VistaAdministrador extends javax.swing.JFrame {
     /** Creates new form VistaAdministrador */
     public VistaAdministrador() {
         initComponents();
+        LogServidor.setSalida();
+        LogServidor.setEvento("INFO : Corre la Interfaz de Admnistrador");
         PantallaCompleta.setVentana(this);
     }
     
