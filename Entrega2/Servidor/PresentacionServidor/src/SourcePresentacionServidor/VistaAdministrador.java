@@ -14,7 +14,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
     /** Creates new form VistaAdministrador */
     public VistaAdministrador() {
         initComponents();
-        LogServidor.setEvento("INFO : Se Ejecuta Interfaz de Administrador");
+        LogServidor.setEvento("INFO","Se Ejecuta Interfaz de Administrador");
       //  PantallaCompleta.setVentana(this);
     }
     
