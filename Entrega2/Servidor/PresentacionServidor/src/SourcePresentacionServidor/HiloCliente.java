@@ -33,7 +33,7 @@ public class HiloCliente implements Runnable{
      }
      
      public void run(){
-        LogServidor.setEvento("Esperando Peticiones del Cliente :"+ this);
+        LogServidor.setEvento("INFO : Esperando Peticiones del Cliente :"+ this);
         try{
             // Paso 3: obtener flujos de entrada y salida.
      
@@ -45,16 +45,16 @@ public class HiloCliente implements Runnable{
             try{
                 peticion = ( Peticion )entradaComunicacion.readObject();
             }catch(ClassNotFoundException ex ) {
-                LogServidor.setEvento("Error 4: Falla de Comunicacion - Entrada Desconocida: " + skClienteComunicacion + 
-                      "\n               Causa :" + ex.getMessage());
+                LogServidor.setEvento("ERROR : Falla de Comunicacion - Entrada Desconocida: " + skClienteComunicacion + 
+                      "\n               DETALLE :" + ex.getMessage());
             }
-            LogServidor.setEvento("Se Agrega Cliente: "+ this +
+            LogServidor.setEvento("INFO : Se Agrega Cliente : "+ this +
                        "\n               Empleado    : "+ peticion.getNombreEmpleado() +
                        "\n               Desde IP    : " + String.valueOf(skClienteComunicacion.getInetAddress()) +
                        "\n               Nombre Host : " + skClienteComunicacion.getInetAddress().getHostName());
         }catch(IOException ex) {
-            LogServidor.setEvento("Error 3: Falla de Comunicacion: " + skClienteComunicacion + 
-                      "\n               Causa :" + ex.getMessage());
+            LogServidor.setEvento("ERROR : Falla de Comunicacion: " + skClienteComunicacion + 
+                      "\n               DETALLE :" + ex.getMessage());
         }
                       
         while( atendiendo ){
@@ -66,27 +66,27 @@ public class HiloCliente implements Runnable{
                      break;
                  }
             } catch (IOException ex) {
-                LogServidor.setEvento("El Cliente Termino la Conexion: "+ this +
+                LogServidor.setEvento("INFO : El Cliente Termino la Conexion: "+ this +
                            "\n               Empleado    : "+ peticion.getNombreEmpleado() +
                            "\n               Desde IP    : " + String.valueOf(skClienteComunicacion.getInetAddress()) +
                            "\n               Nombre Host : " + skClienteComunicacion.getInetAddress().getHostName());
                 break;
             }
         }
-    	LogServidor.setEvento("Se Retiro el Cliente: " + this +
+    	LogServidor.setEvento("INFO : Se Retiro el Cliente: " + this +
                        "\n               Empleado    : "+ peticion.getNombreEmpleado() +
                        "\n               Desde IP    : " + String.valueOf(skClienteComunicacion.getInetAddress()) +
                        "\n               Nombre Host : " + skClienteComunicacion.getInetAddress().getHostName());
     	clientesActivos.removeElement(this);
     	try{
-            LogServidor.setEvento("Se Desconecto el Cliente: " + this +
+            LogServidor.setEvento("INFO : Se Desconecto el Cliente: " + this +
                        "\n               Empleado    : "+ peticion.getNombreEmpleado() +
                        "\n               Desde IP    : " + String.valueOf(skClienteComunicacion.getInetAddress()) +
                        "\n               Nombre Host : " + skClienteComunicacion.getInetAddress().getHostName());
             skClienteComunicacion.close();
         } catch(Exception ex){
-            LogServidor.setEvento("Error 5: No se pudo Cerrar la Comunicacion: " + skClienteComunicacion + 
-                      "\n               Causa :" + ex.getMessage());
+            LogServidor.setEvento("ERROR : No se pudo Cerrar la Comunicacion: " + skClienteComunicacion + 
+                      "\n               DETALLE :" + ex.getMessage());
         }         
      }
     
