@@ -29,18 +29,19 @@ public class Servidor implements Runnable{
             
             skServerComunicacion = new ServerSocket(8081);  
             skServerPeticiones = new ServerSocket(8082);
-            LogServidor.setEvento("El Servidor esta Corriendo.");
+            LogServidor.setEvento("INFO : El Servidor esta Corriendo.");
             while( escuchando ){
                 Socket skComunicacion = null;
                 Socket skPeticiones = null;
                 try {
-                    LogServidor.setEvento("Esperando Cliente.");
+                    LogServidor.setEvento("INFO : Esperando Cliente.");
                     // Paso 2: esperar una conexion.
                     
                     skComunicacion = skServerComunicacion.accept();
                     skPeticiones = skServerPeticiones.accept();
                 } catch (IOException e){
-                    LogServidor.setEvento("Error 2: Falla de Comunicacion: " + skServerComunicacion + "\n               Causa :" + e.getMessage());
+                    LogServidor.setEvento("ERROR : Falla de Comunicacion: " + skServerComunicacion + 
+                         "\n               DETALLE :" + e.getMessage());
                     continue;
                 }
                 HiloCliente cliente = new HiloCliente(skComunicacion, skPeticiones);
@@ -48,7 +49,8 @@ public class Servidor implements Runnable{
                 correrCliente.start();
             }
         }catch(IOException e){
-            LogServidor.setEvento("Error 1: Falla de Comunicacion: " + skServerComunicacion + "\n               Causa :" + e.getMessage());
+            LogServidor.setEvento("ERROR : Falla de Comunicacion: " + skServerComunicacion + 
+                 "\n               DETALLE :" + e.getMessage());
         }
     }
 }
