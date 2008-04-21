@@ -15,8 +15,8 @@ import java.util.List;
  */
 public class LogServidor {
     
-    private static PrintWriter escritorArchivo = null;
-    private static PrintWriter escritorConsola = null;
+    private static PrintWriter escritorArchivo;
+    private static PrintWriter escritorConsola;
     private static Calendar fecha;
     private static List<String> dias = new ArrayList<String>();    
     private static List<String> meses = new ArrayList<String>();
@@ -58,21 +58,21 @@ public class LogServidor {
     }
     
     public static void escribir(PrintWriter escritor, String evento){
-        crearEscritor();
         escritor.println(evento);
         escritor.flush();
     }
     
     public static void setEvento(String evento) {
+        crearEscritor();
         escribir(escritorArchivo, tiempoEvento() +" --> "+ evento );
         escribir(escritorConsola, tiempoEvento() +" --> "+ evento );
     }
     
-    private static  String tiempoEvento(){   
+    private static  String tiempoEvento(){
         fecha = Calendar.getInstance();
         String dia = dias.get(fecha.get(Calendar.DAY_OF_WEEK) -1 );
         String diaMes = tiempoExacto(fecha.get(Calendar.DAY_OF_MONTH) );
-        String mes = meses.get(fecha.get(Calendar.MONTH)-1 );
+        String mes = meses.get(fecha.get(Calendar.MONTH) -1 );
         String anio = tiempoExacto(fecha.get(Calendar.YEAR) );
         String horas = tiempoExacto(fecha.get(Calendar.HOUR_OF_DAY) );
         String minutos = tiempoExacto(fecha.get(Calendar.MINUTE) );
