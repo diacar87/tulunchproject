@@ -20,21 +20,31 @@ public class LogServidor {
     private static Calendar fecha;
     private static List<String> dias = new ArrayList<String>();    
     private static List<String> meses = new ArrayList<String>();
+    private static String nombreLog;
     
-    public static void setSalida (){
+    public static void crearEscritor(){
         dias.add("Lunes");dias.add("Martes");dias.add("Miercoles");dias.add("Jueves");dias.add("Viernes");dias.add("Sabado");dias.add("Domingo");        
         meses.add("Enero");meses.add("Febrero");meses.add("Marzo");meses.add("Abril");meses.add("Mayo");meses.add("Junio");meses.add("Julio");meses.add("Agosto");meses.add("Septiembre");meses.add("Octubre");meses.add("Noviembre");meses.add("Diciembre");
-        String nombreLog = "LogServidor.log"; 
-        String ip = "N/A",host="N/A";
+        nombreLog = "LogServidor.log";
         try {
             escritorArchivo = new PrintWriter(new FileWriter(nombreLog,true));
             escritorConsola = new PrintWriter(System.out);
+        } catch (IOException ex) {
+            System.out.println("ERROR :  Al intentar Abrir el Archivo : "+ nombreLog + "No se puede crear el Log del Servidor" +
+                    "\n               DETALLE : " + ex.getMessage());
+        }
+    }
+    
+    public static void setSalida (){
+        crearEscritor();
+        String ip = "N/A",host="N/A";
+        try {
             InetAddress ipservidor = InetAddress.getLocalHost();
             ip = String.valueOf(ipservidor);
             host = ipservidor.getHostName();
-        } catch (IOException io) {
-            System.out.println("Error :  al intentar abrir el archivo : "+nombreLog +
-                                         "\n no se puede crear el Log del Servidor");
+        } catch (IOException ex) {
+            System.out.println("ERROR :  Al Obtener IP y Nombre Host del Servidor" +
+                    "\n               DETALLE : " + ex.getMessage());
         }finally{
             String primerLog ="\n------------------------| LOG DE SERVIDOR |-------------------" +
                               "\n  IP del Servidor : " + ip +
@@ -48,6 +58,7 @@ public class LogServidor {
     }
     
     public static void escribir(PrintWriter escritor, String evento){
+        crearEscritor();
         escritor.println(evento);
         escritor.flush();
     }
