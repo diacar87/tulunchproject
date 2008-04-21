@@ -2,7 +2,8 @@ package SourcePresentacionServidor;
 
 import SourceLogicaNegocioServidor.LogServidor;
 import SourceLogicaNegocioServidor.PantallaCompleta;
-import SourceLogicaNegocioServidor.*;
+import SourceLogicaNegocioServidor.ValidarPassword;
+
 import vo.*;
 
 /**
@@ -333,7 +334,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         }
         else
         {           
-            Empleado empleado=ValidarPassword.setPassword(password);
+            Empleado empleado = ValidarPassword.setPassword(password);
            
              if(empleado!=null){   
                  
