@@ -2,34 +2,20 @@
 package SourcePresentacionServidor;
 
 
-import java.awt.*;
+import SourceLogicaNegocioServidor.LogServidor;
+import SourceLogicaNegocioServidor.PantallaCompleta;
 
 /**
  *
  * @author  Familia
  */
 public class VistaCajero extends javax.swing.JFrame {
-    private GraphicsDevice monitor;
        
     /** Creates new form VistaCajero */
     public VistaCajero() {
         initComponents();
-        GraphicsEnvironment entornoGrafico = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        monitor = entornoGrafico.getDefaultScreenDevice();
-        if(!monitor.isFullScreenSupported())
-            System.out.println("WARNING: No hay soporte.\n");
-        else
-            System.out.println("INFO: Detectado soporte\n");
-        try{
-            // Activamos el modo a pantalla completa
-            monitor.setFullScreenWindow(this);
-            // Inicializamos toda la interfaz gráfica
-        }
-        catch(Throwable e) {
-            e.printStackTrace();
-            System.out.println("ERROR CRITICO: "+e.getMessage());
-        }
-
+        LogServidor.setEvento("INFO : Se Ejecuta Interfaz de Cajero.");
+        PantallaCompleta.setVentana(this);
     }
     
     /** This method is called from within the constructor to
