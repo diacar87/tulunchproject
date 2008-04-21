@@ -37,11 +37,12 @@ public class LogServidor {
     
     public static void setSalida (){
         crearEscritor();
-        String ip = "N/A",host="N/A";
+        String ip = "No se puedo Obtener La IP";
+        String host="No se puedo Obtener el Nombre del Host";
         try {
-            InetAddress ipservidor = InetAddress.getLocalHost();
-            ip = String.valueOf(ipservidor);
-            host = ipservidor.getHostName();
+            InetAddress ipServidor = InetAddress.getLocalHost();
+            ip = String.valueOf(ipServidor);
+            host = ipServidor.getHostName();
         } catch (IOException ex) {
             System.out.println("ERROR :  Al Obtener IP y Nombre Host del Servidor" +
                     "\n               DETALLE : " + ex.getMessage());

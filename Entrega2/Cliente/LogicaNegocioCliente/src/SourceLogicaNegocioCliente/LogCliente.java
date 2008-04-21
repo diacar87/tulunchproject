@@ -15,29 +15,40 @@ import java.util.List;
  */
 public class LogCliente {
     
-    private static PrintWriter escritorArchivo = null;
-    private static PrintWriter escritorConsola = null;
+    private static PrintWriter escritorArchivo;
+    private static PrintWriter escritorConsola;
     private static Calendar fecha;
     private static List<String> dias = new ArrayList<String>();    
     private static List<String> meses = new ArrayList<String>();
+    private static String nombreLog;
     
-    public static void setSalida (){
+    public static void crearEscritor(){
         dias.add("Lunes");dias.add("Martes");dias.add("Miercoles");dias.add("Jueves");dias.add("Viernes");dias.add("Sabado");dias.add("Domingo");        
         meses.add("Enero");meses.add("Febrero");meses.add("Marzo");meses.add("Abril");meses.add("Mayo");meses.add("Junio");meses.add("Julio");meses.add("Agosto");meses.add("Septiembre");meses.add("Octubre");meses.add("Noviembre");meses.add("Diciembre");
-        String nombreLog = "LogCliente.log"; 
-        String ip = "N/A",host="N/A";
+        nombreLog = "LogCliente.log";
         try {
             escritorArchivo = new PrintWriter(new FileWriter(nombreLog,true));
             escritorConsola = new PrintWriter(System.out);
-            InetAddress ipservidor = InetAddress.getLocalHost();
-            ip = String.valueOf(ipservidor);
-            host = ipservidor.getHostName();
-        } catch (IOException io) {
-            System.out.println("Error :  Al intentar abrir el Archivo : "+ nombreLog +
-                                         "\n no se puede crear el Log del Cliente");
+        } catch (IOException ex) {
+            System.out.println("ERROR :  Al intentar Abrir el Archivo : "+ nombreLog + "No se puede crear el Log del Cliente" +
+                    "\n               DETALLE : " + ex.getMessage());
+        }
+    }
+    
+    public static void setSalida (){
+        crearEscritor();
+        String ip = "No se puedo Obtener La IP";
+        String host="No se puedo Obtener el Nombre del Host";
+        try {
+            InetAddress ipCliente = InetAddress.getLocalHost();
+            ip = String.valueOf(ipCliente);
+            host = ipCliente.getHostName();
+        } catch (IOException ex) {
+            System.out.println("ERROR :  Al Obtener IP y Nombre Host del Cliente" +
+                    "\n               DETALLE : " + ex.getMessage());
         }finally{
-            String primerLog ="\n------------------------| LOG DE CLIENTE |--------------------" +
-                              "\n  IP del Cliente : " + ip +
+            String primerLog ="\n------------------------| LOG DE CLIENTE |-------------------" +
+                              "\n  IP del Cliente  : " + ip +
                               "\n  Nombre del Host : "+ host +
                               "\n  Fecha y Hora de Inicio : "+ tiempoEvento() +
                               "\n--------------------------------------------------------------";
@@ -53,15 +64,16 @@ public class LogCliente {
     }
     
     public static void setEvento(String evento) {
+        crearEscritor();
         escribir(escritorArchivo, tiempoEvento() +" --> "+ evento );
         escribir(escritorConsola, tiempoEvento() +" --> "+ evento );
     }
     
-    private static  String tiempoEvento(){   
+    private static  String tiempoEvento(){
         fecha = Calendar.getInstance();
         String dia = dias.get(fecha.get(Calendar.DAY_OF_WEEK) -1 );
         String diaMes = tiempoExacto(fecha.get(Calendar.DAY_OF_MONTH) );
-        String mes = meses.get(fecha.get(Calendar.MONTH)-1 );
+        String mes = meses.get(fecha.get(Calendar.MONTH) -1 );
         String anio = tiempoExacto(fecha.get(Calendar.YEAR) );
         String horas = tiempoExacto(fecha.get(Calendar.HOUR_OF_DAY) );
         String minutos = tiempoExacto(fecha.get(Calendar.MINUTE) );
