@@ -2,6 +2,8 @@ package SourcePresentacionServidor;
 
 import SourceLogicaNegocioServidor.LogServidor;
 import SourceLogicaNegocioServidor.PantallaCompleta;
+import SourceLogicaNegocioServidor.*;
+import vo.*;
 
 /**
  *
@@ -328,12 +330,39 @@ public class IniciarSesion extends javax.swing.JFrame {
         {
             password="";
             campoPassword.setText("");
-        }      
-            else{
+        }
+        else
+        {           
+            Empleado empleado=ValidarPassword.setPassword(password);
+           
+             if(empleado!=null){   
+                 
+                    if(empleado.getCargo().equals("Cajero"))        
+                    {
+                        this.setVisible(false);                        
+                        VistaCajero vc=new VistaCajero();
+                        vc.llamarVistaCajero();                      
+
+                    }
+                     if(empleado.getCargo().equals("Administrador"))        
+                    {
+                        this.setVisible(false);                        
+                        VistaAdministrador va= new VistaAdministrador();
+                        va.llamarVistaAdministrador();
+                    }
+                    else{
                     campoPassword.setText("ERROR");                
                     botonReset.setText("RESET");
                     password="";
-                 }
+                    }
+              }
+              else{
+                    campoPassword.setText("ERROR");                
+                    botonReset.setText("RESET");
+                    password="";
+              }
+            
+        }
                    
         
     }//GEN-LAST:event_botonResetActionPerformed

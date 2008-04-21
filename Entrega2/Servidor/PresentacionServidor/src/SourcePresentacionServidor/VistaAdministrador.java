@@ -18,10 +18,6 @@ public class VistaAdministrador extends javax.swing.JFrame {
         PantallaCompleta.setVentana(this);
     }
     
-    private void busqueda()
-    {       
-       
-    }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -731,8 +727,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
 }//GEN-LAST:event_radioProductoActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
-        // TODO add your handling code here:
-        busqueda();     
+        // TODO add your handling code here:   
         
 }//GEN-LAST:event_botonBuscarActionPerformed
 
@@ -797,6 +792,15 @@ public class VistaAdministrador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
     
+    public void llamarVistaAdministrador(){
+    
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VistaAdministrador().setVisible(true);
+            }
+        });
+    
+    }
     /**
      * @param args the command line arguments
      */

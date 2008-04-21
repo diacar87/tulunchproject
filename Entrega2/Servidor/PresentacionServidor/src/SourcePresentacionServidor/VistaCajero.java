@@ -333,6 +333,15 @@ public class VistaCajero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Mesa1MouseClicked
     
+    public void llamarVistaCajero(){
+    
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VistaCajero().setVisible(true);
+            }
+        });
+    
+    }
     /**
      * @param args the command line arguments
      */
