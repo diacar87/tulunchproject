@@ -23,7 +23,7 @@ public class LogCliente {
     private static String nombreLog;
     
     public static void crearEscritor(){
-        dias.add("Lunes");dias.add("Martes");dias.add("Miercoles");dias.add("Jueves");dias.add("Viernes");dias.add("Sabado");dias.add("Domingo");        
+        dias.add("Domingo");dias.add("Lunes");dias.add("Martes");dias.add("Miercoles");dias.add("Jueves");dias.add("Viernes");dias.add("Sabado");        
         meses.add("Enero");meses.add("Febrero");meses.add("Marzo");meses.add("Abril");meses.add("Mayo");meses.add("Junio");meses.add("Julio");meses.add("Agosto");meses.add("Septiembre");meses.add("Octubre");meses.add("Noviembre");meses.add("Diciembre");
         nombreLog = "LogCliente.log";
         try {
@@ -73,7 +73,7 @@ public class LogCliente {
         fecha = Calendar.getInstance();
         String dia = dias.get(fecha.get(Calendar.DAY_OF_WEEK) -1 );
         String diaMes = tiempoExacto(fecha.get(Calendar.DAY_OF_MONTH) );
-        String mes = meses.get(fecha.get(Calendar.MONTH) -1 );
+        String mes = meses.get(fecha.get(Calendar.MONTH) );
         String anio = tiempoExacto(fecha.get(Calendar.YEAR) );
         String horas = tiempoExacto(fecha.get(Calendar.HOUR_OF_DAY) );
         String minutos = tiempoExacto(fecha.get(Calendar.MINUTE) );

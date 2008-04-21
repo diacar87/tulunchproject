@@ -11,12 +11,13 @@ import SourceLogicaNegocioCliente.PantallaCompleta;
  */
 public class IniciarSesion extends javax.swing.JFrame {
     
-    String password="";
+    String password = "";
     
     /** Creates new form IniciarSesion */
     public IniciarSesion() {
         initComponents();
         LogCliente.setSalida();
+        LogCliente.setEvento("INFO : Se Ejecuta Interfaz de Iniciar Sesion.");
         PantallaCompleta.setVentana(this);
     }
     

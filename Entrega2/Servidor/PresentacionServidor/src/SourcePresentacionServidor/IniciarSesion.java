@@ -14,7 +14,6 @@ public class IniciarSesion extends javax.swing.JFrame {
     /** Creates new form IniciarSesion */
     public IniciarSesion() {
         initComponents();
-        LogServidor.setSalida();
         LogServidor.setEvento("INFO : Se Ejecuta Interfaz de Iniciar Sesion.");
         PantallaCompleta.setVentana(this);
     }

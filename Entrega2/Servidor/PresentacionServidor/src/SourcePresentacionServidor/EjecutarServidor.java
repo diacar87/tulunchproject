@@ -10,9 +10,8 @@ import java.net.*;
 
 public class EjecutarServidor{
    
-   Servidor servidor;
    public EjecutarServidor(){
-        servidor = new Servidor();
+        Servidor servidor = new Servidor();
         Thread correrServidor = new Thread( servidor);
         correrServidor.start();
    }
