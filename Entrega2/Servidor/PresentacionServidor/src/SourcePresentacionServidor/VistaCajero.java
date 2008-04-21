@@ -15,7 +15,7 @@ public class VistaCajero extends javax.swing.JFrame {
     public VistaCajero() {
         initComponents();
         LogServidor.setEvento("INFO : Se Ejecuta Interfaz de Cajero.");
-        PantallaCompleta.setVentana(this);
+      //  PantallaCompleta.setVentana(this);
     }
     
     /** This method is called from within the constructor to
