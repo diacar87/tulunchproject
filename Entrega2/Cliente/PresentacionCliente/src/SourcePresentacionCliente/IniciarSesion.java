@@ -1,5 +1,5 @@
 
-package SourcePresentacion;
+package SourcePresentacionCliente;
 
 import SourceLogicaNegocioCliente.LogCliente;
 import SourceLogicaNegocioCliente.PantallaCompleta;
