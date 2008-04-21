@@ -1,9 +1,15 @@
+
 package SourcePresentacionServidor;
 
 import SourceLogicaNegocioServidor.LogServidor;
 import SourceLogicaNegocioServidor.PantallaCompleta;
 import SourceLogicaNegocioServidor.ValidarPassword;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import vo.*;
 
 /**
@@ -16,6 +22,13 @@ public class IniciarSesion extends javax.swing.JFrame {
     
     /** Creates new form IniciarSesion */
     public IniciarSesion() {
+        try {
+            
+            UIManager.setLookAndFeel(new com.nilo.plaf.nimrod.NimRODLookAndFeel());                                
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(IniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
         LogServidor.setEvento("INFO : Se Ejecuta Interfaz de Iniciar Sesion.");
         PantallaCompleta.setVentana(this);
@@ -72,10 +85,11 @@ public class IniciarSesion extends javax.swing.JFrame {
         botonReset = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Iniciar Sesion");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jButton9.setFont(new java.awt.Font("Bodoni MT", 0, 36));
+        jButton9.setFont(new java.awt.Font("Tahoma", 0, 36));
         jButton9.setText("9");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +97,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Bodoni MT", 0, 36));
+        jButton8.setFont(new java.awt.Font("Tahoma", 0, 36));
         jButton8.setText("8");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +105,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Bodoni MT", 0, 36));
+        jButton7.setFont(new java.awt.Font("Tahoma", 0, 36));
         jButton7.setText("7");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,7 +113,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Bodoni MT", 0, 36));
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 36));
         jButton4.setText("4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +121,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Bodoni MT", 0, 36));
+        jButton5.setFont(new java.awt.Font("Tahoma", 0, 36));
         jButton5.setText("5");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,7 +129,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Bodoni MT", 0, 36));
+        jButton6.setFont(new java.awt.Font("Tahoma", 0, 36));
         jButton6.setText("6");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +137,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Bodoni MT", 0, 36));
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 36));
         jButton3.setText("3");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +145,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Bodoni MT", 0, 36));
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 36));
         jButton2.setText("2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +153,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Bodoni MT", 0, 36));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 36));
         jButton1.setText("1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +208,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         campoPassword.setFont(new java.awt.Font("SansSerif", 0, 36));
         campoPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        botonReset.setFont(new java.awt.Font("Bodoni MT", 0, 24));
+        botonReset.setFont(new java.awt.Font("Tahoma", 0, 24));
         botonReset.setText("RESET");
         botonReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,7 +216,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 24));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18));
         jLabel1.setText("Por favor ingrese su password:");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -266,6 +280,8 @@ public class IniciarSesion extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(14, 14, 14))
         );
+
+        getAccessibleContext().setAccessibleName("IniciarSesion");
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((screenSize.width-490)/2, (screenSize.height-671)/2, 490, 671);
@@ -338,14 +354,14 @@ public class IniciarSesion extends javax.swing.JFrame {
            
              if(empleado!=null){   
                  
-                    if(empleado.getCargo().equals("Cajero"))        
+                    if(empleado.getCargo().equals("cajero"))        
                     {
                         this.setVisible(false);                        
                         VistaCajero vc=new VistaCajero();
                         vc.llamarVistaCajero();                      
 
                     }
-                     if(empleado.getCargo().equals("Administrador"))        
+                     if(empleado.getCargo().equals("administrador"))        
                     {
                         this.setVisible(false);                        
                         VistaAdministrador va= new VistaAdministrador();
@@ -369,23 +385,22 @@ public class IniciarSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_botonResetActionPerformed
     
     public void llamarIniciarSesion(){
-    
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new IniciarSesion().setVisible(true);
-            }
-        });
+       
+            java.awt.EventQueue.invokeLater(new Runnable() {
+
+                public void run() {
+
+                    new IniciarSesion().setVisible(true);
+                }
+            });       
     
     }
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new IniciarSesion().setVisible(true);
-            }
-        });
+    public static void main(String args[]) {                               
+             IniciarSesion is=new IniciarSesion();
+             is.llamarIniciarSesion();               
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
