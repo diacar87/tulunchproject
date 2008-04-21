@@ -21,14 +21,10 @@ public class Servidor implements Runnable{
     }
 
     public void run(){
-        ServerSocket skServerComunicacion = null;
-        ServerSocket skServerPeticiones = null;
-
         try{
-            // Paso 1: crear  objetos  ServerSocket
-            
-            skServerComunicacion = new ServerSocket(8081);  
-            skServerPeticiones = new ServerSocket(8082);
+             // Paso 1: crear  e instanciar objetos  ServerSocket
+            ServerSocket  skServerComunicacion = new ServerSocket(8081);
+            ServerSocket skServerPeticiones = new ServerSocket(8082);
             LogServidor.setEvento("INFO : El Servidor esta Corriendo.");
             while( escuchando ){
                 Socket skComunicacion = null;
@@ -49,7 +45,7 @@ public class Servidor implements Runnable{
                 correrCliente.start();
             }
         }catch(IOException e){
-            LogServidor.setEvento("ERROR : Falla de Comunicacion: " + skServerComunicacion + 
+            LogServidor.setEvento("ERROR : Falla de Comunicacion. " + 
                  "\n               DETALLE :" + e.getMessage());
         }
     }

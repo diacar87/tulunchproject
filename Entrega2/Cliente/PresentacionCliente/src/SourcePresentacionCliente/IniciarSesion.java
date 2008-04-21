@@ -381,9 +381,7 @@ public class IniciarSesion extends javax.swing.JFrame {
                     campoPassword.setText("ERROR");                
                     botonReset.setText("RESET");
                     password="";
-                 }
-                   
-        
+                 } 
     }//GEN-LAST:event_botonResetActionPerformed
     
     public void llamarIniciarSesion(){
