@@ -14,7 +14,7 @@ public class VistaCocina extends javax.swing.JFrame {
     /** Creates new form VistaCocina */
     public VistaCocina() {
         initComponents();
-        LogCliente.setEvento("INFO : Se Ejecuta Interfaz de Cocina.");
+        LogCliente.setEvento("INFO","Se Ejecuta Interfaz de Cocina.");
         PantallaCompleta.setVentana(this);
     }
     
