@@ -4,7 +4,7 @@ package presentacion.servidor;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import logicaNegocio.LogServidor;
+import accesoDatos.util.Log;
 
 
 
@@ -17,7 +17,6 @@ public class Servidor implements Runnable{
     boolean escuchando = true;
     
     public Servidor() {
-        LogServidor.setSalida();
     }
 
     public void run(){
@@ -25,18 +24,18 @@ public class Servidor implements Runnable{
              // Paso 1: crear  e instanciar objetos  ServerSocket
             ServerSocket  skServerComunicacion = new ServerSocket(8081);
             ServerSocket skServerPeticiones = new ServerSocket(8082);
-            LogServidor.setEvento("INFO","El Servidor esta Corriendo.");
+            Log.setEvento("Servidor","INFO","El Servidor esta Corriendo.");
             while( escuchando ){
                 Socket skComunicacion = null;
                 Socket skPeticiones = null;
                 try {
-                    LogServidor.setEvento("INFO","Esperando Cliente.");
+                    Log.setEvento("Servidor","INFO","Esperando Cliente.");
                     // Paso 2: esperar una conexion.
                     
                     skComunicacion = skServerComunicacion.accept();
                     skPeticiones = skServerPeticiones.accept();
                 } catch (IOException e){
-                    LogServidor.setEvento("ERROR", e.getMessage());
+                    Log.setEvento("Servidor","ERROR", e.getMessage());
                     continue;
                 }
                 HiloCliente cliente = new HiloCliente(skComunicacion, skPeticiones);
@@ -44,7 +43,7 @@ public class Servidor implements Runnable{
                 correrCliente.start();
             }
         }catch(IOException e){
-            LogServidor.setEvento("ERROR", e.getMessage());
+            Log.setEvento("Servidor","ERROR", e.getMessage());
         }
     }
 }
