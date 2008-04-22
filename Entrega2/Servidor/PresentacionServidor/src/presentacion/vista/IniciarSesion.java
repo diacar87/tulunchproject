@@ -5,8 +5,6 @@ import accesoDatos.util.Log;
 import logicaNegocio.PantallaCompleta;
 import logicaNegocio.ValidarPassword;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import accesoDatos.vo.Empleado;
@@ -22,10 +20,9 @@ public class IniciarSesion extends javax.swing.JFrame {
     /** Creates new form IniciarSesion */
     public IniciarSesion() {
         try {
-            
             UIManager.setLookAndFeel(new com.nilo.plaf.nimrod.NimRODLookAndFeel());                                
         } catch (UnsupportedLookAndFeelException ex) {
-            System.out.println("WARNING"+ex.getMessage());
+            Log.setEvento("Servidor","WARNING",ex.getMessage());
         }
         
         initComponents();
