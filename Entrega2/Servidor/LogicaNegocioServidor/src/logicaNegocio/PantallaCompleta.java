@@ -4,6 +4,7 @@ package logicaNegocio;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Window;
+import accesoDatos.util.Log;
 
 /**
  *  Clase que recibe una Ventana y le aplica Pantalla Completa (FullScreen).
@@ -18,15 +19,15 @@ public class PantallaCompleta {
     public static void setVentana( Window ventana ){
         GraphicsDevice monitor = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         if(!monitor.isFullScreenSupported())
-            LogServidor.setEvento("WARNING","No hay Soporte para Pantalla Completa.");
+            Log.setEvento("Servidor","WARNING","No hay Soporte para Pantalla Completa.");
         else
-            LogServidor.setEvento("INFO","Se aplica Pantalla Completa.");
+            Log.setEvento("Servidor","INFO","Se aplica Pantalla Completa.");
         try{
             // Activamos el modo a pantalla completa
             monitor.setFullScreenWindow(ventana);
         }
         catch(Throwable ex) {
-            LogServidor.setEvento("ERROR",ex.getMessage());
+            Log.setEvento("Servidor","ERROR",ex.getMessage());
         }
     }
 }
