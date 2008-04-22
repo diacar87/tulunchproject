@@ -73,7 +73,7 @@ public class ConexionServidor {
             Log.setEvento("Cliente","INFO","Comunicacion exitosa de Flujos de Entrada y Salida al Servidor");
             return true;
       } catch (IOException e) {
-         Log.setEvento("Cliente","ERROR","El Servidor no esta Corriendo.");
+         Log.setEvento("Cliente","ERROR",e.getMessage());
       }
       return false;
     }
