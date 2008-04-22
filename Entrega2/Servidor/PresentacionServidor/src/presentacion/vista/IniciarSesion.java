@@ -1,7 +1,7 @@
 
 package presentacion.vista;
 
-import logicaNegocio.LogServidor;
+import accesoDatos.util.Log;
 import logicaNegocio.PantallaCompleta;
 import logicaNegocio.ValidarPassword;
 
@@ -29,7 +29,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         }
         
         initComponents();
-        LogServidor.setEvento("INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
+        Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
       //  PantallaCompleta.setVentana(this);
     }
     
