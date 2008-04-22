@@ -1,9 +1,9 @@
 
 package presentacion.vista;
 
-//import logicaNegocio.LogServidor;
+
 import logicaNegocio.PantallaCompleta;
-import logicaNegocio.BuscarPorCampo;
+//import logicaNegocio.BuscarPorCampo;
 
 import java.util.List;
 import accesoDatos.vo.Producto;
@@ -12,6 +12,7 @@ import accesoDatos.vo.Pedido;
 import accesoDatos.dao.DaoProducto;
 import accesoDatos.dao.DaoEmpleado;
 import accesoDatos.dao.DaoPedido;
+import accesoDatos.util.Log;
 import java.util.ArrayList;
 
 /**
@@ -24,7 +25,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
     /** Creates new form VistaAdministrador */
     public VistaAdministrador() {
         initComponents();
-     //   LogServidor.setEvento("INFO","Se Ejecuta Interfaz de Administrador");
+        Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Administrador");
       //  PantallaCompleta.setVentana(this);
     }
     
@@ -870,7 +871,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
             if(radioEmpleado.isSelected())
             {
                 List<Empleado> empleados=new ArrayList<Empleado>();                
-                empleados=BuscarPorCampo.buscarEmpleado(busqueda,campo);    
+                //empleados=BuscarPorCampo.buscarEmpleado(busqueda,campo);    
                 
                 modeloTabla.setRowCount(empleados.size());
                  for(int fila = 0 ; fila < empleados.size() ; fila++){
