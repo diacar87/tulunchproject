@@ -360,8 +360,8 @@ public class IniciarSesion extends javax.swing.JFrame {
                      if(empleado.getCargo().equals("administrador"))        
                     {
                         this.setVisible(false);                        
-                        VistaAdministrador va= new VistaAdministrador();
-                        va.llamarVistaAdministrador();
+                        //VistaAdministrador va= new VistaAdministrador();
+                        //va.llamarVistaAdministrador();
                     }
                     else{
                     campoPassword.setText("ERROR");                
