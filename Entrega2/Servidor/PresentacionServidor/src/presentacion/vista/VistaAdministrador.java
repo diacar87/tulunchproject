@@ -1,7 +1,7 @@
 
 package presentacion.vista;
 
-import logicaNegocio.LogServidor;
+import accesoDatos.util.Log;
 import logicaNegocio.PantallaCompleta;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
     /** Creates new form VistaAdministrador */
     public VistaAdministrador() {
         initComponents();
-        LogServidor.setEvento("INFO","Se Ejecuta Interfaz de Administrador");
+        Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Administrador");
       //  PantallaCompleta.setVentana(this);
     }
     
