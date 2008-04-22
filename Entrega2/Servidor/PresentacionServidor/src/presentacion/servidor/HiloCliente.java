@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Vector;
 import logicaNegocio.Peticion;
-import logicaNegocio.LogServidor;
 import logicaNegocio.EmpleadoXPassword;
 import accesoDatos.vo.Empleado;
+import accesoDatos.util.Log;
 
 /**
  *
@@ -35,7 +35,7 @@ public class HiloCliente implements Runnable{
      }
      
      public void run(){
-        LogServidor.setEvento("INFO","Esperando Peticiones del Cliente :"+ this);
+        Log.setEvento("Servidor","INFO","Esperando Peticiones del Cliente :"+ this);
         try{
             // Paso 3: obtener flujos de entrada y salida.
      
@@ -47,14 +47,14 @@ public class HiloCliente implements Runnable{
             try{
                 peticion = ( Peticion )entradaComunicacion.readObject();
             }catch(ClassNotFoundException ex ) {
-                LogServidor.setEvento("ERROR","Entrada Desconocida :"+ ex.getMessage());
+                Log.setEvento("Servidor","ERROR","Entrada Desconocida :"+ ex.getMessage());
             }
-            LogServidor.setEvento("INFO","Se Agrega Cliente : "+ this +
+            Log.setEvento("Servidor","INFO","Se Agrega Cliente : "+ this +
                                             "<div class=\"salto\"><p><b>Empleado    :</b>"+ peticion.getNombreEmpleado() +
                                             "</p><p><b>Desde IP    :</b>"+ String.valueOf(skClienteComunicacion.getInetAddress()) +
                                             "</p><p><b>Nombre Host :</b>"+ skClienteComunicacion.getInetAddress().getHostName() +"</p></div>"); 
         }catch(IOException ex) {
-            LogServidor.setEvento("ERROR",ex.getMessage());
+            Log.setEvento("Servidor","ERROR",ex.getMessage());
         }
                       
         while( atendiendo ){
@@ -66,26 +66,26 @@ public class HiloCliente implements Runnable{
                      break;
                  }
             } catch (IOException ex) {
-                LogServidor.setEvento("INFO","El Cliente Termino la Conexion: "+ this +
+                Log.setEvento("Servidor","INFO","El Cliente Termino la Conexion: "+ this +
                                             "<div class=\"salto\"><p><b>Empleado    :</b>"+ peticion.getNombreEmpleado() +
                                             "</p><p><b>Desde IP    :</b>"+ String.valueOf(skClienteComunicacion.getInetAddress()) +
                                             "</p><p><b>Nombre Host :</b>"+ skClienteComunicacion.getInetAddress().getHostName() +"</p></div>"); 
                 break;
             }
         }
-    	LogServidor.setEvento("INFO","Se Retiro el Cliente: " + this +
+    	Log.setEvento("Servidor","INFO","Se Retiro el Cliente: " + this +
                                     "<div class=\"salto\"><p><b>Empleado    :</b>"+ peticion.getNombreEmpleado() +
                                     "</p><p><b>Desde IP    :</b>"+ String.valueOf(skClienteComunicacion.getInetAddress()) +
                                     "</p><p><b>Nombre Host :</b>"+ skClienteComunicacion.getInetAddress().getHostName() +"</p></div>"); 
     	clientesActivos.removeElement(this);
     	try{
-            LogServidor.setEvento("INFO","Se Desconecto el Cliente: " + this +
+            Log.setEvento("Servidor","INFO","Se Desconecto el Cliente: " + this +
                                         "<div class=\"salto\"><p><b>Empleado    :</b>"+ peticion.getNombreEmpleado() +
                                         "</p><p><b>Desde IP    :</b>"+ String.valueOf(skClienteComunicacion.getInetAddress()) +
                                         "</p><p><b>Nombre Host :</b>"+ skClienteComunicacion.getInetAddress().getHostName() +"</p></div>"); 
             skClienteComunicacion.close();
         } catch(Exception ex){
-            LogServidor.setEvento("ERROR", ex.getMessage());
+            Log.setEvento("Servidor","ERROR", ex.getMessage());
         }         
      }
     
