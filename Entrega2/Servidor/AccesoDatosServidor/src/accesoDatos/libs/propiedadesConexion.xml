@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE propiedadesConexion SYSTEM "propiedadesConexion.dtd">
+
+<!--
+    Document   : propiedadesConexion.xml
+    Created on : 21 de abril de 2008, 07:01 PM
+    Author     : acactown
+    Description: Propiedades para la Conexion con el Cliente
+-->
+
+<propiedadesConexion>
+	<conexion>
+		<comunicacionPuerto port="8081" />
+                <peticionPuerto port="8082" />
+	</conexion>
+</propiedadesConexion>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : propiedadesConexion.dtd
+    Created on : 21 de abril de 2008, 10:29 PM
+    Author     : acactown
+    Description: Validacion del documento que contiene la propiedades para la Conexion con el Cliente
+-->
+
+<!ELEMENT propiedadesConexion (conexion)>
+<!ELEMENT conexion (comunicacionPuerto , peticionPuerto)>
+<!ELEMENT comunicacionPuerto (#PCDATA)>
+<!ELEMENT peticionPuerto (#PCDATA)>
+<!ATTLIST comunicacionPuerto
+	  port CDATA #REQUIRED>
+<!ATTLIST peticionPuerto
+	  port CDATA #REQUIRED>
