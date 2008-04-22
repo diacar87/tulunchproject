@@ -4,9 +4,6 @@ package presentacion.vista;
 import accesoDatos.util.Log;
 import logicaNegocio.PantallaCompleta;
 import logicaNegocio.ValidarPassword;
-
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import accesoDatos.vo.Empleado;
 
 /**
@@ -18,13 +15,7 @@ public class IniciarSesion extends javax.swing.JFrame {
     String password="";
     
     /** Creates new form IniciarSesion */
-    public IniciarSesion() {
-        try {
-            UIManager.setLookAndFeel(new com.nilo.plaf.nimrod.NimRODLookAndFeel());                                
-        } catch (UnsupportedLookAndFeelException ex) {
-            Log.setEvento("Servidor","WARNING",ex.getMessage());
-        }
-        
+    public IniciarSesion() {       
         initComponents();
         Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
     //    PantallaCompleta.setVentana(this);
@@ -380,15 +371,11 @@ public class IniciarSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_botonResetActionPerformed
     
     public void llamarIniciarSesion(){
-       
             java.awt.EventQueue.invokeLater(new Runnable() {
-
                 public void run() {
-
                     new IniciarSesion().setVisible(true);
                 }
             });       
-    
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
