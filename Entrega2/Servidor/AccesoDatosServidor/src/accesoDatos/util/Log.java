@@ -55,7 +55,7 @@ public class Log {
         
         try {
             InetAddress ipUsuario = InetAddress.getLocalHost();
-            ip = String.valueOf(ipUsuario);
+            ip = ipUsuario.getHostAddress();
             host = ipUsuario.getHostName();
             SO = System.getProperty("os.name");
             VSO = System.getProperty("os.version");
