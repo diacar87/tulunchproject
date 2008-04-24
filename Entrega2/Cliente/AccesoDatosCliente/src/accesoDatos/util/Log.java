@@ -111,7 +111,7 @@ public class Log {
             log = "<div id=\"contenidoLogs\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr><td class=\"fechaEvento\">"+ tiempoEvento() +"</td><td class=\"tipoEvento\">INFO</td><td class=\"detalleEvento\">Cerrando Aplicacion</td></tr></table></div>";
             escribir(log );
             JOptionPane.showMessageDialog(null,"ERROR : "+ evento +"\nPor favor pongase en contacto con el Administrador.","ERROR",JOptionPane.ERROR_MESSAGE);
-            System.exit(1);
+            System.exit(0);
         }
         if(tipoEvento.equals("WARNING")){
             JOptionPane.showMessageDialog(null,"WARNING : "+ evento +"\nPor favor pongase en contacto con el Administrador.","WARNING",JOptionPane.WARNING_MESSAGE);
