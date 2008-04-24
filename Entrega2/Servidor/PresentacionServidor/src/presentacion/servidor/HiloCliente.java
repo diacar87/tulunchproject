@@ -6,8 +6,8 @@ import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Vector;
-import logicaNegocio.Peticion;
-import logicaNegocio.EmpleadoXPassword;
+import logicaNegocio.servicios.Peticion;
+import logicaNegocio.servicios.EmpleadoXPassword;
 import accesoDatos.vo.Empleado;
 import accesoDatos.util.Log;
 

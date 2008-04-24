@@ -2,7 +2,7 @@
 package presentacion.vista;
 
 
-import logicaNegocio.PantallaCompleta;
+import presentacion.util.PantallaCompleta;
 import accesoDatos.util.Log;
 
 /**
