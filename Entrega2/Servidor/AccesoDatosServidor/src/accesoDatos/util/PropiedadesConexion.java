@@ -20,7 +20,7 @@ public class PropiedadesConexion {
     private static void obtenerPropiedadesConexion(){
         try{
             SAXBuilder parsear = new SAXBuilder( true );
-            Document constructor = parsear.build("src/accesoDatos/libs/propiedadesConexion.xml");
+            Document constructor = parsear.build("../AccesoDatosServidor/src/accesoDatos/libs/propiedadesConexion.xml");
             Element propiedadesConexion = constructor.getRootElement();
             Element eleConexion = propiedadesConexion.getChild("conexion");
             Element etiqueta = eleConexion.getChild("comunicacionPuerto");
