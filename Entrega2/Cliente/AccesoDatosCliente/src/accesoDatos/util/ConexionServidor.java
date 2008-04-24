@@ -58,11 +58,13 @@ public class ConexionServidor {
                 obtenerPropiedadesConexion();
                 datos = true;
             }
-            Log.setEvento("Cliente","INFO","Intentando Conectarse al Servidor.");
+            Log.setEvento("Cliente","INFO","Intentando Conectarse al Servidor con la IP "+ ipServidor);
             // Paso 1: crear un socket para realizar la conexion
             skComunication = new Socket(ipServidor, puertoComunicacion);
             skPeticiones = new Socket( ipServidor, puertoPeticion);
-            Log.setEvento("Cliente","INFO","<b>Conectado a :</b> "+  skComunication.getInetAddress().getHostName());
+            Log.setEvento("Cliente","INFO","Conectado a "+ skComunication.getInetAddress().getHostName() );
+            Log.setEvento("Cliente","INFO","Recibiendo Comunicacion por el puerto "+puertoComunicacion);
+            Log.setEvento("Cliente","INFO","Entrada y Salida de Peticiones por el puerto "+puertoPeticion);
             Log.setEvento("Cliente","INFO","Se envian Flujos de Entrada y Salida al Servidor");
             //Paso 2: obtener los flujos de entrada y salida
             entradaComunicacion = new ObjectInputStream(skComunication.getInputStream());
