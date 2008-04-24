@@ -1,4 +1,4 @@
-﻿INSERT INTO `tulunch`.`Producto` (`nombre` ,`tipo` ,`precio`, `estaEnMenu`, `eliminado`) VALUES
+﻿INSERT INTO `tulunch`.`producto` (`nombre` ,`tipo` ,`precio`, `estaEnMenu`, `eliminado`) VALUES
 	
 	-- BEBIDAS
 	('Avena', 'Bebida', 2000, 1, 0),
