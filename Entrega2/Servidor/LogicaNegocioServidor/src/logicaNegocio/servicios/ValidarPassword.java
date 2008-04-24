@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package logicaNegocio;
+package logicaNegocio.servicios;
 import java.util.List;
 import accesoDatos.vo.Empleado;
 import accesoDatos.dao.DaoEmpleado;

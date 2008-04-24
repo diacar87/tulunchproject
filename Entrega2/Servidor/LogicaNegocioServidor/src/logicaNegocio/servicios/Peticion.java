@@ -1,5 +1,5 @@
 
-package logicaNegocio;
+package logicaNegocio.servicios;
 
 import java.io.Serializable;
 

@@ -1,5 +1,5 @@
 
-package logicaNegocio;
+package logicaNegocio.servicios;
 
 import accesoDatos.vo.Empleado;
 import accesoDatos.dao.DaoEmpleado;

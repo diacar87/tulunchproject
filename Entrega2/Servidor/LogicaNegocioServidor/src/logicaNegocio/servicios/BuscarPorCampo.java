@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package logicaNegocio;
+package logicaNegocio.servicios;
 
 import accesoDatos.dao.DaoEmpleado;
 import accesoDatos.vo.Empleado;
