@@ -35,7 +35,7 @@ public class HiloCliente implements Runnable{
      }
      
      public void run(){
-        Log.setEvento("Servidor","INFO","Esperando Peticiones del Cliente :"+ this);
+        Log.setEvento("Servidor","INFO","Esperando Peticiones del Cliente");
         try{
             // Paso 3: obtener flujos de entrada y salida.
      
