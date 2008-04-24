@@ -40,8 +40,6 @@ public class ConexionServidor {
             ipServidor = etiqueta.getAttributeValue("ip");
             etiqueta = eleConexion.getChild("comunicacionPuerto");
             puertoComunicacion = Integer.valueOf(etiqueta.getAttributeValue("port"));
-            etiqueta = eleConexion.getChild("comunicacionPuerto");
-            puertoComunicacion = Integer.valueOf(etiqueta.getAttributeValue("port"));
             etiqueta = eleConexion.getChild("peticionPuerto");
             puertoPeticion = Integer.valueOf(etiqueta.getAttributeValue("port"));
         }catch(JDOMException e){
