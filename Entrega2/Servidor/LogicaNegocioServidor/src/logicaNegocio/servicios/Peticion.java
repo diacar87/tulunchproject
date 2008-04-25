@@ -2,6 +2,7 @@
 package logicaNegocio.servicios;
 
 import java.io.Serializable;
+import accesoDatos.vo.Empleado;
 
 /**
  *
@@ -10,22 +11,18 @@ import java.io.Serializable;
 public class Peticion implements Serializable {
     
     private int opcionPeticion;
-    private String nombreEmpleado;
-    private String parametroPeticion;
-    
+    private Empleado empleado;
+
     public Peticion() {
     }
+
     
-    public Peticion(int opcionPeticion , String nombreEmpleado, String parametroPeticion) {
+    public Peticion(int opcionPeticion, Empleado empleado) {
         this.opcionPeticion = opcionPeticion;
-        this.nombreEmpleado = nombreEmpleado;
-        this.parametroPeticion = parametroPeticion;
+        this.empleado = empleado;
     }
 
-
-    public
-
-    int getOpcionPeticion() {
+    public int getOpcionPeticion() {
         return opcionPeticion;
     }
 
@@ -33,20 +30,12 @@ public class Peticion implements Serializable {
         this.opcionPeticion = opcionPeticion;
     }
 
-    public String getNombreEmpleado() {
-        return nombreEmpleado;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setNombreEmpleado(String nombreEmpleado) {
-        this.nombreEmpleado = nombreEmpleado;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
-
-    public String getParametroPeticion() {
-        return parametroPeticion;
-    }
-
-    public void setParametroPeticion(String parametroPeticion) {
-        this.parametroPeticion = parametroPeticion;
-    }
-
+    
 }
