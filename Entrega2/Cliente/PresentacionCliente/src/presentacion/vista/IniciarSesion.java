@@ -2,7 +2,7 @@
 package presentacion.vista;
 
 import accesoDatos.util.Log;
-import presentacion.util.PantallaCompleta;
+import presentacion.util.Ventana;
         
 
 /**
@@ -17,7 +17,7 @@ public class IniciarSesion extends javax.swing.JFrame {
     public IniciarSesion() {
         initComponents();
         Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
-        PantallaCompleta.setVentana(this);
+        Ventana.pantallaCompleta(this);
     }
     
     /** This method is called from within the constructor to

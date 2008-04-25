@@ -3,7 +3,7 @@
 package presentacion.vista;
 
 import accesoDatos.util.Log;
-import presentacion.util.PantallaCompleta;
+import presentacion.util.Ventana;
         
 /**
  *
@@ -15,7 +15,7 @@ public class VistaCocina extends javax.swing.JFrame {
     public VistaCocina() {
         initComponents();
         Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Cocina.");
-        PantallaCompleta.setVentana(this);
+        Ventana.pantallaCompleta(this);
     }
     
     /** This method is called from within the constructor to
