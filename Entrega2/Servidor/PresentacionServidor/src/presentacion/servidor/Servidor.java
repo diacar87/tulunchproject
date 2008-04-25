@@ -27,7 +27,10 @@ public class Servidor {
         skServerPeticiones = null;
         escuchando = true;
     }
-
+    /**
+     * Pone a corre el servidor despues de obtener el puerto de peticion del Archivo XML
+     * Este se queda corriendo en un bucle infinito, siempre esperando nuevos clientes.
+     */
     public void ejecutarServidor(){
         try{
             skServerPeticiones = new ServerSocket( PropiedadesConexion.getPuertoPeticion() );
@@ -52,7 +55,7 @@ public class Servidor {
         }
     }
    /**
-    * 
+    * este es el "main de los main"
     * @param arg
     */
     public static void main(String arg[]) {                
