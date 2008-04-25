@@ -1,5 +1,5 @@
 
-package logicaNegocio.servicios;
+package logicaNegocio.servicios.cliente;
 
 import java.io.Serializable;
 import accesoDatos.vo.Empleado;
