@@ -889,9 +889,68 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 }                                    
               
             }
-            if(radioVenta.isSelected())
-            {
+            if(radioProducto.isSelected()){
+                
+                List<Producto> productos=new ArrayList<Producto>();               
+                productos=BuscarPorCampo.buscarProducto(busqueda, campo);                    
+                modeloTabla=generarCamposTabla();
+                String eliminado="",estaEnMenu="";
+                
+                if(productos==null)
+                {
+                    tablaBuscar.setModel(modeloTabla);
+                }
+                else{
+                    modeloTabla.setRowCount(productos.size());
+                
+                    for(int fila = 0 ; fila < productos.size() ; fila++){
+                        if(productos.get(fila).getEliminado()==true)
+                            eliminado="Si";
+                        else
+                            eliminado="No";
+                    
+                        if(productos.get(fila).getEstaEnMenu()==true)
+                            estaEnMenu="Si";
+                        else
+                            estaEnMenu="No";
+                        
+                        modeloTabla.setValueAt(productos.get(fila).getId(), fila ,0);
+                        modeloTabla.setValueAt(productos.get(fila).getNombre(), fila ,1);
+                        modeloTabla.setValueAt(productos.get(fila).getTipo(), fila ,2);
+                        modeloTabla.setValueAt(productos.get(fila).getPrecio(), fila ,3);
+                        modeloTabla.setValueAt(estaEnMenu, fila ,4);                     
+                        modeloTabla.setValueAt(eliminado, fila ,5);                     
+                    }                
+                    tablaBuscar.setModel(modeloTabla);
+                }  
                
+            }
+            if(radioVenta.isSelected()){
+               
+                List<Pedido> pedidos=new ArrayList<Pedido>();               
+              //  pedidos=BuscarPorCampo.buscarPedido(busqueda, campo);                    
+                modeloTabla=generarCamposTabla();                
+                String enCurso="";
+                
+                if(pedidos==null)
+                {
+                    tablaBuscar.setModel(modeloTabla);
+                }
+                else{       
+                    for(int fila = 0 ; fila < pedidos.size() ; fila++){
+                        if(pedidos.get(fila).getEnCurso()==true)
+                            enCurso="Si";
+                        else
+                            enCurso="No";
+                    
+                        modeloTabla.setValueAt(pedidos.get(fila).getId(), fila ,0);
+                        modeloTabla.setValueAt(pedidos.get(fila).getMesa(), fila ,1);
+                        modeloTabla.setValueAt(enCurso, fila ,2);
+                        modeloTabla.setValueAt(pedidos.get(fila).getFecha(), fila ,3);
+                        modeloTabla.setValueAt(pedidos.get(fila).getEmpleado().getNombre(), fila ,4);   
+                    }
+                    tablaBuscar.setModel(modeloTabla);
+                }
             }
             
                                                                                                       
