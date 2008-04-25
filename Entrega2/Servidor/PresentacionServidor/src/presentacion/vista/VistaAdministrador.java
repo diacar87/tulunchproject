@@ -3,8 +3,6 @@ package presentacion.vista;
 
 
 import presentacion.util.PantallaCompleta;
-//import logicaNegocio.BuscarPorCampo;
-
 import java.util.List;
 import accesoDatos.vo.Producto;
 import accesoDatos.vo.Empleado;
@@ -14,6 +12,7 @@ import accesoDatos.dao.DaoEmpleado;
 import accesoDatos.dao.DaoPedido;
 import accesoDatos.util.Log;
 import java.util.ArrayList;
+import logicaNegocio.servicios.BuscarPorCampo;
 
 /**
  *
@@ -862,26 +861,32 @@ public class VistaAdministrador extends javax.swing.JFrame {
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:   
         
-        javax.swing.table.DefaultTableModel modeloTabla = new javax.swing.table.DefaultTableModel();                      
-        
-        String campo= comboBoxCampos.getName();
+        javax.swing.table.DefaultTableModel modeloTabla = new javax.swing.table.DefaultTableModel();                              
+        String campo= String.valueOf(comboBoxCampos.getSelectedItem());
         String busqueda = campoBuscar.getText();  
-        
-        
+      
             if(radioEmpleado.isSelected())
             {
-                List<Empleado> empleados=new ArrayList<Empleado>();                
-                //empleados=BuscarPorCampo.buscarEmpleado(busqueda,campo);    
+                List<Empleado> empleados=new ArrayList<Empleado>();               
+                empleados=BuscarPorCampo.buscarEmpleado(busqueda, campo);                    
+                modeloTabla=generarCamposTabla();
                 
-                modeloTabla.setRowCount(empleados.size());
-                 for(int fila = 0 ; fila < empleados.size() ; fila++){
-                    modeloTabla.setValueAt(empleados.get(fila).getId(), fila ,0);
-                    modeloTabla.setValueAt(empleados.get(fila).getNombre(), fila ,1);
-                    modeloTabla.setValueAt(empleados.get(fila).getCargo(), fila ,2);
-                    modeloTabla.setValueAt(empleados.get(fila).getTelefono(), fila ,3);
-                    modeloTabla.setValueAt(empleados.get(fila).getCelular(), fila ,4);    
-                 }
-                tablaBuscar.setModel(modeloTabla);
+                if(empleados==null)
+                {
+                    tablaBuscar.setModel(modeloTabla);
+                }
+                else{
+                    modeloTabla.setRowCount(empleados.size());
+                
+                    for(int fila = 0 ; fila < empleados.size() ; fila++){
+                        modeloTabla.setValueAt(empleados.get(fila).getId(), fila ,0);
+                        modeloTabla.setValueAt(empleados.get(fila).getNombre(), fila ,1);
+                        modeloTabla.setValueAt(empleados.get(fila).getCargo(), fila ,2);
+                        modeloTabla.setValueAt(empleados.get(fila).getTelefono(), fila ,3);
+                        modeloTabla.setValueAt(empleados.get(fila).getCelular(), fila ,4);                     
+                    }                
+                    tablaBuscar.setModel(modeloTabla);
+                }                                    
               
             }
             if(radioVenta.isSelected())
