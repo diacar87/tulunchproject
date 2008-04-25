@@ -2,7 +2,7 @@
 package presentacion.vista;
 
 import accesoDatos.util.Log;
-import presentacion.util.PantallaCompleta;
+import presentacion.util.Pantalla;
 import logicaNegocio.servicios.ValidarPassword;
 import accesoDatos.vo.Empleado;
 

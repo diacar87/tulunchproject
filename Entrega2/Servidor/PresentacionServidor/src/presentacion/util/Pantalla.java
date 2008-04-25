@@ -10,7 +10,7 @@ import accesoDatos.util.Log;
  *  Clase que recibe una Ventana y le aplica Pantalla Completa (FullScreen).
  * @author acactown
  */
-public class PantallaCompleta {
+public class Pantalla {
     /**
      * Metodo que recibe una ventana y le aplica Pantalla Completa
      * Queneralmente corre desde una ventana entonces se ejecuta con el argumento this.

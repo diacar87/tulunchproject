@@ -2,7 +2,7 @@
 package presentacion.vista;
 
 
-import presentacion.util.PantallaCompleta;
+import presentacion.util.Pantalla;
 import java.util.List;
 import accesoDatos.vo.Producto;
 import accesoDatos.vo.Empleado;
