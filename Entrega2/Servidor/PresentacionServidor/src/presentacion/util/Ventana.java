@@ -37,7 +37,7 @@ public class Ventana {
      * Queneralmente corre desde una ventana entonces se ejecuta con el argumento this.
      * @param ventana Ventana que se va a centrar
      */
-    private void centrar(Window ventana){
+    public static void centrar(Window ventana){
         ventana.pack();
 
         // Se obtienen las dimensiones en pixels de la pantalla.
