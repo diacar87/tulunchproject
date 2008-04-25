@@ -6,6 +6,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import accesoDatos.util.Log;
 import accesoDatos.util.PropiedadesConexion;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import presentacion.vista.IniciarSesion;
 
 
 
@@ -13,40 +16,51 @@ import accesoDatos.util.PropiedadesConexion;
  *
  * @author acactown
  */
-public class Servidor implements Runnable{
+public class Servidor {
     
-    boolean escuchando = true;
+    private ServerSocket skServerPeticiones;
+    private boolean escuchando;
     
     public Servidor() {
+        skServerPeticiones = null;
+        escuchando = true;
     }
 
-    public void run(){
+    public void ejecutarServidor(){
         try{
-             // Paso 1: crear  e instanciar objetos  ServerSocket
-            ServerSocket  skServerComunicacion = new ServerSocket( PropiedadesConexion.getPuertoComunicacion() );
-            ServerSocket skServerPeticiones = new ServerSocket( PropiedadesConexion.getPuertoPeticion() );
+            skServerPeticiones = new ServerSocket( PropiedadesConexion.getPuertoPeticion() );
             Log.setEvento("Servidor","INFO","El Servidor esta Corriendo.");
-            Log.setEvento("Servidor","INFO","El Servidor esta escuchando por el puerto "+ skServerComunicacion.getLocalPort());
-            Log.setEvento("Servidor","INFO","El Servidor esta atendiendo por el puerto "+ skServerPeticiones.getLocalPort());
+            Log.setEvento("Servidor","INFO","El Servidor esta Recibiendo/Enviado Peticiones por el Puerto "+ skServerPeticiones.getLocalPort());
             while( escuchando ){
-                Socket skComunicacion = null;
-                Socket skPeticiones = null;
+                Socket skPeticion = null;
                 try {
                     Log.setEvento("Servidor","INFO","Esperando Cliente.");
-                    // Paso 2: esperar una conexion.
-                    
-                    skComunicacion = skServerComunicacion.accept();
-                    skPeticiones = skServerPeticiones.accept();
+                    skPeticion = skServerPeticiones.accept();
                 } catch (IOException e){
                     Log.setEvento("Servidor","WARNING", e.getMessage());
                     continue;
+                } finally{
+                    HiloCliente clienteNuevo = new HiloCliente(skPeticion);
+                    Thread hilo = new Thread(clienteNuevo);
+                    hilo.start();
                 }
-                HiloCliente cliente = new HiloCliente(skComunicacion, skPeticiones);
-                Thread correrCliente = new Thread(cliente);
-                correrCliente.start();
             }
         }catch(IOException e){
             Log.setEvento("Servidor","ERROR", e.getMessage());
         }
     }
+   public static void main(String abc[]) throws IOException {                
+        try {
+            UIManager.setLookAndFeel(new com.nilo.plaf.nimrod.NimRODLookAndFeel());                                
+        } catch (UnsupportedLookAndFeelException ex) {
+            Log.setEvento("Servidor","WARNING",ex.getMessage());
+        }
+        java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new IniciarSesion().setVisible(true);
+                }
+         });
+        Servidor servidor = new Servidor();
+        servidor.ejecutarServidor();
+   }
 }

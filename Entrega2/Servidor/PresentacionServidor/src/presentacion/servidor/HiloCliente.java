@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Vector;
 import logicaNegocio.servicios.Peticion;
-import logicaNegocio.servicios.EmpleadoXPassword;
 import accesoDatos.vo.Empleado;
 import accesoDatos.util.Log;
 
@@ -26,16 +25,15 @@ public class HiloCliente implements Runnable{
     Peticion peticion;
     boolean atendiendo;
     
-    public HiloCliente(Socket skClienteComunicacion,Socket skClientePeticiones){
-        this.skClienteComunicacion = skClienteComunicacion;
+    public HiloCliente(Socket skClientePeticiones){
         this.skClientePeticiones = skClientePeticiones;
         clientesActivos.add(this);
-        peticion = new Peticion(0, "Iniciar Sesion", "N/A");
+        peticion = new Peticion();
         atendiendo = true;
      }
      
      public void run(){
-        Log.setEvento("Servidor","INFO","Esperando Peticiones del Cliente");
+        /*Log.setEvento("Servidor","INFO","Esperando Peticiones del Cliente");
         try{
             // Paso 3: obtener flujos de entrada y salida.
      
@@ -78,7 +76,7 @@ public class HiloCliente implements Runnable{
             skClienteComunicacion.close();
         } catch(Exception ex){
             Log.setEvento("Servidor","ERROR", ex.getMessage());
-        }         
+        }     */    
      }
     
 }
