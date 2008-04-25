@@ -2,7 +2,7 @@
 package presentacion.vista;
 
 
-import presentacion.util.Pantalla;
+import presentacion.util.Ventana;
 import accesoDatos.util.Log;
 
 /**
@@ -15,7 +15,7 @@ public class VistaCajero extends javax.swing.JFrame {
     public VistaCajero() {
         initComponents();
         Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Cajero.");
-        //Pantalla.pantallaCompleta(this);
+        //Ventana.pantallaCompleta(this);
     }
     
     /** This method is called from within the constructor to

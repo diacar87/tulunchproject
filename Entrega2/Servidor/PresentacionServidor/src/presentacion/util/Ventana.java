@@ -11,11 +11,11 @@ import java.awt.Toolkit;
 /**
  *  Clase que maneja posicion y tamaño de ventanas.
  */
-public class Pantalla {
+public class Ventana {
     /**
-     * Metodo que recibe una ventana y le aplica Pantalla Completa (Full Screen)
+     * Metodo que recibe una ventana y le aplica Ventana Completa (Full Screen)
      * Queneralmente corre desde una ventana entonces se ejecuta con el argumento this.
-     * @param ventana Ventana a aplicar Pantalla Completa
+     * @param ventana Ventana a aplicar Ventana Completa
      */
     public static void pantallaCompleta( Window ventana ){
         GraphicsDevice monitor = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();

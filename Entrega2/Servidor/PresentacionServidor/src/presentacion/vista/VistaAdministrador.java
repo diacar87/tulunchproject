@@ -2,7 +2,7 @@
 package presentacion.vista;
 
 
-import presentacion.util.Pantalla;
+import presentacion.util.Ventana;
 import java.util.List;
 import accesoDatos.vo.Producto;
 import accesoDatos.vo.Empleado;
@@ -25,7 +25,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
     public VistaAdministrador() {
         initComponents();
         Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Administrador");
-        //Pantalla.pantallaCompleta(this);
+        //Ventana.pantallaCompleta(this);
     }
     
     /** This method is called from within the constructor to

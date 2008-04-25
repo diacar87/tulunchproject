@@ -4,7 +4,7 @@ package presentacion.vista;
 import accesoDatos.util.Log;
 import logicaNegocio.servicios.ValidarPassword;
 import accesoDatos.vo.Empleado;
-import presentacion.util.Pantalla;
+import presentacion.util.Ventana;
 
 /**
  *
@@ -18,7 +18,7 @@ public class IniciarSesion extends javax.swing.JFrame {
     public IniciarSesion() {       
         initComponents();
         Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
-        //Pantalla.pantallaCompleta(this);
+        //Ventana.pantallaCompleta(this);
     }
     
     /** This method is called from within the constructor to
