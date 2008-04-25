@@ -10,7 +10,6 @@
 
 <propiedadesConexion>
 	<conexion>
-		<comunicacionPuerto port="8081" />
-                <peticionPuerto port="8082" />
+                <peticionPuerto port="8081" />
 	</conexion>
 </propiedadesConexion>

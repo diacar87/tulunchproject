@@ -8,10 +8,7 @@
 -->
 
 <!ELEMENT propiedadesConexion (conexion)>
-<!ELEMENT conexion (comunicacionPuerto , peticionPuerto)>
-<!ELEMENT comunicacionPuerto (#PCDATA)>
+<!ELEMENT conexion (peticionPuerto)>
 <!ELEMENT peticionPuerto (#PCDATA)>
-<!ATTLIST comunicacionPuerto
-	  port CDATA #REQUIRED>
 <!ATTLIST peticionPuerto
 	  port CDATA #REQUIRED>
