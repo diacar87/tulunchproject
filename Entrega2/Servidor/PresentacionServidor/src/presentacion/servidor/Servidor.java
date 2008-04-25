@@ -4,16 +4,18 @@ package presentacion.servidor;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import accesoDatos.util.Log;
-import accesoDatos.util.PropiedadesConexion;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import accesoDatos.util.Log;
+import accesoDatos.util.PropiedadesConexion;
 import presentacion.vista.IniciarSesion;
 
 
-
 /**
- *
+ * Esta clase es el "main de los main".
+ * 1) Aplica el LookAndFeel.
+ * 2) Llama a la interfaz InisiarSesion de Cajero/Admin.
+ * 3) Pone a Correr al Servidor que atiende a las Clientes.
  * @author acactown
  */
 public class Servidor {
@@ -30,7 +32,7 @@ public class Servidor {
         try{
             skServerPeticiones = new ServerSocket( PropiedadesConexion.getPuertoPeticion() );
             Log.setEvento("Servidor","INFO","El Servidor esta Corriendo.");
-            Log.setEvento("Servidor","INFO","El Servidor esta Recibiendo/Enviado Peticiones por el Puerto "+ skServerPeticiones.getLocalPort());
+            Log.setEvento("Servidor","INFO","El Servidor esta Enviado/Recibiendo Peticiones por el Puerto "+ skServerPeticiones.getLocalPort());
             while( escuchando ){
                 Socket skPeticion = null;
                 try {
@@ -49,7 +51,11 @@ public class Servidor {
             Log.setEvento("Servidor","ERROR", e.getMessage());
         }
     }
-   public static void main(String abc[]) throws IOException {                
+   /**
+    * 
+    * @param arg
+    */
+    public static void main(String arg[]) {                
         try {
             UIManager.setLookAndFeel(new com.nilo.plaf.nimrod.NimRODLookAndFeel());                                
         } catch (UnsupportedLookAndFeelException ex) {
@@ -63,4 +69,5 @@ public class Servidor {
         Servidor servidor = new Servidor();
         servidor.ejecutarServidor();
    }
+    
 }
