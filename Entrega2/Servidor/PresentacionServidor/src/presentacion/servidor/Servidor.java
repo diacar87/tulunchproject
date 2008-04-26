@@ -8,7 +8,7 @@ import java.net.Socket;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import accesoDatos.util.Log;
-import accesoDatos.util.PropiedadesConexion;
+import accesoDatos.conexion.PropiedadesConexion;
 import presentacion.vista.IniciarSesion;
 
 
