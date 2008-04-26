@@ -1,6 +1,7 @@
 package accesoDatos.vo;
 
 import java.io.Serializable;
+import javax.swing.ImageIcon;
 
 public class Producto implements Serializable {
     
@@ -11,6 +12,15 @@ public class Producto implements Serializable {
     private String nombre;
     private boolean estaEnMenu = false;
     private boolean eliminado = false;
+    private ImageIcon foto = null;
+
+    public ImageIcon getFoto() {
+        return foto;
+    }
+
+    public void setFoto(ImageIcon foto) {
+        this.foto = foto;
+    }
 
     public Producto() {
     }
