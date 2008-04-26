@@ -71,7 +71,7 @@ public class Conexion {
             salidaPeticion.close();
             entradaPeticion.close();
             skPeticion.close();
-            return entradaPeticion.readObject();
+            return (Object)entradaPeticion.readObject();
         } catch (UnknownHostException ex) {
             Log.setEvento("Cliente","ERROR", ex.getMessage());
         } catch (IOException ex) {
