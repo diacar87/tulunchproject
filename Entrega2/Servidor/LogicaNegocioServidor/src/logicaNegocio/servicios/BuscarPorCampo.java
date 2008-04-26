@@ -115,10 +115,10 @@ public class BuscarPorCampo {
      * @return Lista de Pedidos
      */
     
-   /*  public static List<Pedido> buscarPedido(String busqueda, String campo){
+      public static List<Pedido> buscarPedido(String busqueda, String campo){
         List<Pedido> pedidos=new ArrayList<Pedido>();
         List<Pedido> encontrados=new ArrayList<Pedido>();           
-       
+              
         if(campo.equals("id")){                     
                 encontrados.add(DaoPedido.read(Integer.parseInt(busqueda)));                         
         }
@@ -148,13 +148,13 @@ public class BuscarPorCampo {
             return null;
         else
             return encontrados;                              
-    }    */
+    }    
     
     public static void main(String args[])
     {
-        List<Producto> encontrados=new ArrayList<Producto>();          
-        encontrados=buscarProducto("Si","estaEnMenu");
+        List<Pedido> encontrados=new ArrayList<Pedido>();          
+        encontrados=buscarPedido("5","id");
         for(int i=0;i<encontrados.size();i++)        
-           System.out.println(encontrados.get(i).getId());
+           System.out.println(encontrados.get(i).getEmpleado().getNombre());
     }
 }

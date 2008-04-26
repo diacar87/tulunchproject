@@ -331,26 +331,17 @@ public class VistaCajero extends javax.swing.JFrame {
     private void Mesa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Mesa1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_Mesa1MouseClicked
-    
-    public void llamarVistaCajero(){
-    
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaCajero().setVisible(true);
-            }
-        });
-    
-    }
+        
     /**
      * @param args the command line arguments
      */
-  /*  public static void main(String args[]) {
+    public static void main() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VistaCajero().setVisible(true);
             }
         });
-    }*/
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Mesa1;

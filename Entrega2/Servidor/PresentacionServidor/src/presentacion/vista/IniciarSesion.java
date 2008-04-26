@@ -345,14 +345,12 @@ public class IniciarSesion extends javax.swing.JFrame {
                  
                     if(empleado.getCargo().equals("Cajero")){
                         this.setVisible(false);                        
-                        VistaCajero vc=new VistaCajero();
-                        vc.llamarVistaCajero();                      
+                        VistaCajero.main();                  
 
                     }
                      if(empleado.getCargo().equals("Administrador")){
                         this.setVisible(false);                        
-                        VistaAdministrador va= new VistaAdministrador();
-                        va.llamarVistaAdministrador();
+                        VistaAdministrador.main();
                     }
                     else{
                     campoPassword.setText("ERROR");                
