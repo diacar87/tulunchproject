@@ -2,6 +2,7 @@
 package accesoDatos.conexion;
 
 import accesoDatos.util.Log;
+import accesoDatos.vo.Empleado;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -67,10 +68,7 @@ public class Conexion {
             Log.setEvento("Cliente","INFO","Se envia Peticion");
             salidaPeticion.writeObject(peticion);
             salidaPeticion.flush();
-            Log.setEvento("Cliente","INFO","Recepcion Exitosa");
-            salidaPeticion.close();
-            entradaPeticion.close();
-            skPeticion.close();
+            //Log.setEvento("Cliente","INFO","Recepcion Exitosa");
             return (Object)entradaPeticion.readObject();
         } catch (UnknownHostException ex) {
             Log.setEvento("Cliente","ERROR", ex.getMessage());
@@ -81,6 +79,12 @@ public class Conexion {
         }
         return null;
         
+    }
+    
+    public static void main(String arg[]){
+        Peticion p = new  Peticion(1, new Empleado("Andres","animador", "hola"));
+        p = ( Peticion )Conexion.enviarPeticion(p);
+        System.out.println(p.getOpcionPeticion());
     }
     
     
