@@ -8,13 +8,10 @@
 -->
 
 <!ELEMENT propiedadesConexion (conexion)>
-<!ELEMENT conexion (servidorIp , comunicacionPuerto , peticionPuerto)>
+<!ELEMENT conexion (servidorIp , peticionPuerto)>
 <!ELEMENT servidorIp (#PCDATA)>
-<!ELEMENT comunicacionPuerto (#PCDATA)>
 <!ELEMENT peticionPuerto (#PCDATA)>
 <!ATTLIST servidorIp
 	  ip CDATA #REQUIRED>
-<!ATTLIST comunicacionPuerto
-	  port CDATA #REQUIRED>
 <!ATTLIST peticionPuerto
 	  port CDATA #REQUIRED>

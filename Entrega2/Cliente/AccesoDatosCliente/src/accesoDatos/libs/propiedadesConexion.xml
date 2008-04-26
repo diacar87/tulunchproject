@@ -10,8 +10,7 @@
 
 <propiedadesConexion>
 	<conexion>
-		<servidorIp ip="192.168.1.1" />
-		<comunicacionPuerto port="8081" />
-                <peticionPuerto port="8082" />
+		<servidorIp ip="127.0.0.1" />
+                <peticionPuerto port="8081" />
 	</conexion>
 </propiedadesConexion>
