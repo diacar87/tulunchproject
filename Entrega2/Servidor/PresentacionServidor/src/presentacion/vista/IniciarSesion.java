@@ -17,7 +17,7 @@ public class IniciarSesion extends javax.swing.JFrame {
     /** Creates new form IniciarSesion */
     public IniciarSesion() {       
         initComponents();
-        Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
+        
         //Ventana.pantallaCompleta(this);
     }
     
@@ -344,12 +344,14 @@ public class IniciarSesion extends javax.swing.JFrame {
              if(empleado!=null){   
                  
                     if(empleado.getCargo().equals("Cajero")){
-                        this.setVisible(false);                        
+                        this.setVisible(false);
+                        Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Iniciar Sesion.");
                         VistaCajero.main();                  
 
                     }
                      if(empleado.getCargo().equals("Administrador")){
                         this.setVisible(false);                        
+                        Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Iniciar Sesion.");
                         VistaAdministrador.main();
                     }
                     else{

@@ -65,6 +65,7 @@ public class Servidor {
         } catch (UnsupportedLookAndFeelException ex) {
             Log.setEvento("Servidor","WARNING",ex.getMessage());
         }
+        Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
         java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     new IniciarSesion().setVisible(true);

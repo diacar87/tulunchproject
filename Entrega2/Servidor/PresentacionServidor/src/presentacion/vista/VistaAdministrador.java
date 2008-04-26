@@ -1148,7 +1148,9 @@ public class VistaAdministrador extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Administrador");
         IniciarSesion i = new IniciarSesion();
+        Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
         i.llamarIniciarSesion();
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -1158,6 +1160,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
     private void botonCerrarAplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarAplicacionActionPerformed
         // TODO add your handling code here:
+        Log.setEvento("Servidor","INFO","Se Cierra la Apliacion");
         System.exit(1);        
 }//GEN-LAST:event_botonCerrarAplicacionActionPerformed
        
