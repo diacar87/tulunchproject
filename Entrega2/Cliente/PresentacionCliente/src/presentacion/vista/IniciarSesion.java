@@ -381,9 +381,8 @@ public class IniciarSesion extends javax.swing.JFrame {
             campoPassword.setText("");
         }      
         else{ 
-            Empleado empleado = new Empleado("Iniciar Sesion", password, "Iniciando Sesion");
-            empleado = ( Empleado )Conexion.enviarPeticion(new Peticion(1, empleado));
-            System.out.println(empleado.getNombre());
+            Empleado empleado = ( Empleado )Conexion.enviarPeticion(new Peticion( new Empleado("Iniciar Sesion", password, "Iniciando Sesion") ,1));
+            Log.setEvento("Cliente","INFO","Recepcion Exitosa");
              if(empleado!=null){   
                  
                     if(empleado.getCargo().equals("Cocina")){
@@ -406,7 +405,7 @@ public class IniciarSesion extends javax.swing.JFrame {
                     botonReset.setText("RESET");
                     password="";
               }
-            
+   
         }
     }//GEN-LAST:event_botonResetActionPerformed
     
