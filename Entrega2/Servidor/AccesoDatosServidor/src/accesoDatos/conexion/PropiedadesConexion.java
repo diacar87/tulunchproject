@@ -1,6 +1,7 @@
 
-package accesoDatos.util;
+package accesoDatos.conexion;
 
+import accesoDatos.util.Log;
 import java.io.IOException;
 import org.jdom.Document;
 import org.jdom.Element;

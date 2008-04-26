@@ -1,6 +1,7 @@
 
 package accesoDatos.conexion;
 
+import accesoDatos.vo.Empleado;
 import java.io.Serializable;
 
 /**
@@ -9,15 +10,23 @@ import java.io.Serializable;
  */
 public class Peticion implements Serializable{
     
-    private String nombreCliente;
+    private Empleado empleado;
     private int opcion;
     
     public Peticion() {
     }
 
-    public Peticion(String nombreCliente, int opcion) {
-        this.nombreCliente = nombreCliente;
+    public Peticion(Empleado empleado, int opcion) {
+        this.empleado = empleado;
         this.opcion = opcion;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     public int getOpcion() {
@@ -26,16 +35,6 @@ public class Peticion implements Serializable{
 
     public void setOpcion(int opcion) {
         this.opcion = opcion;
-    }
-
-    public
-
-    String getNombreCliente() {
-        return nombreCliente;
-    }
-
-    public void setNombreCliente(String nombreCliente) {
-        this.nombreCliente = nombreCliente;
     }
     
 }
