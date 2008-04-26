@@ -21,7 +21,6 @@ public class IniciarSesion extends javax.swing.JFrame {
     /** Creates new form IniciarSesion */
     public IniciarSesion() {
         initComponents();
-        Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
         //Ventana.pantallaCompleta(this);
     }
     
@@ -380,32 +379,35 @@ public class IniciarSesion extends javax.swing.JFrame {
             password="";
             campoPassword.setText("");
         }      
-        else{ 
-            Empleado empleado = ( Empleado )Conexion.enviarPeticion(new Peticion( new Empleado("Iniciar Sesion", password, "Iniciando Sesion") ,1));
-            Log.setEvento("Cliente","INFO","Recepcion Exitosa");
-             if(empleado!=null){   
-                 
+        else{
+            if( Conexion.abrirConexion() ){
+                Empleado empleado = ( Empleado )Conexion.enviarPeticion(new Peticion( new Empleado("Iniciar Sesion", password, password) ,1));
+                Log.setEvento("Cliente","INFO","Recepcion Exitosa");
+                Conexion.cerrarConexion();
+                if(empleado!=null){   
                     if(empleado.getCargo().equals("Cocina")){
-                        this.setVisible(false);                        
+                        this.setVisible(false);
+                        Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Iniciar Sesion.");
                         VistaCocina.main();
 
                     }
-                     if(empleado.getCargo().equals("Mesero")){
-                        this.setVisible(false);                        
-
+                    if(empleado.getCargo().equals("Mesero")){
+                        this.setVisible(false);               
+                        Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Iniciar Sesion.");
+                        //VistaMesero.main();
                     }
                     else{
                         campoPassword.setText("ERROR");                
                         botonReset.setText("RESET");
                         password="";
                     }
-              }
-              else{
+                }
+                else{
                     campoPassword.setText("ERROR");                
                     botonReset.setText("RESET");
                     password="";
-              }
-   
+                }
+            }
         }
     }//GEN-LAST:event_botonResetActionPerformed
     
@@ -427,6 +429,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Log.setEvento("Cliente","WARNING",ex.getMessage());
         }
+        Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new IniciarSesion().setVisible(true);
