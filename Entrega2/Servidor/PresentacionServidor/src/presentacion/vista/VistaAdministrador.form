@@ -27,18 +27,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace pref="67" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="botonCerrarAplicacion" min="-2" pref="204" max="-2" attributes="1"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" pref="157" max="-2" attributes="1"/>
-                          </Group>
-                          <Component id="panelDatosEmpleado" alignment="1" min="-2" max="-2" attributes="2"/>
-                      </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="panelDatosEmpleado" min="-2" max="-2" attributes="2"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace pref="901" max="32767" attributes="0"/>
+                      <Component id="botonCerrarAplicacion" min="-2" pref="204" max="-2" attributes="1"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton5" min="-2" pref="157" max="-2" attributes="1"/>
                   </Group>
                   <Component id="jTabbedPane1" alignment="0" min="-2" pref="1272" max="-2" attributes="0"/>
               </Group>
@@ -58,7 +57,7 @@
               <Component id="jTabbedPane1" min="-2" pref="618" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="panelDatosEmpleado" max="32767" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,15 +83,17 @@
                   <Component id="jLabel2" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="n" min="-2" pref="388" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                   <Component id="jLabel3" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="c" min="-2" pref="129" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                   <Component id="jLabel4" max="32767" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="i" pref="121" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                  <Component id="botonCambiarContraseña" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -100,12 +101,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" max="32767" attributes="0"/>
-                      <Component id="i" alignment="3" max="32767" attributes="0"/>
                       <Component id="jLabel2" alignment="3" max="32767" attributes="0"/>
+                      <Component id="n" alignment="3" max="32767" attributes="0"/>
                       <Component id="jLabel3" alignment="3" max="32767" attributes="0"/>
                       <Component id="c" alignment="3" max="32767" attributes="0"/>
-                      <Component id="n" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jLabel4" alignment="3" max="32767" attributes="0"/>
+                      <Component id="i" alignment="3" max="32767" attributes="0"/>
+                      <Component id="botonCambiarContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -144,6 +146,11 @@
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="botonCambiarContrase&#xf1;a">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cambiar mi contrase&#xf1;a"/>
           </Properties>
         </Component>
       </SubComponents>

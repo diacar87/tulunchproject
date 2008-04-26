@@ -75,6 +75,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         c = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         i = new javax.swing.JTextField();
+        botonCambiarContraseña = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
@@ -140,26 +141,28 @@ public class VistaAdministrador extends javax.swing.JFrame {
         botonCerrarAplicacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Interfaz Administrador");
+        setTitle("Interfaz Administrador"); // NOI18N
         setResizable(false);
         setUndecorated(true);
 
         panelDatosEmpleado.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Empleado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 12), new java.awt.Color(102, 102, 102)));
 
-        jLabel2.setText("Nombre : ");
+        jLabel2.setText("Nombre : "); // NOI18N
 
         n.setEditable(false);
         n.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jLabel3.setText("Cargo : ");
+        jLabel3.setText("Cargo : "); // NOI18N
 
         c.setEditable(false);
         c.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jLabel4.setText("ID : ");
+        jLabel4.setText("ID : "); // NOI18N
 
         i.setEditable(false);
         i.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        botonCambiarContraseña.setText("Cambiar mi contraseña");
 
         javax.swing.GroupLayout panelDatosEmpleadoLayout = new javax.swing.GroupLayout(panelDatosEmpleado);
         panelDatosEmpleado.setLayout(panelDatosEmpleadoLayout);
@@ -170,26 +173,29 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(n, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(133, 133, 133)
+                .addGap(91, 91, 91)
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(139, 139, 139)
+                .addGap(107, 107, 107)
                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(i, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                .addGap(98, 98, 98))
+                .addGap(84, 84, 84)
+                .addComponent(botonCambiarContraseña)
+                .addContainerGap())
         );
         panelDatosEmpleadoLayout.setVerticalGroup(
             panelDatosEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDatosEmpleadoLayout.createSequentialGroup()
                 .addGroup(panelDatosEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(i)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(n)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(c)
-                    .addComponent(n))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(i)
+                    .addComponent(botonCambiarContraseña))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -197,11 +203,11 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 2, 14));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Menú del Día");
+        jLabel5.setText("Menú del Día"); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 2, 14));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Actualización");
+        jLabel6.setText("Actualización"); // NOI18N
 
         jTabbedPane5.setTabPlacement(javax.swing.JTabbedPane.RIGHT);
 
@@ -226,21 +232,21 @@ public class VistaAdministrador extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(tablaBuscar);
 
-        radioEmpleado.setText("Empleado");
+        radioEmpleado.setText("Empleado"); // NOI18N
         radioEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioEmpleadoActionPerformed(evt);
             }
         });
 
-        radioProducto.setText("Producto");
+        radioProducto.setText("Producto"); // NOI18N
         radioProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioProductoActionPerformed(evt);
             }
         });
 
-        radioVenta.setText("Venta");
+        radioVenta.setText("Venta"); // NOI18N
         radioVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioVentaActionPerformed(evt);
@@ -271,9 +277,9 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton2.setText("Agregar al Menu");
+        jButton2.setText("Agregar al Menu"); // NOI18N
 
-        botonBuscar.setText("Buscar");
+        botonBuscar.setText("Buscar"); // NOI18N
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonBuscarActionPerformed(evt);
@@ -305,7 +311,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonBuscar))
-                .addContainerGap(3, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -343,17 +349,17 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("<html>\t\n\t<body>\n\t\tC<br>O<br>N<br>S<br>U<br>L<br>T<br>A<br>R\t\n\t</body>\t\n</html>", jPanel3);
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setText("jLabel7"); // NOI18N
 
-        jLabel8.setText("jLabel7");
+        jLabel8.setText("jLabel7"); // NOI18N
 
-        jLabel9.setText("jLabel7");
+        jLabel9.setText("jLabel7"); // NOI18N
 
-        jLabel10.setText("jLabel7");
+        jLabel10.setText("jLabel7"); // NOI18N
 
-        jLabel11.setText("jLabel7");
+        jLabel11.setText("jLabel7"); // NOI18N
 
-        botonModificar.setText("Modificar");
+        botonModificar.setText("Modificar"); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -418,33 +424,33 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("<html>\t\n\t<body>\n\t\tM<br>O<br>D<br>I<br>F<br>I<br>C<br>A<br>R\t\n\t</body>\t\n</html>", jPanel4);
 
-        jLabel12.setText("jLabel7");
+        jLabel12.setText("jLabel7"); // NOI18N
 
-        jLabel13.setText("jLabel7");
+        jLabel13.setText("jLabel7"); // NOI18N
 
-        jLabel14.setText("jLabel7");
+        jLabel14.setText("jLabel7"); // NOI18N
 
-        jLabel15.setText("jLabel7");
+        jLabel15.setText("jLabel7"); // NOI18N
 
-        jLabel16.setText("jLabel7");
+        jLabel16.setText("jLabel7"); // NOI18N
 
-        botonCrear.setText("Crear");
+        botonCrear.setText("Crear"); // NOI18N
 
-        radioEmpleadoCrear.setText("Empleado");
+        radioEmpleadoCrear.setText("Empleado"); // NOI18N
         radioEmpleadoCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioEmpleadoCrearActionPerformed(evt);
             }
         });
 
-        radioVentaCrear.setText("Venta");
+        radioVentaCrear.setText("Venta"); // NOI18N
         radioVentaCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioVentaCrearActionPerformed(evt);
             }
         });
 
-        radioProductoCrear.setText("Producto");
+        radioProductoCrear.setText("Producto"); // NOI18N
         radioProductoCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioProductoCrearActionPerformed(evt);
@@ -516,7 +522,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, Short.MAX_VALUE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 86, Short.MAX_VALUE)
                 .addGap(44, 44, 44)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -537,7 +543,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
         );
@@ -581,7 +587,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         Mesa5.setFont(new java.awt.Font("Tahoma", 0, 18));
-        Mesa5.setText("Mesa 1");
+        Mesa5.setText("Mesa 1"); // NOI18N
         Mesa5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Mesa5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -595,7 +601,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         });
 
         Mesa6.setFont(new java.awt.Font("Tahoma", 0, 18));
-        Mesa6.setText("Mesa 2");
+        Mesa6.setText("Mesa 2"); // NOI18N
         Mesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mesa6ActionPerformed(evt);
@@ -603,7 +609,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         });
 
         Mesa7.setFont(new java.awt.Font("Tahoma", 0, 18));
-        Mesa7.setText("Mesa 3");
+        Mesa7.setText("Mesa 3"); // NOI18N
         Mesa7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mesa7ActionPerformed(evt);
@@ -611,7 +617,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         });
 
         Mesa8.setFont(new java.awt.Font("Tahoma", 0, 18));
-        Mesa8.setText("Mesa 4");
+        Mesa8.setText("Mesa 4"); // NOI18N
         Mesa8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mesa8ActionPerformed(evt);
@@ -650,7 +656,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(11, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -678,12 +684,12 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("TOTAL");
+        jLabel1.setText("TOTAL"); // NOI18N
 
         jTextField1.setEditable(false);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18));
-        jButton1.setText("Cerrar Pedido");
+        jButton1.setText("Cerrar Pedido"); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -722,11 +728,11 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 857, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
                         .addGap(34, 34, 34))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(28, Short.MAX_VALUE))))
+                        .addContainerGap(29, Short.MAX_VALUE))))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -784,16 +790,16 @@ public class VistaAdministrador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(67, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(botonCerrarAplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(panelDatosEmpleado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(panelDatosEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap(901, Short.MAX_VALUE)
+                        .addComponent(botonCerrarAplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1272, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -807,7 +813,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelDatosEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -1103,6 +1109,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JToggleButton Mesa7;
     private javax.swing.JToggleButton Mesa8;
     private javax.swing.JButton botonBuscar;
+    private javax.swing.JButton botonCambiarContraseña;
     private javax.swing.JButton botonCerrarAplicacion;
     private javax.swing.JButton botonCrear;
     private javax.swing.JButton botonModificar;
