@@ -3,6 +3,11 @@ package accesoDatos.conexion;
 
 import accesoDatos.util.Log;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -16,6 +21,7 @@ public class Conexion {
     
     private static String ipServidor;
     private static int puertoPeticion;
+    private static boolean datos;
     
     /**
      * Metodo que se encarga de traer los datos de la conexion alamacenados en el dico duro.
@@ -38,12 +44,40 @@ public class Conexion {
         }
     }
     /**
-     * Se encarga de conectarse al servidor y obtener los Flujos de Entrada y Salida
-     * @return <tt>true</tt> si fue posible realizar la Conexion y hay comunicacion entre el Cliente y el Servidor.
+     * Metodo que Obtiene las propiedaes de la conexion y luego envia una Peticiones al Servidor
+     * @param peticion la Peticion a enviar
+     * @return El objeto que retorna el Servidor, pilas hay que hacerle el cast
      */
-    private static boolean conectar(){
-
-      return false;
+    public static Object enviarPeticion(Peticion peticion){
+        if(!datos){
+            obtenerPropiedadesConexion();
+            datos = true;
+        }
+        Socket skPeticion;
+        ObjectInputStream entradaPeticion = null;
+        ObjectOutputStream salidaPeticion = null;
+        try {
+            Log.setEvento("Cliente","INFO","Intentando Conectarse al Servidor con IP "+ ipServidor +" por el puerto " + puertoPeticion);
+            skPeticion = new Socket(InetAddress.getByName( ipServidor ), puertoPeticion );
+            Log.setEvento("Cliente","INFO","Conectado a "+ skPeticion.getInetAddress().getHostName() );
+            Log.setEvento("Cliente","INFO","Se envian Flujos de Entrada y Salida al Servidor");
+            salidaPeticion = new ObjectOutputStream(skPeticion.getOutputStream());
+            salidaPeticion.flush();
+            entradaPeticion = new ObjectInputStream(skPeticion.getInputStream());
+            Log.setEvento("Cliente","INFO","Se envia Peticion");
+            salidaPeticion.writeObject(peticion);
+            salidaPeticion.flush();
+            Log.setEvento("Cliente","INFO","Recepcion Exitosa");
+            return entradaPeticion.readObject();
+        } catch (UnknownHostException ex) {
+            Log.setEvento("Cliente","ERROR", ex.getMessage());
+        } catch (IOException ex) {
+            Log.setEvento("Cliente","ERROR", ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            Log.setEvento("Cliente","WARNING", ex.getMessage());
+        }
+        return null;
+        
     }
     
     
