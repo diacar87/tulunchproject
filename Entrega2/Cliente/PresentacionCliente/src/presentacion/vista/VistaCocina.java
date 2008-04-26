@@ -252,7 +252,7 @@ public class VistaCocina extends javax.swing.JFrame {
         this.setVisible(false);
         Log.setEvento("Cliente","INFO","Se Cierra Interfaz de Cocina.");
         IniciarSesion i = new IniciarSesion();
-        Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
+        Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
         i.llamarIniciarSesion();
     }//GEN-LAST:event_jButton8ActionPerformed
     
