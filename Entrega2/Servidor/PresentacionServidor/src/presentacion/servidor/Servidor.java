@@ -1,7 +1,7 @@
 
 package presentacion.servidor;
 
-import logicaNegocio.servicios.cliente.HiloCliente;
+import logicaNegocio.servicios.HiloCliente;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
