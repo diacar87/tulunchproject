@@ -30,7 +30,7 @@ public class Conexion {
     private static void obtenerPropiedadesConexion(){
         try{
             SAXBuilder parsear = new SAXBuilder( true );
-            Document constructor = parsear.build("src/accesoDatos/libs/propiedadesConexion.xml");
+            Document constructor = parsear.build("../AccesoDatosCliente/src/accesoDatos/libs/propiedadesConexion.xml");
             Element propiedadesConexion = constructor.getRootElement();
             Element eleConexion = propiedadesConexion.getChild("conexion");
             Element etiqueta = eleConexion.getChild("servidorIp");
@@ -68,6 +68,9 @@ public class Conexion {
             salidaPeticion.writeObject(peticion);
             salidaPeticion.flush();
             Log.setEvento("Cliente","INFO","Recepcion Exitosa");
+            salidaPeticion.close();
+            entradaPeticion.close();
+            skPeticion.close();
             return entradaPeticion.readObject();
         } catch (UnknownHostException ex) {
             Log.setEvento("Cliente","ERROR", ex.getMessage());
