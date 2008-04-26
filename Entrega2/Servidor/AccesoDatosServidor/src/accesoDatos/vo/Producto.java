@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.swing.ImageIcon;
 
 @Entity
@@ -38,6 +39,7 @@ public class Producto implements Serializable {
     @Column(name = "eliminado", nullable = false)
     private boolean eliminado = false;
     
+    @Transient
     private ImageIcon foto = null;
 
     public Producto() {
