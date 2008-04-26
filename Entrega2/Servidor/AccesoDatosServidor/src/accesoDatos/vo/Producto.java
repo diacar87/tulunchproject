@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.swing.ImageIcon;
 
 @Entity
 @Table(name = "producto")
@@ -36,6 +37,8 @@ public class Producto implements Serializable {
     
     @Column(name = "eliminado", nullable = false)
     private boolean eliminado = false;
+    
+    private ImageIcon foto = null;
 
     public Producto() {
     }
@@ -123,4 +126,11 @@ public class Producto implements Serializable {
         return "vo.Producto[id=" + id + "]";
     }
 
+    public ImageIcon getFoto() {
+        return foto;
+    }
+
+    public void setFoto(ImageIcon foto) {
+        this.foto = foto;
+    }
 }
