@@ -30,29 +30,29 @@ public class HiloCliente implements Runnable{
         
     public void run(){
         try {
-            Log.setEvento("Servidor","INFO","Se envian Flujos de Entrada/Salida al Cliente en el Hilo<p class=\"salto\">"+ this.toString() +"</p>");
             salidaPeticion = new ObjectOutputStream(skPeticion.getOutputStream());
             salidaPeticion.flush();
             entradaPeticion = new ObjectInputStream(skPeticion.getInputStream());
-            Log.setEvento("Servidor","INFO","Esperando Peticiones de Cliente en el Hilo<p class=\"salto\">"+ this.toString() +"</p>");
         } catch (IOException ex) {
             Log.setEvento("Servidor","ERROR",ex.getMessage());
         }
         while( atendiendo ){
             try {
                 peticion = (Peticion)entradaPeticion.readObject();
+                Log.setEvento("Servidor","INFO","Se Procesa Peticion de Cliente desde IP : "+ skPeticion.getInetAddress().getHostAddress() +
+                            "<p class=\"salto\">Empleado    : "+ peticion.getEmpleado().getNombre() +"</p>" +
+                            "<p class=\"salto\">En Hilo    : "+ this.toString() +"</p>");
                 switch (peticion.getOpcion()) {
                     case 1:
-                        Empleado empleado = ValidarPassword.setPassword( peticion.getEmpleado().getPassword());
+                        Empleado empleado = ValidarPassword.setPassword( peticion.getEmpleado().getCargo());
                         salidaPeticion.writeObject(empleado);
                         salidaPeticion.flush();
                     break;
                 }
             } catch (IOException ex) {
-                /*Log.setEvento("Servidor","INFO","El Cliente Termino la Conexion desde IP : "+ skPeticion.getInetAddress().getHostAddress() +
+                Log.setEvento("Servidor","INFO","El Cliente Termino la Conexion desde IP : "+ skPeticion.getInetAddress().getHostAddress() +
                                             "<p class=\"salto\">Empleado    : "+ peticion.getEmpleado().getNombre() +"</p>" +
-                                            "<p class=\"salto\">Cargo       : "+ peticion.getEmpleado().getCargo() +"</p>" +
-                                            "<p class=\"salto\">Por Hilo    : "+ this.toString() +"</p>"); */
+                                            "<p class=\"salto\">En Hilo    : "+ this.toString() +"</p>");
                 break;
             } catch (ClassNotFoundException ex) {
                 Log.setEvento("Servidor","WARNING","Entrada Desconocida , "+ ex.getMessage());
@@ -62,7 +62,7 @@ public class HiloCliente implements Runnable{
         try{
             skPeticion.close();
         } catch (IOException ex) {
-            Log.setEvento("Servidor","ERROR",ex.getMessage());
+            Log.setEvento("Servidor","WARNING",ex.getMessage());
         }
     }
     
