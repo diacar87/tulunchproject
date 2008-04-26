@@ -429,7 +429,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Log.setEvento("Cliente","WARNING",ex.getMessage());
         }
-        Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
+        Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new IniciarSesion().setVisible(true);

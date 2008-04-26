@@ -40,7 +40,6 @@ public class Servidor {
             while( escuchando ){
                 Socket skPeticion = null;
                 try {
-                    Log.setEvento("Servidor","INFO","Esperando Cliente.");
                     skPeticion = skServerPeticiones.accept();
                 } catch (IOException e){
                     Log.setEvento("Servidor","WARNING", e.getMessage());
