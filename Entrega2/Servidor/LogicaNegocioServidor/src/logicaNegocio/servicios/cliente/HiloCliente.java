@@ -38,17 +38,18 @@ public class HiloCliente implements Runnable{
         }
         while( atendiendo ){
             try {
-                peticion = ( Peticion )entradaPeticion.readObject();
+                peticion = (Peticion)entradaPeticion.readObject();
                 switch (peticion.getOpcionPeticion()) {
                     case 1:
-
+                        peticion.setOpcionPeticion(5);
+                        salidaPeticion.writeObject(peticion);
                     break;
                 }
             } catch (IOException ex) {
-                Log.setEvento("Servidor","INFO","El Cliente Termino la Conexion desde IP : "+ skPeticion.getInetAddress().getHostAddress() +
+                /*Log.setEvento("Servidor","INFO","El Cliente Termino la Conexion desde IP : "+ skPeticion.getInetAddress().getHostAddress() +
                                             "<p class=\"salto\">Empleado    : "+ peticion.getEmpleado().getNombre() +"</p>" +
                                             "<p class=\"salto\">Cargo       : "+ peticion.getEmpleado().getCargo() +"</p>" +
-                                            "<p class=\"salto\">Por Hilo    : "+ this.toString() +"</p>"); 
+                                            "<p class=\"salto\">Por Hilo    : "+ this.toString() +"</p>"); */
                 break;
             } catch (ClassNotFoundException ex) {
                 Log.setEvento("Servidor","WARNING","Entrada Desconocida :"+ ex.getMessage());

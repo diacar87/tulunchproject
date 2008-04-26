@@ -11,7 +11,7 @@ import accesoDatos.vo.Empleado;
 public class Peticion implements Serializable {
     
     private int opcionPeticion;
-    private Empleado empleado;
+    //private Empleado empleado;
 
     public Peticion() {
     }
@@ -19,7 +19,7 @@ public class Peticion implements Serializable {
     
     public Peticion(int opcionPeticion, Empleado empleado) {
         this.opcionPeticion = opcionPeticion;
-        this.empleado = empleado;
+      //  this.empleado = empleado;
     }
 
     public int getOpcionPeticion() {
@@ -30,12 +30,12 @@ public class Peticion implements Serializable {
         this.opcionPeticion = opcionPeticion;
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
-    }
+    //public Empleado getEmpleado() {
+        //return empleado;
+    //}
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
+    //public void setEmpleado(Empleado empleado) {
+        //this.empleado = empleado;
+    //}
     
 }
