@@ -49,7 +49,7 @@ public class Conexion {
      * @param peticion la Peticion a enviar
      * @return El objeto que retorna el Servidor, pilas hay que hacerle el cast
      */
-    public static Object enviarPeticion(Peticion peticion){
+    public static Peticion enviarPeticion(Peticion peticion){
         if(!datos){
             obtenerPropiedadesConexion();
             datos = true;
@@ -68,8 +68,9 @@ public class Conexion {
             Log.setEvento("Cliente","INFO","Se envia Peticion");
             salidaPeticion.writeObject(peticion);
             salidaPeticion.flush();
-            //Log.setEvento("Cliente","INFO","Recepcion Exitosa");
-            return (Object)entradaPeticion.readObject();
+            peticion = (Peticion)entradaPeticion.readObject();
+            Log.setEvento("Cliente","INFO","Recepcion Exitosa");
+            return peticion;   
         } catch (UnknownHostException ex) {
             Log.setEvento("Cliente","ERROR", ex.getMessage());
         } catch (IOException ex) {
@@ -78,13 +79,12 @@ public class Conexion {
             Log.setEvento("Cliente","WARNING", ex.getMessage());
         }
         return null;
-        
     }
     
     public static void main(String arg[]){
-        Peticion p = new  Peticion(1, new Empleado("Andres","animador", "hola"));
-        p = ( Peticion )Conexion.enviarPeticion(p);
-        System.out.println(p.getOpcionPeticion());
+       Peticion p = new Peticion("camilo", 1);
+       p = Conexion.enviarPeticion(p);
+       System.out.println(p.getNombreCliente());
     }
     
     
