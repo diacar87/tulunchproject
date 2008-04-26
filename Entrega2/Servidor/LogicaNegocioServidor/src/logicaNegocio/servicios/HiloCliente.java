@@ -7,6 +7,7 @@ import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import accesoDatos.util.Log;
+import accesoDatos.vo.Empleado;
 
 /**
  *
@@ -42,8 +43,8 @@ public class HiloCliente implements Runnable{
                 peticion = (Peticion)entradaPeticion.readObject();
                 switch (peticion.getOpcion()) {
                     case 1:
-                        peticion.setNombreCliente("Camilo");
-                        salidaPeticion.writeObject(peticion);
+                        Empleado empleado = ValidarPassword.setPassword( peticion.getEmpleado().getPassword());
+                        salidaPeticion.writeObject(empleado);
                         salidaPeticion.flush();
                     break;
                 }
