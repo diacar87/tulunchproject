@@ -19,7 +19,7 @@ public class Ventana {
     public static void pantallaCompleta( Window ventana ){
         GraphicsDevice monitor = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         if(!monitor.isFullScreenSupported())
-            Log.setEvento("Cliente","ERROR","No hay Soporte para Pantalla Completa.");
+            Log.setEvento("Cliente","WARNING","No hay Soporte para Pantalla Completa.");
         else
             Log.setEvento("Cliente","INFO","Se aplica Pantalla Completa.");
         try{
