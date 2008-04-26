@@ -1,7 +1,12 @@
 
 package presentacion.vista;
 
+import accesoDatos.conexion.Conexion;
+import accesoDatos.conexion.Peticion;
 import accesoDatos.util.Log;
+import accesoDatos.vo.Empleado;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import presentacion.util.Ventana;
         
 
@@ -17,7 +22,7 @@ public class IniciarSesion extends javax.swing.JFrame {
     public IniciarSesion() {
         initComponents();
         Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
-        Ventana.pantallaCompleta(this);
+        //Ventana.pantallaCompleta(this);
     }
     
     /** This method is called from within the constructor to
@@ -371,16 +376,38 @@ public class IniciarSesion extends javax.swing.JFrame {
 
     private void botonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResetActionPerformed
         // TODO add your handling code here:
-        if(botonReset.getText().equals("RESET"))
-        {
+        if(botonReset.getText().equals("RESET")){
             password="";
             campoPassword.setText("");
         }      
-            else{
+        else{ 
+            Empleado empleado = new Empleado("Iniciar Sesion", password, "Iniciando Sesion");
+            empleado = ( Empleado )Conexion.enviarPeticion(new Peticion(1, empleado));
+            System.out.println(empleado.getNombre());
+             if(empleado!=null){   
+                 
+                    if(empleado.getCargo().equals("Cocina")){
+                        this.setVisible(false);                        
+                        VistaCocina.main();
+
+                    }
+                     if(empleado.getCargo().equals("Mesero")){
+                        this.setVisible(false);                        
+
+                    }
+                    else{
+                        campoPassword.setText("ERROR");                
+                        botonReset.setText("RESET");
+                        password="";
+                    }
+              }
+              else{
                     campoPassword.setText("ERROR");                
                     botonReset.setText("RESET");
                     password="";
-                 } 
+              }
+            
+        }
     }//GEN-LAST:event_botonResetActionPerformed
     
     public void llamarIniciarSesion(){
@@ -396,7 +423,11 @@ public class IniciarSesion extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+        try {
+            UIManager.setLookAndFeel(new com.nilo.plaf.nimrod.NimRODLookAndFeel());                                
+        } catch (UnsupportedLookAndFeelException ex) {
+            Log.setEvento("Cliente","WARNING",ex.getMessage());
+        }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new IniciarSesion().setVisible(true);
