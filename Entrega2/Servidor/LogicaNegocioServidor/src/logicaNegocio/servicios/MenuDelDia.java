@@ -25,5 +25,21 @@ public class MenuDelDia {
         }            
         return menu;        
     }
+    
+    public static void agregarAMenu(String id){
+        int idInt=Integer.parseInt(id);
+        Producto producto=new Producto();
+        producto=DaoProducto.read(idInt);
+        producto.setEstaEnMenu(true);
+        DaoProducto.update(producto);               
+    }
+    
+    public static void quitarDeMenu(String id){
+        int idInt=Integer.parseInt(id);
+        Producto producto=new Producto();
+        producto=DaoProducto.read(idInt);
+        producto.setEstaEnMenu(false);
+        DaoProducto.update(producto);               
+    }
             
 }
