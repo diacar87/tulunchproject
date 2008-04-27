@@ -51,6 +51,9 @@ public class DaoProducto {
     public static List<Producto> readAll(){
         Query q = em.createQuery("SELECT p FROM Producto p");
         List<Producto> productos = q.getResultList();
+        for(int i=0; i<productos.size(); i++){
+            productos.get(i).setFoto(new ImageIcon(path+ productos.get(i).getId()+ ".jpg"));
+        }
         return productos;
     } 
  
