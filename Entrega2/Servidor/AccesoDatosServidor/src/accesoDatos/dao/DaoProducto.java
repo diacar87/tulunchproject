@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.swing.ImageIcon;
 
 public class DaoProducto {
     
@@ -38,7 +39,9 @@ public class DaoProducto {
      * @throws IndexOutOfBoundsException si no existe un producto con ese identiicador
      */
     public static Producto read(int id){
-        return em.find(Producto.class, id);
+        Producto producto = em.find(Producto.class, id);
+        producto.setFoto(new ImageIcon(path+ producto.getId()+ ".jpg"));
+        return producto;
     }
     
     /**
