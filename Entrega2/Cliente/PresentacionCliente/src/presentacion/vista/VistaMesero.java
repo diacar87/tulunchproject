@@ -30,14 +30,13 @@ public class VistaMesero extends javax.swing.JFrame {
     private List<Producto> menu = new ArrayList<Producto>();
     // Panel Pedidos
     private List<Pedido> pedidos = new ArrayList<Pedido>();
-    private Empleado empleado = null;
+    private static Empleado empleado = null;
     private int mesaActual = 0;
     
-    public VistaMesero(Empleado empleado) {
+    public VistaMesero() {
             initComponents();
             Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Mesero.");
             Ventana.pantallaCompleta(this);
-            this.empleado = empleado;
             traerProductos();
             cargarImagenes(panelBebidas);
     }
@@ -82,6 +81,7 @@ public class VistaMesero extends javax.swing.JFrame {
         setTitle("Tu Lunch Restaurant Manager - Mesero");
         setMinimumSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
+        setUndecorated(true);
 
         panelMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -255,7 +255,7 @@ public class VistaMesero extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(tituloMenu)
                 .addGap(18, 18, 18)
-                .addComponent(tabProductos, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE)
+                .addComponent(tabProductos, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
                 .addGap(11, 11, 11)
                 .addComponent(sliderTamañoImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -383,7 +383,7 @@ public class VistaMesero extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(tituloMesas)
                 .addGap(18, 18, 18)
-                .addComponent(tabMesas, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                .addComponent(tabMesas, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botonQuitarItem)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -424,29 +424,14 @@ public class VistaMesero extends javax.swing.JFrame {
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-979)/2, (screenSize.height-768)/2, 979, 768);
+        setBounds((screenSize.width-971)/2, (screenSize.height-734)/2, 971, 734);
     }// </editor-fold>//GEN-END:initComponents
 
     private void traerProductos(){
-        int numeroProductos = 0;
         if( Conexion.abrirConexion() ){
-            numeroProductos = (Integer)Conexion.enviarPeticion(new Peticion(new Empleado("Meserito", "hola", "holas"), 2));
-            Conexion.cerrarConexion();
-        }
-        Producto product = new Producto();
-        Empleado emp = new Empleado("Mesero","hola", "Hola");
-        
-        for(int j=1; j<numeroProductos; j++){
-            for(int i=j; i<=j+20; i++){
-                if( Conexion.abrirConexion() ){
-                    emp.setId(i);
-                    product = (Producto)Conexion.enviarPeticion(new Peticion(emp, 3));
-                    Conexion.cerrarConexion();
-                    menu.add(product);   
-                }
-                if(j==numeroProductos)
-                    break;
-            }
+           menu = (List<Producto>)Conexion.enviarPeticion(new Peticion(empleado, 2));
+           Log.setEvento("Cliente","INFO","Recepcion Exitosa");
+           Conexion.cerrarConexion();
         }
     }
     
@@ -603,14 +588,14 @@ public class VistaMesero extends javax.swing.JFrame {
         System.exit(1);
     }//GEN-LAST:event_botonCerrarAplicacionActionPerformed
     
-    public void setEmpleado(Empleado empleado){
-        this.empleado = empleado;
+    public static void setEmpleado(Empleado empl){
+        empleado = empl;
     }
     
-    public static void main(final Empleado empleado) {
+    public static void main() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaMesero(empleado).setVisible(true);
+                new VistaMesero().setVisible(true);
             }
         });
     }
