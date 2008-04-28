@@ -21,7 +21,7 @@ public class HiloCliente implements Runnable{
     private ObjectInputStream entradaPeticion;
     private ObjectOutputStream salidaPeticion;
     private boolean atendiendo;
-    private Peticion peticion;
+    private Peticion peticion; 
     
     public HiloCliente(Socket skPeticion) {
         this.skPeticion = skPeticion;
