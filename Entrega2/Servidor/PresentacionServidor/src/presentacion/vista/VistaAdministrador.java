@@ -21,10 +21,12 @@ import logicaNegocio.servicios.MenuDelDia;
  */
 public class VistaAdministrador extends javax.swing.JFrame {
 
+    private Empleado empleado;
     
     /** Creates new form VistaAdministrador */
-    public VistaAdministrador() {
+    public VistaAdministrador(Empleado empleado) {
         initComponents();
+        this.empleado = empleado;
         tabsCRUD.remove(tabModificar);
         radioProductoCrear.doClick();
         botonCrear.setVisible(false);
@@ -1408,10 +1410,10 @@ public class VistaAdministrador extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(Empleado empleado) {
+    public static void main(final Empleado empleado) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaAdministrador().setVisible(true);               
+                new VistaAdministrador(empleado).setVisible(true);               
                 
             }
         });
