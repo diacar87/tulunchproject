@@ -10,6 +10,7 @@ import accesoDatos.vo.Pedido;
 import accesoDatos.dao.DaoProducto;
 import accesoDatos.dao.DaoEmpleado;
 import accesoDatos.dao.DaoPedido;
+import accesoDatos.util.Archivo;
 import accesoDatos.util.Log;
 import java.awt.Image;
 import java.io.File;
@@ -1468,7 +1469,8 @@ public class VistaAdministrador extends javax.swing.JFrame {
             ImageIcon tmpIcon = new ImageIcon(file.getPath());
             ImageIcon thumbnail = new ImageIcon(tmpIcon.getImage().getScaledInstance(100, -1, Image.SCALE_DEFAULT));
             labelFoto.setIcon(thumbnail);
-            //jLabel1.setToolTipText("\n" + file.getName());
+            int id = DaoProducto.readAll().size()+1;
+            Archivo.copiar(new File(file.getPath()), new File("../AccesoDatosServidor/src/accesoDatos/vo/fotos/"+id+".jpg"));
        }
 }//GEN-LAST:event_botonAgregarImagenActionPerformed
        
