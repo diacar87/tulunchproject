@@ -1,6 +1,7 @@
 
 package presentacion.vista;
 
+import accesoDatos.util.Encriptacion;
 import accesoDatos.util.Log;
 import logicaNegocio.servicios.ValidarPassword;
 import accesoDatos.vo.Empleado;
@@ -339,7 +340,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         }
         else
         {               
-            Empleado empleado =ValidarPassword.setPassword(password);
+            Empleado empleado =ValidarPassword.setPassword(Encriptacion.md5(password));
           
              if(empleado!=null){   
                  
