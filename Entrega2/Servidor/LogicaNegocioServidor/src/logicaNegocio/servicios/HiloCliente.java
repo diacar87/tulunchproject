@@ -2,14 +2,12 @@
 package logicaNegocio.servicios;
 
 import accesoDatos.conexion.Peticion;
-import accesoDatos.dao.DaoEmpleado;
 import accesoDatos.dao.DaoProducto;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import accesoDatos.util.Log;
-import accesoDatos.vo.Empleado;
 
 /**
  *
@@ -50,11 +48,7 @@ public class HiloCliente implements Runnable{
                         salidaPeticion.flush();
                     break;
                     case 2: // Gestiona Peticion  del cliente al pedir la cantidad de Productos en la base de datos, la consume Cliente.Presentacion.VistaMesero
-                        salidaPeticion.writeObject(DaoProducto.readAll().size());
-                        salidaPeticion.flush();
-                    break;
-                    case 3: // Gestiona Peticion  del cliente al pedir los Productos en la base de datos, la consume Cliente.Presentacion.VistaMesero
-                        salidaPeticion.writeObject(DaoProducto.read(peticion.getEmpleado().getId()));
+                        salidaPeticion.writeObject(DaoProducto.readAll());
                         salidaPeticion.flush();
                     break;
                 }
