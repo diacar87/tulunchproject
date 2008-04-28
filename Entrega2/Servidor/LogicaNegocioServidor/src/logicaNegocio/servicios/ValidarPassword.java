@@ -7,7 +7,6 @@ package logicaNegocio.servicios;
 import java.util.List;
 import accesoDatos.vo.Empleado;
 import accesoDatos.dao.DaoEmpleado;
-import accesoDatos.util.Encriptacion;
 
 /**
  *
@@ -19,7 +18,7 @@ public class ValidarPassword {
      public static Empleado setPassword(String password){
         List<Empleado> empleados =DaoEmpleado.readAll();        
         for(int i=0; i<empleados.size(); i++){                 
-            if (empleados.get(i).getPassword().equals(Encriptacion.md5(password))){               
+            if (empleados.get(i).getPassword().equals(password)){               
                 return empleados.get(i);
             }
         }  
