@@ -450,8 +450,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="labelFoto" min="-2" pref="143" max="-2" attributes="0"/>
-                              <EmptySpace pref="223" max="32767" attributes="0"/>
+                              <Component id="labelFoto" min="-2" pref="113" max="-2" attributes="0"/>
+                              <EmptySpace pref="253" max="32767" attributes="0"/>
                               <Component id="botonCrear" min="-2" pref="128" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
@@ -467,10 +467,10 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="42" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="botonCrear" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <Component id="labelFoto" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <Component id="labelFoto" min="-2" pref="108" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
