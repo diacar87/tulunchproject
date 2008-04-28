@@ -63,6 +63,8 @@ public class VistaMesero extends javax.swing.JFrame {
         panelEstado = new javax.swing.JPanel();
         barraEstado = new javax.swing.JLabel();
         botonCambiarPassword = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         panelPedidos = new javax.swing.JPanel();
         tabMesas = new javax.swing.JTabbedPane();
         scrollItems = new javax.swing.JScrollPane();
@@ -267,6 +269,10 @@ public class VistaMesero extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
+
         javax.swing.GroupLayout panelEstadoLayout = new javax.swing.GroupLayout(panelEstado);
         panelEstado.setLayout(panelEstadoLayout);
         panelEstadoLayout.setHorizontalGroup(
@@ -275,13 +281,19 @@ public class VistaMesero extends javax.swing.JFrame {
                 .addComponent(barraEstado, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonCambiarPassword)
-                .addGap(285, 285, 285))
+                .addGap(34, 34, 34)
+                .addComponent(jButton1)
+                .addGap(52, 52, 52)
+                .addComponent(jButton2)
+                .addGap(53, 53, 53))
         );
         panelEstadoLayout.setVerticalGroup(
             panelEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(barraEstado, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
-                .addComponent(botonCambiarPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(botonCambiarPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addComponent(jButton2))
         );
 
         panelPedidos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -563,6 +575,8 @@ public class VistaMesero extends javax.swing.JFrame {
     private javax.swing.JButton botonCambiarPassword;
     private javax.swing.JButton botonEnviaraCocina;
     private javax.swing.JButton botonQuitarItem;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JPanel panelAcompañamientos;
     private javax.swing.JPanel panelBebidas;
