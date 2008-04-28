@@ -7,7 +7,7 @@ import accesoDatos.util.Log;
 import accesoDatos.vo.Empleado;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import presentacion.util.Ventana;
+
         
 
 /**
@@ -394,7 +394,7 @@ public class IniciarSesion extends javax.swing.JFrame {
                     if(empleado.getCargo().equals("Mesero")){
                         this.setVisible(false);               
                         Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Iniciar Sesion.");
-                        //VistaMesero.main();
+                        VistaMesero.main(empleado);
                     }
                     else{
                         campoPassword.setText("ERROR");                

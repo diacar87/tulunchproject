@@ -21,7 +21,7 @@ import javax.swing.JTable;
 import presentacion.util.Ventana;
 import javax.swing.table.DefaultTableModel;
 
-public class Mesero extends javax.swing.JFrame {
+public class VistaMesero extends javax.swing.JFrame {
     
     private DialogoCambiarContraseña cambiarContraseña = null;
     // Panel Menu
@@ -33,7 +33,7 @@ public class Mesero extends javax.swing.JFrame {
     private Empleado empleado = null;
     private int mesaActual = 0;
     
-    public Mesero(Empleado empleado) {
+    public VistaMesero(Empleado empleado) {
             initComponents();
             Ventana.pantallaCompleta(this);
             this.empleado = empleado;
@@ -326,7 +326,6 @@ public class Mesero extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 24));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
-        jComboBox1.setSelectedIndex(0);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -547,10 +546,10 @@ public class Mesero extends javax.swing.JFrame {
         this.empleado = empleado;
     }
     
-    public static void main(String args[]) {
+    public static void main(final Empleado empleado) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Mesero(new Empleado()).setVisible(true);
+                new VistaMesero(empleado).setVisible(true);
             }
         });
     }
