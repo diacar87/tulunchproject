@@ -277,6 +277,11 @@ public class VistaMesero extends javax.swing.JFrame {
         });
 
         botonCerrarAplicacion.setText("Cerrar Aplicacion");
+        botonCerrarAplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCerrarAplicacionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelEstadoLayout = new javax.swing.GroupLayout(panelEstado);
         panelEstado.setLayout(panelEstadoLayout);
@@ -569,6 +574,11 @@ public class VistaMesero extends javax.swing.JFrame {
         Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
         i.llamarIniciarSesion();
     }//GEN-LAST:event_botonCerrarSesionActionPerformed
+
+    private void botonCerrarAplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarAplicacionActionPerformed
+        Log.setEvento("Cliente","INFO","Se Cierra la Aplicacion");
+        System.exit(1);
+    }//GEN-LAST:event_botonCerrarAplicacionActionPerformed
     
     public void setEmpleado(Empleado empleado){
         this.empleado = empleado;
