@@ -39,9 +39,9 @@ public class Servidor {
             Log.setEvento("Servidor","INFO","El Servidor esta Enviado/Recibiendo Peticiones por el Puerto "+ skServerPeticiones.getLocalPort());
             while( escuchando ){
                 Socket skPeticion = null;
-                skPeticion.setSoTimeout(15000);
                 try {
                     skPeticion = skServerPeticiones.accept();
+                     skPeticion.setSoTimeout(15000);
                 } catch (IOException e){
                     Log.setEvento("Servidor","WARNING", e.getMessage());
                     continue;
