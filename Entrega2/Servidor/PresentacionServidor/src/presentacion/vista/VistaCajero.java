@@ -1,20 +1,16 @@
 
 package presentacion.vista;
 
-
-import presentacion.util.Ventana;
 import accesoDatos.util.Log;
 import accesoDatos.vo.Empleado;
 
-/**
- *
- * @author  Familia
- */
 public class VistaCajero extends javax.swing.JFrame {
-       
+    
+    private Empleado empleado;
     /** Creates new form VistaCajero */
-    public VistaCajero() {
+    public VistaCajero(Empleado empleado) {
         initComponents();
+        this.empleado = empleado;
         Log.setEvento("Servidor","INFO","Se Ejecuta Interfaz de Cajero.");
         //Ventana.pantallaCompleta(this);
     }
@@ -338,10 +334,10 @@ public class VistaCajero extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(Empleado empleado) {
+    public static void main(final Empleado empleado) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaCajero().setVisible(true);
+                new VistaCajero(empleado).setVisible(true);
             }
         });
     }
