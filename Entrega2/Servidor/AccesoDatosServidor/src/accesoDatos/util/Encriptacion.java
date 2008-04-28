@@ -1,10 +1,6 @@
 package accesoDatos.util;
 
-import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Encriptacion {
     
@@ -18,11 +14,10 @@ public class Encriptacion {
             for (byte b : digest) {
                 md5 += Integer.toHexString(b & 0xff);
             }
+            Log.setEvento("Cliente", "INFO", "Se pudo encriptar el password");
             return md5;
-        } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(Encriptacion.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(Encriptacion.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Log.setEvento("Cliente", "WARNING", "No se pudo encriptar el password");
         }
         return md5;
     }
