@@ -64,7 +64,7 @@ public class VistaMesero extends javax.swing.JFrame {
         barraEstado = new javax.swing.JLabel();
         botonCambiarPassword = new javax.swing.JButton();
         botonCerrarSesion = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botonCerrarAplicacion = new javax.swing.JButton();
         panelPedidos = new javax.swing.JPanel();
         tabMesas = new javax.swing.JTabbedPane();
         scrollItems = new javax.swing.JScrollPane();
@@ -271,7 +271,7 @@ public class VistaMesero extends javax.swing.JFrame {
 
         botonCerrarSesion.setText("Cerrar sesion");
 
-        jButton2.setText("Cerrar Aplicacion");
+        botonCerrarAplicacion.setText("Cerrar Aplicacion");
 
         javax.swing.GroupLayout panelEstadoLayout = new javax.swing.GroupLayout(panelEstado);
         panelEstado.setLayout(panelEstadoLayout);
@@ -284,15 +284,15 @@ public class VistaMesero extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(botonCerrarSesion)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2))
+                .addComponent(botonCerrarAplicacion))
         );
 
-        panelEstadoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {botonCambiarPassword, botonCerrarSesion, jButton2});
+        panelEstadoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {botonCambiarPassword, botonCerrarAplicacion, botonCerrarSesion});
 
         panelEstadoLayout.setVerticalGroup(
             panelEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jButton2)
+                .addComponent(botonCerrarAplicacion)
                 .addComponent(botonCerrarSesion)
                 .addComponent(botonCambiarPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(barraEstado, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
@@ -575,10 +575,10 @@ public class VistaMesero extends javax.swing.JFrame {
     private javax.swing.JLabel barraEstado;
     private javax.swing.JButton botonBorrarPedido;
     private javax.swing.JButton botonCambiarPassword;
+    private javax.swing.JButton botonCerrarAplicacion;
     private javax.swing.JButton botonCerrarSesion;
     private javax.swing.JButton botonEnviaraCocina;
     private javax.swing.JButton botonQuitarItem;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JPanel panelAcompañamientos;
     private javax.swing.JPanel panelBebidas;
