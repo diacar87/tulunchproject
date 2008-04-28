@@ -1408,7 +1408,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main() {
+    public static void main(Empleado empleado) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VistaAdministrador().setVisible(true);               

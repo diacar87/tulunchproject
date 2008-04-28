@@ -4,6 +4,7 @@ package presentacion.vista;
 
 import presentacion.util.Ventana;
 import accesoDatos.util.Log;
+import accesoDatos.vo.Empleado;
 
 /**
  *
@@ -337,7 +338,7 @@ public class VistaCajero extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main() {
+    public static void main(Empleado empleado) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VistaCajero().setVisible(true);

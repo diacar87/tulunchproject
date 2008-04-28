@@ -346,13 +346,13 @@ public class IniciarSesion extends javax.swing.JFrame {
                     if(empleado.getCargo().equals("Cajero")){
                         this.setVisible(false);
                         Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Iniciar Sesion.");
-                        VistaCajero.main();                  
+                        VistaCajero.main(empleado);                  
 
                     }
                      if(empleado.getCargo().equals("Administrador")){
                         this.setVisible(false);                        
                         Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Iniciar Sesion.");
-                        VistaAdministrador.main();
+                        VistaAdministrador.main(empleado);
                     }
                     else{
                     campoPassword.setText("ERROR");                
