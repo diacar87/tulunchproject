@@ -52,6 +52,7 @@ public class Conexion {
         obtenerPropiedadesConexion();
         try {
             skPeticion = new Socket(InetAddress.getByName( ipServidor ), puertoPeticion );
+            skPeticion.setSoTimeout(15000);
             Log.setEvento("Cliente","INFO","Conectado a "+ skPeticion.getInetAddress().getHostAddress() + " por el puerto " + puertoPeticion );
             salidaPeticion = new ObjectOutputStream(skPeticion.getOutputStream());
             salidaPeticion.flush();
