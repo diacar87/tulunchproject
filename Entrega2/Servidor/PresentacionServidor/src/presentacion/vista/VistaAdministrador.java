@@ -175,6 +175,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         labelCrear5 = new javax.swing.JLabel();
         labelCrear6 = new javax.swing.JLabel();
         botonAgregarImagen = new javax.swing.JButton();
+        labelFoto = new javax.swing.JLabel();
         tabModificar = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -596,12 +597,16 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        labelFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout tabCrearLayout = new javax.swing.GroupLayout(tabCrear);
         tabCrear.setLayout(tabCrearLayout);
         tabCrearLayout.setHorizontalGroup(
             tabCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabCrearLayout.createSequentialGroup()
-                .addContainerGap(397, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
+                .addComponent(labelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
                 .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
             .addGroup(tabCrearLayout.createSequentialGroup()
@@ -614,8 +619,10 @@ public class VistaAdministrador extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabCrearLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(tabCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
         );
 
@@ -689,7 +696,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addGroup(tabModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
                 .addComponent(botonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98))
         );
@@ -1263,6 +1270,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
     private void radioProductoCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioProductoCrearActionPerformed
         // TODO add your handling code here:
+        botonAgregarImagen.setEnabled(true);
         radioEmpleadoCrear.setSelected(false);
         if(!radioEmpleadoCrear.isSelected())
             radioProductoCrear.setSelected(true);
@@ -1285,6 +1293,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
 
     private void radioEmpleadoCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioEmpleadoCrearActionPerformed
         // TODO add your handling code here:
+        botonAgregarImagen.setEnabled(false);
         radioProductoCrear.setSelected(false);
         if(!radioProductoCrear.isSelected())
             radioEmpleadoCrear.setSelected(true);
@@ -1457,8 +1466,8 @@ public class VistaAdministrador extends javax.swing.JFrame {
        if (file!= null){
             System.out.println(file.getPath());
             ImageIcon tmpIcon = new ImageIcon(file.getPath());
-            ImageIcon thumbnail = new ImageIcon(tmpIcon.getImage().getScaledInstance(150, -1, Image.SCALE_DEFAULT));
-            //jLabel1.setIcon(thumbnail);
+            ImageIcon thumbnail = new ImageIcon(tmpIcon.getImage().getScaledInstance(100, -1, Image.SCALE_DEFAULT));
+            labelFoto.setIcon(thumbnail);
             //jLabel1.setToolTipText("\n" + file.getName());
        }
 }//GEN-LAST:event_botonAgregarImagenActionPerformed
@@ -1539,6 +1548,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel labelCrear4;
     private javax.swing.JLabel labelCrear5;
     private javax.swing.JLabel labelCrear6;
+    private javax.swing.JLabel labelFoto;
     private javax.swing.JTextField n;
     private javax.swing.JPanel panelDatosEmpleado;
     private javax.swing.JRadioButton radioEmpleado;
