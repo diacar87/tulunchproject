@@ -12,7 +12,7 @@ public class DaoProducto {
     
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("AccesoDatosPU");
     private static EntityManager em = emf.createEntityManager();
-    public  static String path = "C:\\Documents and Settings\\Familia\\Mis documentos\\NetBeansProjects\\Entrega2\\Servidor\\AccesoDatosServidor\\src\\accesoDatos\\vo\\fotos\\";
+    public  static String path = "../AccesoDatosServidor/src/accesoDatos/vo/fotos/";
 
     /**
      * Almacena un producto en la base de datos.
