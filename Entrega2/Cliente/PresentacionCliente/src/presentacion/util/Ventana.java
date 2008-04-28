@@ -25,6 +25,7 @@ public class Ventana {
         try{
             // Activamos el modo a pantalla completa
             monitor.setFullScreenWindow(ventana);
+            ventana.setMinimumSize(ventana.getSize());
         }
         catch(Throwable ex) {
             Log.setEvento("Cliente","ERROR",ex.getMessage());
