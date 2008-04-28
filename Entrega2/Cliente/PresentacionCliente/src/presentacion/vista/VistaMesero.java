@@ -35,10 +35,11 @@ public class VistaMesero extends javax.swing.JFrame {
     
     public VistaMesero(Empleado empleado) {
             initComponents();
+            Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Mesero.");
             Ventana.pantallaCompleta(this);
             this.empleado = empleado;
+            traerProductos();
             cargarImagenes(panelBebidas);
-            Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Mesero.");
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -434,7 +435,7 @@ public class VistaMesero extends javax.swing.JFrame {
         }
         Producto product = new Producto();
         Empleado emp = new Empleado("Mesero","hola", "Hola");
-         for(int i=1; i<20; i++){
+        for(int i=1; i<=numeroProductos; i++){
                 if( Conexion.abrirConexion() ){
                     emp.setId(i);
                     product = (Producto)Conexion.enviarPeticion(new Peticion(emp, 3));
@@ -443,6 +444,7 @@ public class VistaMesero extends javax.swing.JFrame {
                 }   
         }
     }
+    
     public void cargarImagenes(JPanel panel){
         pack();
         int anchoDelPadre = (int) panel.getParent().getWidth();
@@ -460,12 +462,10 @@ public class VistaMesero extends javax.swing.JFrame {
         int columnas = 0;
         
         String tipo = panel.getName();
-        // * menu = DaoProducto.readAll();
-        traerProductos();
         
         for(int i=0; i<menu.size(); i++){
             final int j=i;
-            if (menu.get(i).getTipo().equals(tipo) && menu.get(i).getEstaEnMenu()){
+            if (menu.get(i).getTipo().equals(tipo)){// && menu.get(i).getEstaEnMenu()){
                 
                 JButton botonProducto = new JButton();
                 JLabel labelProducto = new JLabel();
