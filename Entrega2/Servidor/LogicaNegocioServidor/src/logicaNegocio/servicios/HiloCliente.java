@@ -38,7 +38,6 @@ public class HiloCliente implements Runnable{
         } catch (IOException ex) {
             Log.setEvento("Servidor","ERROR",ex.getMessage());
         }
-        int contadorProducto = 0;
         while( atendiendo ){
             try {
                 peticion = (Peticion)entradaPeticion.readObject();
@@ -51,17 +50,12 @@ public class HiloCliente implements Runnable{
                         salidaPeticion.flush();
                     break;
                     case 2: // Gestiona Peticion  del cliente al pedir la cantidad de Productos en la base de datos, la consume Cliente.Presentacion.VistaMesero
-                        contadorProducto = DaoProducto.readAll().size();
-                        salidaPeticion.writeObject(contadorProducto);
+                        salidaPeticion.writeObject(DaoProducto.readAll().size());
                         salidaPeticion.flush();
-                        contadorProducto = 1 ;
-                        System.out.println("valor = "+contadorProducto );
                     break;
                     case 3: // Gestiona Peticion  del cliente al pedir los Productos en la base de datos, la consume Cliente.Presentacion.VistaMesero
-                        salidaPeticion.writeObject(DaoProducto.read(contadorProducto));
+                        salidaPeticion.writeObject(DaoProducto.read(peticion.getEmpleado().getId()));
                         salidaPeticion.flush();
-                        contadorProducto++;
-                        System.out.println(contadorProducto);
                     break;
                 }
             } catch (IOException ex) {
