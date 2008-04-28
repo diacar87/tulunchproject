@@ -270,6 +270,11 @@ public class VistaMesero extends javax.swing.JFrame {
         });
 
         botonCerrarSesion.setText("Cerrar sesion");
+        botonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCerrarSesionActionPerformed(evt);
+            }
+        });
 
         botonCerrarAplicacion.setText("Cerrar Aplicacion");
 
@@ -556,6 +561,14 @@ public class VistaMesero extends javax.swing.JFrame {
         JTable tabla2 = (JTable)panel.getViewport().getView();
         System.out.println(tabla2.getName());
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void botonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarSesionActionPerformed
+        this.setVisible(false);
+        Log.setEvento("Cliente","INFO","Se Cierra Interfaz de Cocina.");
+        IniciarSesion i = new IniciarSesion();
+        Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
+        i.llamarIniciarSesion();
+    }//GEN-LAST:event_botonCerrarSesionActionPerformed
     
     public void setEmpleado(Empleado empleado){
         this.empleado = empleado;
