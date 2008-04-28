@@ -274,7 +274,7 @@ public class DialogoCambiarContraseña extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void setPassword(Empleado empleado){
+    public void setEmpleado(Empleado empleado){
         currentPassword = empleado.getPassword();
         this.empleado = empleado;
     }

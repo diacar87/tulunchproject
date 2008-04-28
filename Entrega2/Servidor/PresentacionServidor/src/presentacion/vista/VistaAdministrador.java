@@ -21,7 +21,8 @@ import logicaNegocio.servicios.MenuDelDia;
  */
 public class VistaAdministrador extends javax.swing.JFrame {
 
-    private Empleado empleado;
+    private DialogoCambiarContraseña cambiarContraseña = null;
+    private Empleado empleado = null;
     
     /** Creates new form VistaAdministrador */
     public VistaAdministrador(Empleado empleado) {
@@ -202,6 +203,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         botonCerrarAplicacion = new javax.swing.JButton();
+        botonCambiarContraseña = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Interfaz Administrador"); // NOI18N
@@ -585,7 +587,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(58, 58, 58))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabCrearLayout.createSequentialGroup()
-                .addContainerGap(397, Short.MAX_VALUE)
+                .addContainerGap(417, Short.MAX_VALUE)
                 .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
         );
@@ -596,7 +598,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(146, 146, 146)
                 .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addGap(26, 26, 26))
         );
 
         tabsCRUD.addTab("<html>\t\n\t<body>\n\t\t<br>C<br>R<br>E<br>A<br>R<br><br>\t\n\t</body>\t\n</html>", tabCrear);
@@ -975,6 +977,14 @@ public class VistaAdministrador extends javax.swing.JFrame {
             }
         });
 
+        botonCambiarContraseña.setFont(new java.awt.Font("Tahoma", 0, 18));
+        botonCambiarContraseña.setText("Cambiar Contraseña"); // NOI18N
+        botonCambiarContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCambiarContraseñaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -985,6 +995,8 @@ public class VistaAdministrador extends javax.swing.JFrame {
                         .addContainerGap(67, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(botonCambiarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(botonCerrarAplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -998,7 +1010,8 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCerrarAplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonCerrarAplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCambiarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1406,6 +1419,16 @@ public class VistaAdministrador extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_campoCrear6KeyPressed
+
+    private void botonCambiarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambiarContraseñaActionPerformed
+        if (cambiarContraseña == null){
+            cambiarContraseña = new DialogoCambiarContraseña(this,true);
+        }
+        cambiarContraseña.resetAll();
+        cambiarContraseña.setEmpleado(this.empleado);
+        cambiarContraseña.pack();
+        cambiarContraseña.setVisible(true);
+}//GEN-LAST:event_botonCambiarContraseñaActionPerformed
        
     /**
      * @param args the command line arguments
@@ -1426,6 +1449,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JToggleButton Mesa8;
     private javax.swing.JButton botonAgregar;
     private javax.swing.JButton botonBuscar;
+    private javax.swing.JButton botonCambiarContraseña;
     private javax.swing.JButton botonCerrarAplicacion;
     private javax.swing.JButton botonCrear;
     private javax.swing.JButton botonModificar;
