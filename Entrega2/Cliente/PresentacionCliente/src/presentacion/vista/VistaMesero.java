@@ -269,9 +269,9 @@ public class VistaMesero extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Cerrar sesion");
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Cerrar Aplicacion");
 
         javax.swing.GroupLayout panelEstadoLayout = new javax.swing.GroupLayout(panelEstado);
         panelEstado.setLayout(panelEstadoLayout);
