@@ -435,13 +435,18 @@ public class VistaMesero extends javax.swing.JFrame {
         }
         Producto product = new Producto();
         Empleado emp = new Empleado("Mesero","hola", "Hola");
-        for(int i=1; i<=numeroProductos; i++){
+        
+        for(int j=1; j<numeroProductos; j++){
+            for(int i=j; i<=j+20; i++){
                 if( Conexion.abrirConexion() ){
                     emp.setId(i);
                     product = (Producto)Conexion.enviarPeticion(new Peticion(emp, 3));
                     Conexion.cerrarConexion();
                     menu.add(product);   
-                }   
+                }
+                if(j==numeroProductos)
+                    break;
+            }
         }
     }
     
