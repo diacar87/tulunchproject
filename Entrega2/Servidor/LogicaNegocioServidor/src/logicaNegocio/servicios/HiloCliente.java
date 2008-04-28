@@ -2,6 +2,8 @@
 package logicaNegocio.servicios;
 
 import accesoDatos.conexion.Peticion;
+import accesoDatos.dao.DaoEmpleado;
+import accesoDatos.dao.DaoProducto;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
@@ -43,9 +45,12 @@ public class HiloCliente implements Runnable{
                             "<p class=\"salto\">Empleado    : "+ peticion.getEmpleado().getNombre() +"</p>" +
                             "<p class=\"salto\">En Hilo    : "+ this.toString() +"</p>");
                 switch (peticion.getOpcion()) {
-                    case 1:
-                        Empleado empleado = ValidarPassword.setPassword( peticion.getEmpleado().getCargo());
-                        salidaPeticion.writeObject(empleado);
+                    case 1: // Gestiona Peticion  del cliente al pedir un empleado segun un password ya encriptado, la consume Cliente.Presentacion.IniciarSesion
+                        salidaPeticion.writeObject( ValidarPassword.setPassword( peticion.getEmpleado().getPassword()) );
+                        salidaPeticion.flush();
+                    break;
+                    case 2:
+                        salidaPeticion.writeObject(DaoProducto.read(2));
                         salidaPeticion.flush();
                     break;
                 }
