@@ -14,10 +14,10 @@ public class Encriptacion {
             for (byte b : digest) {
                 md5 += Integer.toHexString(b & 0xff);
             }
-            Log.setEvento("Cliente", "INFO", "Se pudo encriptar el password");
+            Log.setEvento("Servidor", "INFO", "Se pudo encriptar el password");
             return md5;
         } catch (Exception ex) {
-            Log.setEvento("Cliente", "WARNING", "No se pudo encriptar el password");
+            Log.setEvento("Servidor", "WARNING", "No se pudo encriptar el password");
         }
         return md5;
     }
