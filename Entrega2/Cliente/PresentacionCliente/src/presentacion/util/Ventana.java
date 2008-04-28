@@ -17,19 +17,9 @@ public class Ventana {
      * @param ventana Ventana a aplicar Ventana Completa
      */
     public static void pantallaCompleta( Window ventana ){
-        GraphicsDevice monitor = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        if(!monitor.isFullScreenSupported())
-            Log.setEvento("Cliente","WARNING","No hay Soporte para Pantalla Completa.");
-        else
-            Log.setEvento("Cliente","INFO","Se aplica Pantalla Completa.");
-        try{
-            // Activamos el modo a pantalla completa
-            monitor.setFullScreenWindow(ventana);
-            ventana.setMinimumSize(ventana.getSize());
-        }
-        catch(Throwable ex) {
-            Log.setEvento("Cliente","ERROR",ex.getMessage());
-        }
+        Dimension dimensionPantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        ventana.setMinimumSize(dimensionPantalla);
+        centrar(ventana);
     }
     
     /**
