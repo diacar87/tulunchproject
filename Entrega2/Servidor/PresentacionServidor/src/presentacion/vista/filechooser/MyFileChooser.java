@@ -12,7 +12,7 @@ public class MyFileChooser extends javax.swing.JFrame {
     
     private JFileChooser fc;
     
-    public File getFile(File path){
+    public File getFile(File path, Frame window){
         
         if (fc == null) {
             fc = new JFileChooser();                        // Crea el MyFileChooser
@@ -23,7 +23,7 @@ public class MyFileChooser extends javax.swing.JFrame {
             fc.setCurrentDirectory(path);                   // Establece el directorio de inicio del MyFileChooser
         }
 
-        int returnVal = fc.showDialog(this, "Abrir");       // Lanza el MyFileChooser
+        int returnVal = fc.showDialog(window, "Abrir");       // Lanza el MyFileChooser
         
         // Accion Aceptar
         if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -35,7 +35,7 @@ public class MyFileChooser extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Asegurese de que el archivo \n"+ file.getPath() +" existe.", "Archivo no encontrado", JOptionPane.WARNING_MESSAGE);
-                    getFile(new File(file.getParentFile().getPath()));
+                    getFile(new File(file.getParentFile().getPath()), window);
                 } 
             }
         }

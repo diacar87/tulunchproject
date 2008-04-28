@@ -11,9 +11,13 @@ import accesoDatos.dao.DaoProducto;
 import accesoDatos.dao.DaoEmpleado;
 import accesoDatos.dao.DaoPedido;
 import accesoDatos.util.Log;
+import java.awt.Image;
+import java.io.File;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import logicaNegocio.servicios.BuscarPorCampo;
 import logicaNegocio.servicios.MenuDelDia;
+import presentacion.vista.filechooser.MyFileChooser;
 
 /**
  *
@@ -22,6 +26,7 @@ import logicaNegocio.servicios.MenuDelDia;
 public class VistaAdministrador extends javax.swing.JFrame {
 
     private DialogoCambiarContraseña cambiarContraseña = null;
+    private MyFileChooser fileChooser = null;
     private Empleado empleado = null;
     
     /** Creates new form VistaAdministrador */
@@ -169,6 +174,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
         labelCrear4 = new javax.swing.JLabel();
         labelCrear5 = new javax.swing.JLabel();
         labelCrear6 = new javax.swing.JLabel();
+        botonAgregarImagen = new javax.swing.JButton();
         tabModificar = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -554,16 +560,26 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        botonAgregarImagen.setText("Agregar Imagen");
+        botonAgregarImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarImagenActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(botonAgregarImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(89, Short.MAX_VALUE))
@@ -575,7 +591,9 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(botonAgregarImagen)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout tabCrearLayout = new javax.swing.GroupLayout(tabCrear);
@@ -583,20 +601,20 @@ public class VistaAdministrador extends javax.swing.JFrame {
         tabCrearLayout.setHorizontalGroup(
             tabCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabCrearLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(58, 58, 58))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabCrearLayout.createSequentialGroup()
-                .addContainerGap(417, Short.MAX_VALUE)
+                .addContainerGap(397, Short.MAX_VALUE)
                 .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
+            .addGroup(tabCrearLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(38, 38, 38))
         );
         tabCrearLayout.setVerticalGroup(
             tabCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabCrearLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(146, 146, 146)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
@@ -671,7 +689,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
                 .addGroup(tabModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
                 .addComponent(botonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98))
         );
@@ -1429,6 +1447,21 @@ public class VistaAdministrador extends javax.swing.JFrame {
         cambiarContraseña.pack();
         cambiarContraseña.setVisible(true);
 }//GEN-LAST:event_botonCambiarContraseñaActionPerformed
+
+    private void botonAgregarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarImagenActionPerformed
+       if(fileChooser == null){
+           fileChooser = new MyFileChooser();
+       }
+       File file = fileChooser.getFile(new File(System.getProperty("user.home")), this);
+       
+       if (file!= null){
+            System.out.println(file.getPath());
+            ImageIcon tmpIcon = new ImageIcon(file.getPath());
+            ImageIcon thumbnail = new ImageIcon(tmpIcon.getImage().getScaledInstance(150, -1, Image.SCALE_DEFAULT));
+            //jLabel1.setIcon(thumbnail);
+            //jLabel1.setToolTipText("\n" + file.getName());
+       }
+}//GEN-LAST:event_botonAgregarImagenActionPerformed
        
     /**
      * @param args the command line arguments
@@ -1448,6 +1481,7 @@ public class VistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JToggleButton Mesa7;
     private javax.swing.JToggleButton Mesa8;
     private javax.swing.JButton botonAgregar;
+    private javax.swing.JButton botonAgregarImagen;
     private javax.swing.JButton botonBuscar;
     private javax.swing.JButton botonCambiarContraseña;
     private javax.swing.JButton botonCerrarAplicacion;
