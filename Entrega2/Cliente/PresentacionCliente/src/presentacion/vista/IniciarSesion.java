@@ -387,13 +387,13 @@ public class IniciarSesion extends javax.swing.JFrame {
                 if(empleado!=null){   
                     if(empleado.getCargo().equals("Cocina")){
                         this.setVisible(false);
-                        Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Iniciar Sesion.");
+                        Log.setEvento("Cliente","INFO","Se Cierra Interfaz de Iniciar Sesion.");
                         VistaCocina.main();
 
                     }
                     if(empleado.getCargo().equals("Mesero")){
                         this.setVisible(false);               
-                        Log.setEvento("Servidor","INFO","Se Cierra Interfaz de Iniciar Sesion.");
+                        Log.setEvento("Cliente","INFO","Se Cierra Interfaz de Iniciar Sesion.");
                         VistaMesero.main(empleado);
                     }
                     else{

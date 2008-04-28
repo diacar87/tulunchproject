@@ -1,7 +1,7 @@
 package presentacion.vista;
 
-//import accesoDatos.dao.DaoEmpleado;
-//import accesoDatos.dao.DaoProducto;
+import accesoDatos.conexion.Conexion;
+import accesoDatos.conexion.Peticion;
 import accesoDatos.util.Log;
 import accesoDatos.vo.Empleado;
 import accesoDatos.vo.Pedido;
@@ -444,7 +444,20 @@ public class VistaMesero extends javax.swing.JFrame {
         
         String tipo = panel.getName();
         // * menu = DaoProducto.readAll();
-
+        int numeroProductos = 0;
+        if( Conexion.abrirConexion() ){
+            numeroProductos = (Integer)Conexion.enviarPeticion(new Peticion(new Empleado("Meserito", "hola", "holas"), 2));
+            Conexion.cerrarConexion();
+        }
+        Producto product = new Producto();
+         for(int i=0; i<10; i++){
+                if( Conexion.abrirConexion() ){
+                    product = (Producto)Conexion.enviarPeticion(new Peticion(new Empleado("Meserito", "hola", "holas"), 3));
+                    Conexion.cerrarConexion();
+                    menu.add(product);   
+                }   
+        }
+        
         for(int i=0; i<menu.size(); i++){
             final int j=i;
             if (menu.get(i).getTipo().equals(tipo) && menu.get(i).getEstaEnMenu()){
@@ -569,7 +582,7 @@ public class VistaMesero extends javax.swing.JFrame {
 
     private void botonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarSesionActionPerformed
         this.setVisible(false);
-        Log.setEvento("Cliente","INFO","Se Cierra Interfaz de Cocina.");
+        Log.setEvento("Cliente","INFO","Se Cierra Interfaz de Mesero.");
         IniciarSesion i = new IniciarSesion();
         Log.setEvento("Cliente","INFO","Se Ejecuta Interfaz de Iniciar Sesion.");
         i.llamarIniciarSesion();

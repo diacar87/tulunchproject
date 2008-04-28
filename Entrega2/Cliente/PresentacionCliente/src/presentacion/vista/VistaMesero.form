@@ -96,7 +96,7 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="tituloMenu" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="tabProductos" pref="585" max="32767" attributes="0"/>
+                  <Component id="tabProductos" pref="581" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="sliderTamañoImagen" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -454,7 +454,7 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="tituloMesas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                  <Component id="tabMesas" pref="375" max="32767" attributes="0"/>
+                  <Component id="tabMesas" pref="373" max="32767" attributes="0"/>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Component id="botonQuitarItem" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
