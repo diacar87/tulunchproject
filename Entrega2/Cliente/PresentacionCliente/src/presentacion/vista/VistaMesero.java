@@ -426,6 +426,23 @@ public class VistaMesero extends javax.swing.JFrame {
         setBounds((screenSize.width-979)/2, (screenSize.height-768)/2, 979, 768);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void traerProductos(){
+        int numeroProductos = 0;
+        if( Conexion.abrirConexion() ){
+            numeroProductos = (Integer)Conexion.enviarPeticion(new Peticion(new Empleado("Meserito", "hola", "holas"), 2));
+            Conexion.cerrarConexion();
+        }
+        Producto product = new Producto();
+        Empleado emp = new Empleado("Mesero","hola", "Hola");
+         for(int i=1; i<20; i++){
+                if( Conexion.abrirConexion() ){
+                    emp.setId(i);
+                    product = (Producto)Conexion.enviarPeticion(new Peticion(emp, 3));
+                    Conexion.cerrarConexion();
+                    menu.add(product);   
+                }   
+        }
+    }
     public void cargarImagenes(JPanel panel){
         pack();
         int anchoDelPadre = (int) panel.getParent().getWidth();
@@ -444,19 +461,7 @@ public class VistaMesero extends javax.swing.JFrame {
         
         String tipo = panel.getName();
         // * menu = DaoProducto.readAll();
-        int numeroProductos = 0;
-        if( Conexion.abrirConexion() ){
-            numeroProductos = (Integer)Conexion.enviarPeticion(new Peticion(new Empleado("Meserito", "hola", "holas"), 2));
-            Conexion.cerrarConexion();
-        }
-        Producto product = new Producto();
-         for(int i=0; i<10; i++){
-                if( Conexion.abrirConexion() ){
-                    product = (Producto)Conexion.enviarPeticion(new Peticion(new Empleado("Meserito", "hola", "holas"), 3));
-                    Conexion.cerrarConexion();
-                    menu.add(product);   
-                }   
-        }
+        traerProductos();
         
         for(int i=0; i<menu.size(); i++){
             final int j=i;
