@@ -1,12 +1,10 @@
 package presentacion.vista;
 
-import accesoDatos.dao.DaoEmpleado;
 import accesoDatos.util.Encriptacion;
 import accesoDatos.vo.Empleado;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import javax.swing.JPasswordField;
+import presentacion.util.Ventana;
 
 public class DialogoCambiarContraseña extends javax.swing.JDialog {
     
@@ -19,7 +17,7 @@ public class DialogoCambiarContraseña extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        centrar();
+        Ventana.centrar(this);
         pack();
         selectedPasswordField = contraseñaActual;
         actualizarEstadoComponentes();
@@ -274,7 +272,7 @@ public class DialogoCambiarContraseña extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void setPassword(Empleado empleado){
+    public void setEmpleado(Empleado empleado){
         currentPassword = empleado.getPassword();
         this.empleado = empleado;
     }
@@ -412,24 +410,9 @@ public class DialogoCambiarContraseña extends javax.swing.JDialog {
     private void botonCambiarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambiarContraseñaActionPerformed
         currentPassword = nuevaContraseña.getText();
         empleado.setPassword(currentPassword);
-        DaoEmpleado.update(empleado);
+        //* DaoEmpleado.update(empleado);
         dispose();
     }//GEN-LAST:event_botonCambiarContraseñaActionPerformed
-    
-    private void centrar(){
-        pack();
-
-        // Se obtienen las dimensiones en pixels de la pantalla.
-        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
-        
-        // Se obtienen las dimensiones en pixels de la ventana.
-        Dimension ventana = getSize();
-        
-        // Una cuenta para situar la ventana en el centro de la pantalla.
-        setLocation(
-            (pantalla.width - ventana.width) / 2,
-            (pantalla.height - ventana.height) / 2);
-    }
     
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -504,7 +504,7 @@ public class Mesero extends javax.swing.JFrame {
             cambiarContraseña = new DialogoCambiarContraseña(this,true);
         }
         cambiarContraseña.resetAll();
-        cambiarContraseña.setPassword(empleado);
+        cambiarContraseña.setEmpleado(empleado);
         cambiarContraseña.pack();
         cambiarContraseña.setVisible(true);
         
